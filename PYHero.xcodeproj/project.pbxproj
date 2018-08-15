@@ -1,0 +1,674 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D56A70A5F3A0EF58BC88091 /* libPods-PYHero.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A4A2E29D340B738CD78F8F /* libPods-PYHero.a */; };
+		C47A5BA82123C3DC00467618 /* PYVCTabMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */; };
+		C47A5BAB2123C3F800467618 /* PYVCTabShake.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAA2123C3F800467618 /* PYVCTabShake.m */; };
+		C47A5BAE2123C43700467618 /* PYVCTabLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAD2123C43700467618 /* PYVCTabLottery.m */; };
+		C47A5BB12123C47A00467618 /* PYVCTabMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BB02123C47A00467618 /* PYVCTabMonster.m */; };
+		C47A5BB42123C49500467618 /* PYVCTabOwn.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BB32123C49500467618 /* PYVCTabOwn.m */; };
+		C47A5BB82123C61A00467618 /* PYVCTabMain.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BB72123C61A00467618 /* PYVCTabMain.m */; };
+		C47A5BBB2123CA8C00467618 /* PYVCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BBA2123CA8C00467618 /* PYVCRecord.m */; };
+		C47A5BBE2123CAA200467618 /* PYVCOwnSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BBD2123CAA200467618 /* PYVCOwnSetting.m */; };
+		D10BD2B62072803F00AA1615 /* NSDate+PYHero.m in Sources */ = {isa = PBXBuildFile; fileRef = D10BD2B52072803F00AA1615 /* NSDate+PYHero.m */; };
+		D11022CC2073D4900021043E /* PYTabScoreHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D11022CB2073D4900021043E /* PYTabScoreHeader.m */; };
+		D176D3AB2075DD8A00EA514B /* PYVCNewsActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D176D3A92075DD8A00EA514B /* PYVCNewsActivity.m */; };
+		D176D3AC2075DD8A00EA514B /* PYVCNewsActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = D176D3AA2075DD8A00EA514B /* PYVCNewsActivity.xib */; };
+		D176D3B02075DE3700EA514B /* PYVCNewsSpecial.m in Sources */ = {isa = PBXBuildFile; fileRef = D176D3AE2075DE3700EA514B /* PYVCNewsSpecial.m */; };
+		D176D3B12075DE3700EA514B /* PYVCNewsSpecial.xib in Resources */ = {isa = PBXBuildFile; fileRef = D176D3AF2075DE3700EA514B /* PYVCNewsSpecial.xib */; };
+		D176D3B52075DE9200EA514B /* PYVCNewsOfficial.m in Sources */ = {isa = PBXBuildFile; fileRef = D176D3B32075DE9200EA514B /* PYVCNewsOfficial.m */; };
+		D176D3B62075DE9200EA514B /* PYVCNewsOfficial.xib in Resources */ = {isa = PBXBuildFile; fileRef = D176D3B42075DE9200EA514B /* PYVCNewsOfficial.xib */; };
+		D176D3BA2075DECF00EA514B /* PYVCNewsGame.m in Sources */ = {isa = PBXBuildFile; fileRef = D176D3B82075DECF00EA514B /* PYVCNewsGame.m */; };
+		D176D3BB2075DECF00EA514B /* PYVCNewsGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = D176D3B92075DECF00EA514B /* PYVCNewsGame.xib */; };
+		D176D3BF2075DEFF00EA514B /* PYVCNewsHero.m in Sources */ = {isa = PBXBuildFile; fileRef = D176D3BD2075DEFF00EA514B /* PYVCNewsHero.m */; };
+		D176D3C02075DEFF00EA514B /* PYVCNewsHero.xib in Resources */ = {isa = PBXBuildFile; fileRef = D176D3BE2075DEFF00EA514B /* PYVCNewsHero.xib */; };
+		D176D3C42075DF9000EA514B /* PYVCNewsFamous.m in Sources */ = {isa = PBXBuildFile; fileRef = D176D3C22075DF9000EA514B /* PYVCNewsFamous.m */; };
+		D176D3C52075DF9000EA514B /* PYVCNewsFamous.xib in Resources */ = {isa = PBXBuildFile; fileRef = D176D3C32075DF9000EA514B /* PYVCNewsFamous.xib */; };
+		D176D3CA2075E67800EA514B /* PYVCBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D176D3C92075E67800EA514B /* PYVCBase.m */; };
+		D1865017206E210400C2A6D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1865016206E210400C2A6D0 /* AppDelegate.m */; };
+		D1865020206E210400C2A6D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D186501E206E210400C2A6D0 /* Main.storyboard */; };
+		D1865022206E210400C2A6D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1865021206E210400C2A6D0 /* Assets.xcassets */; };
+		D1865025206E210400C2A6D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1865023206E210400C2A6D0 /* LaunchScreen.storyboard */; };
+		D1865028206E210400C2A6D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1865027206E210400C2A6D0 /* main.m */; };
+		D1865039206E384E00C2A6D0 /* PYVCTabNews.m in Sources */ = {isa = PBXBuildFile; fileRef = D1865031206E384D00C2A6D0 /* PYVCTabNews.m */; };
+		D186503A206E384E00C2A6D0 /* PYVCTabScore.m in Sources */ = {isa = PBXBuildFile; fileRef = D1865033206E384D00C2A6D0 /* PYVCTabScore.m */; };
+		D186503F206E47A200C2A6D0 /* PYVCNewsNewest.m in Sources */ = {isa = PBXBuildFile; fileRef = D186503D206E47A200C2A6D0 /* PYVCNewsNewest.m */; };
+		D1865040206E47A200C2A6D0 /* PYVCNewsNewest.xib in Resources */ = {isa = PBXBuildFile; fileRef = D186503E206E47A200C2A6D0 /* PYVCNewsNewest.xib */; };
+		D186504F206E692E00C2A6D0 /* UIColor+PYHero.m in Sources */ = {isa = PBXBuildFile; fileRef = D186504E206E692E00C2A6D0 /* UIColor+PYHero.m */; };
+		D1865056206E703200C2A6D0 /* UIFont+PYHero.m in Sources */ = {isa = PBXBuildFile; fileRef = D1865055206E703200C2A6D0 /* UIFont+PYHero.m */; };
+		D1ACB598207313A800EB6988 /* UIImage+PYHero.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ACB597207313A800EB6988 /* UIImage+PYHero.m */; };
+		D1ADCFA8207452E7001CCE5E /* PYTabScoreHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1ADCFA7207452E7001CCE5E /* PYTabScoreHeader.xib */; };
+		D1ADCFAC2074535B001CCE5E /* PYTabScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ADCFAA2074535B001CCE5E /* PYTabScoreCell.m */; };
+		D1ADCFAD2074535B001CCE5E /* PYTabScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1ADCFAB2074535B001CCE5E /* PYTabScoreCell.xib */; };
+		D1ADCFB120745D5E001CCE5E /* PYTabScoreCurrentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ADCFAF20745D5E001CCE5E /* PYTabScoreCurrentCell.m */; };
+		D1ADCFB220745D5E001CCE5E /* PYTabScoreCurrentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1ADCFB020745D5E001CCE5E /* PYTabScoreCurrentCell.xib */; };
+		D1ADCFB520747589001CCE5E /* NSDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ADCFB320747589001CCE5E /* NSDictionary+SafeAccess.m */; };
+		D1ADCFBB20749641001CCE5E /* PYTabScoreNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ADCFBA20749641001CCE5E /* PYTabScoreNoticeView.m */; };
+		D1ADCFBD2074965A001CCE5E /* PYTabScoreNoticeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1ADCFBC2074965A001CCE5E /* PYTabScoreNoticeView.xib */; };
+		D1EF4FB820707F0F006C6D60 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D1EF4FB720707F0F006C6D60 /* Podfile */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5630972C322D422AABB8F70A /* Pods-PYHero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYHero.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYHero/Pods-PYHero.release.xcconfig"; sourceTree = "<group>"; };
+		B0A4A2E29D340B738CD78F8F /* libPods-PYHero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYHero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63AECE7110E1ED0B66DBE7D /* Pods-PYHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYHero/Pods-PYHero.debug.xcconfig"; sourceTree = "<group>"; };
+		C47A5BA62123C3DC00467618 /* PYVCTabMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabMedia.h; sourceTree = "<group>"; };
+		C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCTabMedia.m; sourceTree = "<group>"; };
+		C47A5BA92123C3F800467618 /* PYVCTabShake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabShake.h; sourceTree = "<group>"; };
+		C47A5BAA2123C3F800467618 /* PYVCTabShake.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCTabShake.m; sourceTree = "<group>"; };
+		C47A5BAC2123C43700467618 /* PYVCTabLottery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabLottery.h; sourceTree = "<group>"; };
+		C47A5BAD2123C43700467618 /* PYVCTabLottery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCTabLottery.m; sourceTree = "<group>"; };
+		C47A5BAF2123C47A00467618 /* PYVCTabMonster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabMonster.h; sourceTree = "<group>"; };
+		C47A5BB02123C47A00467618 /* PYVCTabMonster.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCTabMonster.m; sourceTree = "<group>"; };
+		C47A5BB22123C49500467618 /* PYVCTabOwn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabOwn.h; sourceTree = "<group>"; };
+		C47A5BB32123C49500467618 /* PYVCTabOwn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCTabOwn.m; sourceTree = "<group>"; };
+		C47A5BB62123C61A00467618 /* PYVCTabMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabMain.h; sourceTree = "<group>"; };
+		C47A5BB72123C61A00467618 /* PYVCTabMain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCTabMain.m; sourceTree = "<group>"; };
+		C47A5BB92123CA8C00467618 /* PYVCRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCRecord.h; sourceTree = "<group>"; };
+		C47A5BBA2123CA8C00467618 /* PYVCRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCRecord.m; sourceTree = "<group>"; };
+		C47A5BBC2123CAA200467618 /* PYVCOwnSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCOwnSetting.h; sourceTree = "<group>"; };
+		C47A5BBD2123CAA200467618 /* PYVCOwnSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCOwnSetting.m; sourceTree = "<group>"; };
+		D10BD2B42072803F00AA1615 /* NSDate+PYHero.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+PYHero.h"; sourceTree = "<group>"; };
+		D10BD2B52072803F00AA1615 /* NSDate+PYHero.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PYHero.m"; sourceTree = "<group>"; };
+		D11022CA2073D4900021043E /* PYTabScoreHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYTabScoreHeader.h; sourceTree = "<group>"; };
+		D11022CB2073D4900021043E /* PYTabScoreHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYTabScoreHeader.m; sourceTree = "<group>"; };
+		D176D3A82075DD8A00EA514B /* PYVCNewsActivity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCNewsActivity.h; sourceTree = "<group>"; };
+		D176D3A92075DD8A00EA514B /* PYVCNewsActivity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCNewsActivity.m; sourceTree = "<group>"; };
+		D176D3AA2075DD8A00EA514B /* PYVCNewsActivity.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYVCNewsActivity.xib; sourceTree = "<group>"; };
+		D176D3AD2075DE3700EA514B /* PYVCNewsSpecial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCNewsSpecial.h; sourceTree = "<group>"; };
+		D176D3AE2075DE3700EA514B /* PYVCNewsSpecial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCNewsSpecial.m; sourceTree = "<group>"; };
+		D176D3AF2075DE3700EA514B /* PYVCNewsSpecial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYVCNewsSpecial.xib; sourceTree = "<group>"; };
+		D176D3B22075DE9200EA514B /* PYVCNewsOfficial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCNewsOfficial.h; sourceTree = "<group>"; };
+		D176D3B32075DE9200EA514B /* PYVCNewsOfficial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCNewsOfficial.m; sourceTree = "<group>"; };
+		D176D3B42075DE9200EA514B /* PYVCNewsOfficial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYVCNewsOfficial.xib; sourceTree = "<group>"; };
+		D176D3B72075DECF00EA514B /* PYVCNewsGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCNewsGame.h; sourceTree = "<group>"; };
+		D176D3B82075DECF00EA514B /* PYVCNewsGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCNewsGame.m; sourceTree = "<group>"; };
+		D176D3B92075DECF00EA514B /* PYVCNewsGame.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYVCNewsGame.xib; sourceTree = "<group>"; };
+		D176D3BC2075DEFF00EA514B /* PYVCNewsHero.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCNewsHero.h; sourceTree = "<group>"; };
+		D176D3BD2075DEFF00EA514B /* PYVCNewsHero.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCNewsHero.m; sourceTree = "<group>"; };
+		D176D3BE2075DEFF00EA514B /* PYVCNewsHero.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYVCNewsHero.xib; sourceTree = "<group>"; };
+		D176D3C12075DF9000EA514B /* PYVCNewsFamous.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCNewsFamous.h; sourceTree = "<group>"; };
+		D176D3C22075DF9000EA514B /* PYVCNewsFamous.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCNewsFamous.m; sourceTree = "<group>"; };
+		D176D3C32075DF9000EA514B /* PYVCNewsFamous.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYVCNewsFamous.xib; sourceTree = "<group>"; };
+		D176D3C82075E67800EA514B /* PYVCBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCBase.h; sourceTree = "<group>"; };
+		D176D3C92075E67800EA514B /* PYVCBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCBase.m; sourceTree = "<group>"; };
+		D1865012206E210400C2A6D0 /* PYHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1865015206E210400C2A6D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D1865016206E210400C2A6D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D186501F206E210400C2A6D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D1865021206E210400C2A6D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1865024206E210400C2A6D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D1865026206E210400C2A6D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1865027206E210400C2A6D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D1865030206E384D00C2A6D0 /* PYVCTabNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVCTabNews.h; sourceTree = "<group>"; };
+		D1865031206E384D00C2A6D0 /* PYVCTabNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVCTabNews.m; sourceTree = "<group>"; };
+		D1865032206E384D00C2A6D0 /* PYVCTabScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVCTabScore.h; sourceTree = "<group>"; };
+		D1865033206E384D00C2A6D0 /* PYVCTabScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVCTabScore.m; sourceTree = "<group>"; };
+		D1865036206E384D00C2A6D0 /* MacroCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroCustom.h; sourceTree = "<group>"; };
+		D186503B206E396900C2A6D0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D186503C206E47A200C2A6D0 /* PYVCNewsNewest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCNewsNewest.h; sourceTree = "<group>"; };
+		D186503D206E47A200C2A6D0 /* PYVCNewsNewest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCNewsNewest.m; sourceTree = "<group>"; };
+		D186503E206E47A200C2A6D0 /* PYVCNewsNewest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYVCNewsNewest.xib; sourceTree = "<group>"; };
+		D186504D206E692E00C2A6D0 /* UIColor+PYHero.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+PYHero.h"; sourceTree = "<group>"; };
+		D186504E206E692E00C2A6D0 /* UIColor+PYHero.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYHero.m"; sourceTree = "<group>"; };
+		D1865053206E6E6C00C2A6D0 /* Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Protocol.h; sourceTree = "<group>"; };
+		D1865054206E703200C2A6D0 /* UIFont+PYHero.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+PYHero.h"; sourceTree = "<group>"; };
+		D1865055206E703200C2A6D0 /* UIFont+PYHero.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+PYHero.m"; sourceTree = "<group>"; };
+		D1ACB596207313A800EB6988 /* UIImage+PYHero.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+PYHero.h"; sourceTree = "<group>"; };
+		D1ACB597207313A800EB6988 /* UIImage+PYHero.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PYHero.m"; sourceTree = "<group>"; };
+		D1ADCFA7207452E7001CCE5E /* PYTabScoreHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYTabScoreHeader.xib; sourceTree = "<group>"; };
+		D1ADCFA92074535B001CCE5E /* PYTabScoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYTabScoreCell.h; sourceTree = "<group>"; };
+		D1ADCFAA2074535B001CCE5E /* PYTabScoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYTabScoreCell.m; sourceTree = "<group>"; };
+		D1ADCFAB2074535B001CCE5E /* PYTabScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYTabScoreCell.xib; sourceTree = "<group>"; };
+		D1ADCFAE20745D5E001CCE5E /* PYTabScoreCurrentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYTabScoreCurrentCell.h; sourceTree = "<group>"; };
+		D1ADCFAF20745D5E001CCE5E /* PYTabScoreCurrentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYTabScoreCurrentCell.m; sourceTree = "<group>"; };
+		D1ADCFB020745D5E001CCE5E /* PYTabScoreCurrentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYTabScoreCurrentCell.xib; sourceTree = "<group>"; };
+		D1ADCFB320747589001CCE5E /* NSDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeAccess.m"; sourceTree = "<group>"; };
+		D1ADCFB420747589001CCE5E /* NSDictionary+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeAccess.h"; sourceTree = "<group>"; };
+		D1ADCFB920749641001CCE5E /* PYTabScoreNoticeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYTabScoreNoticeView.h; sourceTree = "<group>"; };
+		D1ADCFBA20749641001CCE5E /* PYTabScoreNoticeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYTabScoreNoticeView.m; sourceTree = "<group>"; };
+		D1ADCFBC2074965A001CCE5E /* PYTabScoreNoticeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PYTabScoreNoticeView.xib; sourceTree = "<group>"; };
+		D1EF4FB720707F0F006C6D60 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D186500F206E210400C2A6D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D56A70A5F3A0EF58BC88091 /* libPods-PYHero.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15FCCE86735BE6EA9B2070E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B63AECE7110E1ED0B66DBE7D /* Pods-PYHero.debug.xcconfig */,
+				5630972C322D422AABB8F70A /* Pods-PYHero.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5C7007F719A824E4E0016D87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0A4A2E29D340B738CD78F8F /* libPods-PYHero.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C47A5BB52123C56C00467618 /* F001 */ = {
+			isa = PBXGroup;
+			children = (
+				C47A5BB22123C49500467618 /* PYVCTabOwn.h */,
+				C47A5BB32123C49500467618 /* PYVCTabOwn.m */,
+				C47A5BA62123C3DC00467618 /* PYVCTabMedia.h */,
+				C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */,
+				C47A5BA92123C3F800467618 /* PYVCTabShake.h */,
+				C47A5BAA2123C3F800467618 /* PYVCTabShake.m */,
+				C47A5BAC2123C43700467618 /* PYVCTabLottery.h */,
+				C47A5BAD2123C43700467618 /* PYVCTabLottery.m */,
+				C47A5BAF2123C47A00467618 /* PYVCTabMonster.h */,
+				C47A5BB02123C47A00467618 /* PYVCTabMonster.m */,
+				C47A5BB62123C61A00467618 /* PYVCTabMain.h */,
+				C47A5BB72123C61A00467618 /* PYVCTabMain.m */,
+				C47A5BB92123CA8C00467618 /* PYVCRecord.h */,
+				C47A5BBA2123CA8C00467618 /* PYVCRecord.m */,
+				C47A5BBC2123CAA200467618 /* PYVCOwnSetting.h */,
+				C47A5BBD2123CAA200467618 /* PYVCOwnSetting.m */,
+			);
+			path = F001;
+			sourceTree = "<group>";
+		};
+		D176D3C62075DFD400EA514B /* News */ = {
+			isa = PBXGroup;
+			children = (
+				D186503C206E47A200C2A6D0 /* PYVCNewsNewest.h */,
+				D186503D206E47A200C2A6D0 /* PYVCNewsNewest.m */,
+				D186503E206E47A200C2A6D0 /* PYVCNewsNewest.xib */,
+				D176D3A82075DD8A00EA514B /* PYVCNewsActivity.h */,
+				D176D3A92075DD8A00EA514B /* PYVCNewsActivity.m */,
+				D176D3AA2075DD8A00EA514B /* PYVCNewsActivity.xib */,
+				D176D3AD2075DE3700EA514B /* PYVCNewsSpecial.h */,
+				D176D3AE2075DE3700EA514B /* PYVCNewsSpecial.m */,
+				D176D3AF2075DE3700EA514B /* PYVCNewsSpecial.xib */,
+				D176D3B22075DE9200EA514B /* PYVCNewsOfficial.h */,
+				D176D3B32075DE9200EA514B /* PYVCNewsOfficial.m */,
+				D176D3B42075DE9200EA514B /* PYVCNewsOfficial.xib */,
+				D176D3B72075DECF00EA514B /* PYVCNewsGame.h */,
+				D176D3B82075DECF00EA514B /* PYVCNewsGame.m */,
+				D176D3B92075DECF00EA514B /* PYVCNewsGame.xib */,
+				D176D3BC2075DEFF00EA514B /* PYVCNewsHero.h */,
+				D176D3BD2075DEFF00EA514B /* PYVCNewsHero.m */,
+				D176D3BE2075DEFF00EA514B /* PYVCNewsHero.xib */,
+				D176D3C12075DF9000EA514B /* PYVCNewsFamous.h */,
+				D176D3C22075DF9000EA514B /* PYVCNewsFamous.m */,
+				D176D3C32075DF9000EA514B /* PYVCNewsFamous.xib */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		D176D3C72075DFFB00EA514B /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				D11022CA2073D4900021043E /* PYTabScoreHeader.h */,
+				D11022CB2073D4900021043E /* PYTabScoreHeader.m */,
+				D1ADCFA7207452E7001CCE5E /* PYTabScoreHeader.xib */,
+				D1ADCFA92074535B001CCE5E /* PYTabScoreCell.h */,
+				D1ADCFAA2074535B001CCE5E /* PYTabScoreCell.m */,
+				D1ADCFAB2074535B001CCE5E /* PYTabScoreCell.xib */,
+				D1ADCFAE20745D5E001CCE5E /* PYTabScoreCurrentCell.h */,
+				D1ADCFAF20745D5E001CCE5E /* PYTabScoreCurrentCell.m */,
+				D1ADCFB020745D5E001CCE5E /* PYTabScoreCurrentCell.xib */,
+				D1ADCFB920749641001CCE5E /* PYTabScoreNoticeView.h */,
+				D1ADCFBA20749641001CCE5E /* PYTabScoreNoticeView.m */,
+				D1ADCFBC2074965A001CCE5E /* PYTabScoreNoticeView.xib */,
+			);
+			path = Score;
+			sourceTree = "<group>";
+		};
+		D1865009206E210400C2A6D0 = {
+			isa = PBXGroup;
+			children = (
+				D1EF4FB720707F0F006C6D60 /* Podfile */,
+				D1865014206E210400C2A6D0 /* PYHero */,
+				D1865013206E210400C2A6D0 /* Products */,
+				15FCCE86735BE6EA9B2070E4 /* Pods */,
+				5C7007F719A824E4E0016D87 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D1865013206E210400C2A6D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1865012206E210400C2A6D0 /* PYHero.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1865014206E210400C2A6D0 /* PYHero */ = {
+			isa = PBXGroup;
+			children = (
+				D1865035206E384D00C2A6D0 /* Helper */,
+				D186502F206E384D00C2A6D0 /* Page */,
+				D1865038206E384E00C2A6D0 /* Resource */,
+				D1865015206E210400C2A6D0 /* AppDelegate.h */,
+				D1865016206E210400C2A6D0 /* AppDelegate.m */,
+				D186501E206E210400C2A6D0 /* Main.storyboard */,
+				D1865021206E210400C2A6D0 /* Assets.xcassets */,
+				D1865023206E210400C2A6D0 /* LaunchScreen.storyboard */,
+				D1865026206E210400C2A6D0 /* Info.plist */,
+				D1865027206E210400C2A6D0 /* main.m */,
+				D186503B206E396900C2A6D0 /* PrefixHeader.pch */,
+			);
+			path = PYHero;
+			sourceTree = "<group>";
+		};
+		D186502F206E384D00C2A6D0 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				C47A5BB52123C56C00467618 /* F001 */,
+				D176D3C72075DFFB00EA514B /* Score */,
+				D176D3C62075DFD400EA514B /* News */,
+				D1865030206E384D00C2A6D0 /* PYVCTabNews.h */,
+				D1865031206E384D00C2A6D0 /* PYVCTabNews.m */,
+				D1865032206E384D00C2A6D0 /* PYVCTabScore.h */,
+				D1865033206E384D00C2A6D0 /* PYVCTabScore.m */,
+				D176D3C82075E67800EA514B /* PYVCBase.h */,
+				D176D3C92075E67800EA514B /* PYVCBase.m */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		D1865035206E384D00C2A6D0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D1ADCFB420747589001CCE5E /* NSDictionary+SafeAccess.h */,
+				D1ADCFB320747589001CCE5E /* NSDictionary+SafeAccess.m */,
+				D1865053206E6E6C00C2A6D0 /* Protocol.h */,
+				D1865036206E384D00C2A6D0 /* MacroCustom.h */,
+				D186504D206E692E00C2A6D0 /* UIColor+PYHero.h */,
+				D186504E206E692E00C2A6D0 /* UIColor+PYHero.m */,
+				D1865054206E703200C2A6D0 /* UIFont+PYHero.h */,
+				D1865055206E703200C2A6D0 /* UIFont+PYHero.m */,
+				D10BD2B42072803F00AA1615 /* NSDate+PYHero.h */,
+				D10BD2B52072803F00AA1615 /* NSDate+PYHero.m */,
+				D1ACB596207313A800EB6988 /* UIImage+PYHero.h */,
+				D1ACB597207313A800EB6988 /* UIImage+PYHero.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		D1865038206E384E00C2A6D0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D1865011206E210400C2A6D0 /* PYHero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D186502B206E210400C2A6D0 /* Build configuration list for PBXNativeTarget "PYHero" */;
+			buildPhases = (
+				DA0B4A3BE746F8B912B20316 /* [CP] Check Pods Manifest.lock */,
+				D186500E206E210400C2A6D0 /* Sources */,
+				D186500F206E210400C2A6D0 /* Frameworks */,
+				D1865010206E210400C2A6D0 /* Resources */,
+				7A6FFEA5C2CCD836CFD1CE29 /* [CP] Embed Pods Frameworks */,
+				57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PYHero;
+			productName = PYHero;
+			productReference = D1865012206E210400C2A6D0 /* PYHero.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D186500A206E210400C2A6D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Bob Lee";
+				TargetAttributes = {
+					D1865011206E210400C2A6D0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D186500D206E210400C2A6D0 /* Build configuration list for PBXProject "PYHero" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D1865009206E210400C2A6D0;
+			productRefGroup = D1865013206E210400C2A6D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D1865011206E210400C2A6D0 /* PYHero */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D1865010206E210400C2A6D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1EF4FB820707F0F006C6D60 /* Podfile in Resources */,
+				D1ADCFB220745D5E001CCE5E /* PYTabScoreCurrentCell.xib in Resources */,
+				D1865040206E47A200C2A6D0 /* PYVCNewsNewest.xib in Resources */,
+				D176D3AC2075DD8A00EA514B /* PYVCNewsActivity.xib in Resources */,
+				D176D3C02075DEFF00EA514B /* PYVCNewsHero.xib in Resources */,
+				D1865025206E210400C2A6D0 /* LaunchScreen.storyboard in Resources */,
+				D176D3C52075DF9000EA514B /* PYVCNewsFamous.xib in Resources */,
+				D176D3BB2075DECF00EA514B /* PYVCNewsGame.xib in Resources */,
+				D1ADCFBD2074965A001CCE5E /* PYTabScoreNoticeView.xib in Resources */,
+				D1ADCFA8207452E7001CCE5E /* PYTabScoreHeader.xib in Resources */,
+				D176D3B12075DE3700EA514B /* PYVCNewsSpecial.xib in Resources */,
+				D1865022206E210400C2A6D0 /* Assets.xcassets in Resources */,
+				D176D3B62075DE9200EA514B /* PYVCNewsOfficial.xib in Resources */,
+				D1865020206E210400C2A6D0 /* Main.storyboard in Resources */,
+				D1ADCFAD2074535B001CCE5E /* PYTabScoreCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A6FFEA5C2CCD836CFD1CE29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA0B4A3BE746F8B912B20316 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PYHero-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D186500E206E210400C2A6D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1ADCFBB20749641001CCE5E /* PYTabScoreNoticeView.m in Sources */,
+				D1865056206E703200C2A6D0 /* UIFont+PYHero.m in Sources */,
+				D176D3BF2075DEFF00EA514B /* PYVCNewsHero.m in Sources */,
+				D176D3BA2075DECF00EA514B /* PYVCNewsGame.m in Sources */,
+				D186503F206E47A200C2A6D0 /* PYVCNewsNewest.m in Sources */,
+				D186503A206E384E00C2A6D0 /* PYVCTabScore.m in Sources */,
+				C47A5BBE2123CAA200467618 /* PYVCOwnSetting.m in Sources */,
+				D1ACB598207313A800EB6988 /* UIImage+PYHero.m in Sources */,
+				D186504F206E692E00C2A6D0 /* UIColor+PYHero.m in Sources */,
+				C47A5BA82123C3DC00467618 /* PYVCTabMedia.m in Sources */,
+				D11022CC2073D4900021043E /* PYTabScoreHeader.m in Sources */,
+				D176D3B02075DE3700EA514B /* PYVCNewsSpecial.m in Sources */,
+				D1865017206E210400C2A6D0 /* AppDelegate.m in Sources */,
+				C47A5BB42123C49500467618 /* PYVCTabOwn.m in Sources */,
+				D176D3C42075DF9000EA514B /* PYVCNewsFamous.m in Sources */,
+				C47A5BB82123C61A00467618 /* PYVCTabMain.m in Sources */,
+				D1ADCFAC2074535B001CCE5E /* PYTabScoreCell.m in Sources */,
+				C47A5BBB2123CA8C00467618 /* PYVCRecord.m in Sources */,
+				D176D3AB2075DD8A00EA514B /* PYVCNewsActivity.m in Sources */,
+				D176D3CA2075E67800EA514B /* PYVCBase.m in Sources */,
+				D176D3B52075DE9200EA514B /* PYVCNewsOfficial.m in Sources */,
+				D10BD2B62072803F00AA1615 /* NSDate+PYHero.m in Sources */,
+				D1ADCFB520747589001CCE5E /* NSDictionary+SafeAccess.m in Sources */,
+				D1ADCFB120745D5E001CCE5E /* PYTabScoreCurrentCell.m in Sources */,
+				D1865039206E384E00C2A6D0 /* PYVCTabNews.m in Sources */,
+				C47A5BAB2123C3F800467618 /* PYVCTabShake.m in Sources */,
+				D1865028206E210400C2A6D0 /* main.m in Sources */,
+				C47A5BB12123C47A00467618 /* PYVCTabMonster.m in Sources */,
+				C47A5BAE2123C43700467618 /* PYVCTabLottery.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D186501E206E210400C2A6D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D186501F206E210400C2A6D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D1865023206E210400C2A6D0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1865024206E210400C2A6D0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D1865029206E210400C2A6D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D186502A206E210400C2A6D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D186502C206E210400C2A6D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B63AECE7110E1ED0B66DBE7D /* Pods-PYHero.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S86KA93GD7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PYHero/PrefixHeader.pch;
+				INFOPLIST_FILE = PYHero/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D186502D206E210400C2A6D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5630972C322D422AABB8F70A /* Pods-PYHero.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S86KA93GD7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PYHero/PrefixHeader.pch;
+				INFOPLIST_FILE = PYHero/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D186500D206E210400C2A6D0 /* Build configuration list for PBXProject "PYHero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1865029206E210400C2A6D0 /* Debug */,
+				D186502A206E210400C2A6D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D186502B206E210400C2A6D0 /* Build configuration list for PBXNativeTarget "PYHero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D186502C206E210400C2A6D0 /* Debug */,
+				D186502D206E210400C2A6D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D186500A206E210400C2A6D0 /* Project object */;
+}

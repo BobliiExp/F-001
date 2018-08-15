@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  PYHero
+//
+//  Created by Bob Lee on 2018/3/30.
+//  Copyright © 2018年 Bob Lee. All rights reserved.
+//
+
+#ifdef __OBJC__
+
+#define _IOS_PROJECT_
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "MacroCustom.h"
+#import "UIColor+PYHero.h"
+#import "UIFont+PYHero.h"
+
+#import "Protocol.h"
+#import "PYVCBase.h"
+
+#endif /* PrefixHeader_pch */
