@@ -21,12 +21,13 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    
     
     // 增加一个导航栏
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[PYVCTabMain alloc] init]];
-    self.window.rootViewController = nav;
-    
+    PYVCTabMain *vc = [[PYVCTabMain alloc] init];
+    //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_Gray} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_HighLight} forState:UIControlStateSelected];

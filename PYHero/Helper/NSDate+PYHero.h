@@ -64,7 +64,7 @@ typedef NS_ENUM(char, PYTimeFormatType) {
 @interface NSDate (PYHero)
 
 + (NSString *)currentTimeString:(PYTimeFormatType)type;
-+ (NSString*)formatString:(PYTimeFormatType)type;
++ (NSString *)formatString:(PYTimeFormatType)type;
 + (NSString *)date2String:(NSDate*)date;
 + (NSString *)date2StringWithInterval:(NSInteger)interval;
 + (NSString *)date2String:(NSDate *)date formatType:(PYTimeFormatType)type;

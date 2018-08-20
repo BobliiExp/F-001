@@ -8,6 +8,10 @@
 
 #import "PYVCBase.h"
 
+typedef void(^saveUserInfo)(void);
+
 @interface PYVCOwnSetting : PYVCBase
+
+@property (nonatomic, copy) saveUserInfo block;    ///< 保存成功
 
 @end
