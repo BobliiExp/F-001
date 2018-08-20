@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4D56A70A5F3A0EF58BC88091 /* libPods-PYHero.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A4A2E29D340B738CD78F8F /* libPods-PYHero.a */; };
+		A1220200212AADED007710D4 /* PYUserManage.m in Sources */ = {isa = PBXBuildFile; fileRef = A12201FD212AADED007710D4 /* PYUserManage.m */; };
+		A1220201212AADED007710D4 /* PYWinManage.m in Sources */ = {isa = PBXBuildFile; fileRef = A12201FE212AADED007710D4 /* PYWinManage.m */; };
+		A1220211212AAE0F007710D4 /* PYVCHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = A1220203212AAE0E007710D4 /* PYVCHistory.m */; };
+		A1220212212AAE0F007710D4 /* PYNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A1220207212AAE0E007710D4 /* PYNumber.m */; };
+		A1220213212AAE0F007710D4 /* PYCellShakeNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A1220208212AAE0E007710D4 /* PYCellShakeNumber.m */; };
+		A1220214212AAE0F007710D4 /* PYVShakeNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A122020B212AAE0E007710D4 /* PYVShakeNumber.m */; };
+		A1220215212AAE0F007710D4 /* PYVCShake.m in Sources */ = {isa = PBXBuildFile; fileRef = A122020D212AAE0E007710D4 /* PYVCShake.m */; };
+		A1220216212AAE0F007710D4 /* PYVLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1220210212AAE0E007710D4 /* PYVLottery.m */; };
+		A1220218212AAF25007710D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1220217212AAF25007710D4 /* Assets.xcassets */; };
 		C47A5BA82123C3DC00467618 /* PYVCTabMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */; };
 		C47A5BAB2123C3F800467618 /* PYVCTabShake.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAA2123C3F800467618 /* PYVCTabShake.m */; };
 		C47A5BAE2123C43700467618 /* PYVCTabLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAD2123C43700467618 /* PYVCTabLottery.m */; };
@@ -33,7 +42,6 @@
 		D176D3CA2075E67800EA514B /* PYVCBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D176D3C92075E67800EA514B /* PYVCBase.m */; };
 		D1865017206E210400C2A6D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1865016206E210400C2A6D0 /* AppDelegate.m */; };
 		D1865020206E210400C2A6D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D186501E206E210400C2A6D0 /* Main.storyboard */; };
-		D1865022206E210400C2A6D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1865021206E210400C2A6D0 /* Assets.xcassets */; };
 		D1865025206E210400C2A6D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1865023206E210400C2A6D0 /* LaunchScreen.storyboard */; };
 		D1865028206E210400C2A6D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1865027206E210400C2A6D0 /* main.m */; };
 		D1865039206E384E00C2A6D0 /* PYVCTabNews.m in Sources */ = {isa = PBXBuildFile; fileRef = D1865031206E384D00C2A6D0 /* PYVCTabNews.m */; };
@@ -56,6 +64,23 @@
 
 /* Begin PBXFileReference section */
 		5630972C322D422AABB8F70A /* Pods-PYHero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYHero.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYHero/Pods-PYHero.release.xcconfig"; sourceTree = "<group>"; };
+		A12201FC212AADEC007710D4 /* PYUserManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYUserManage.h; sourceTree = "<group>"; };
+		A12201FD212AADED007710D4 /* PYUserManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYUserManage.m; sourceTree = "<group>"; };
+		A12201FE212AADED007710D4 /* PYWinManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYWinManage.m; sourceTree = "<group>"; };
+		A12201FF212AADED007710D4 /* PYWinManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYWinManage.h; sourceTree = "<group>"; };
+		A1220203212AAE0E007710D4 /* PYVCHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVCHistory.m; sourceTree = "<group>"; };
+		A1220204212AAE0E007710D4 /* PYVCHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVCHistory.h; sourceTree = "<group>"; };
+		A1220206212AAE0E007710D4 /* PYVShakeNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVShakeNumber.h; sourceTree = "<group>"; };
+		A1220207212AAE0E007710D4 /* PYNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYNumber.m; sourceTree = "<group>"; };
+		A1220208212AAE0E007710D4 /* PYCellShakeNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYCellShakeNumber.m; sourceTree = "<group>"; };
+		A1220209212AAE0E007710D4 /* PYVCShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVCShake.h; sourceTree = "<group>"; };
+		A122020A212AAE0E007710D4 /* PYNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYNumber.h; sourceTree = "<group>"; };
+		A122020B212AAE0E007710D4 /* PYVShakeNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVShakeNumber.m; sourceTree = "<group>"; };
+		A122020C212AAE0E007710D4 /* PYCellShakeNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYCellShakeNumber.h; sourceTree = "<group>"; };
+		A122020D212AAE0E007710D4 /* PYVCShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVCShake.m; sourceTree = "<group>"; };
+		A122020F212AAE0E007710D4 /* PYVLottery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVLottery.h; sourceTree = "<group>"; };
+		A1220210212AAE0E007710D4 /* PYVLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVLottery.m; sourceTree = "<group>"; };
+		A1220217212AAF25007710D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A4A2E29D340B738CD78F8F /* libPods-PYHero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYHero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63AECE7110E1ED0B66DBE7D /* Pods-PYHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYHero/Pods-PYHero.debug.xcconfig"; sourceTree = "<group>"; };
 		C47A5BA62123C3DC00467618 /* PYVCTabMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabMedia.h; sourceTree = "<group>"; };
@@ -102,7 +127,6 @@
 		D1865015206E210400C2A6D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D1865016206E210400C2A6D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D186501F206E210400C2A6D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D1865021206E210400C2A6D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1865024206E210400C2A6D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1865026206E210400C2A6D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1865027206E210400C2A6D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -166,9 +190,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A1220202212AAE0E007710D4 /* PYMine */ = {
+			isa = PBXGroup;
+			children = (
+				A1220203212AAE0E007710D4 /* PYVCHistory.m */,
+				A1220204212AAE0E007710D4 /* PYVCHistory.h */,
+			);
+			path = PYMine;
+			sourceTree = "<group>";
+		};
+		A1220205212AAE0E007710D4 /* PYShake */ = {
+			isa = PBXGroup;
+			children = (
+				A1220206212AAE0E007710D4 /* PYVShakeNumber.h */,
+				A1220207212AAE0E007710D4 /* PYNumber.m */,
+				A1220208212AAE0E007710D4 /* PYCellShakeNumber.m */,
+				A1220209212AAE0E007710D4 /* PYVCShake.h */,
+				A122020A212AAE0E007710D4 /* PYNumber.h */,
+				A122020B212AAE0E007710D4 /* PYVShakeNumber.m */,
+				A122020C212AAE0E007710D4 /* PYCellShakeNumber.h */,
+				A122020D212AAE0E007710D4 /* PYVCShake.m */,
+			);
+			path = PYShake;
+			sourceTree = "<group>";
+		};
+		A122020E212AAE0E007710D4 /* PYLottery */ = {
+			isa = PBXGroup;
+			children = (
+				A122020F212AAE0E007710D4 /* PYVLottery.h */,
+				A1220210212AAE0E007710D4 /* PYVLottery.m */,
+			);
+			path = PYLottery;
+			sourceTree = "<group>";
+		};
 		C47A5BB52123C56C00467618 /* F001 */ = {
 			isa = PBXGroup;
 			children = (
+				A122020E212AAE0E007710D4 /* PYLottery */,
+				A1220202212AAE0E007710D4 /* PYMine */,
+				A1220205212AAE0E007710D4 /* PYShake */,
 				C47A5BB22123C49500467618 /* PYVCTabOwn.h */,
 				C47A5BB32123C49500467618 /* PYVCTabOwn.m */,
 				C47A5BA62123C3DC00467618 /* PYVCTabMedia.h */,
@@ -263,8 +323,8 @@
 				D1865038206E384E00C2A6D0 /* Resource */,
 				D1865015206E210400C2A6D0 /* AppDelegate.h */,
 				D1865016206E210400C2A6D0 /* AppDelegate.m */,
+				A1220217212AAF25007710D4 /* Assets.xcassets */,
 				D186501E206E210400C2A6D0 /* Main.storyboard */,
-				D1865021206E210400C2A6D0 /* Assets.xcassets */,
 				D1865023206E210400C2A6D0 /* LaunchScreen.storyboard */,
 				D1865026206E210400C2A6D0 /* Info.plist */,
 				D1865027206E210400C2A6D0 /* main.m */,
@@ -304,6 +364,10 @@
 				D10BD2B52072803F00AA1615 /* NSDate+PYHero.m */,
 				D1ACB596207313A800EB6988 /* UIImage+PYHero.h */,
 				D1ACB597207313A800EB6988 /* UIImage+PYHero.m */,
+				A12201FC212AADEC007710D4 /* PYUserManage.h */,
+				A12201FD212AADED007710D4 /* PYUserManage.m */,
+				A12201FF212AADED007710D4 /* PYWinManage.h */,
+				A12201FE212AADED007710D4 /* PYWinManage.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -326,7 +390,6 @@
 				D186500E206E210400C2A6D0 /* Sources */,
 				D186500F206E210400C2A6D0 /* Frameworks */,
 				D1865010206E210400C2A6D0 /* Resources */,
-				7A6FFEA5C2CCD836CFD1CE29 /* [CP] Embed Pods Frameworks */,
 				57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -380,6 +443,7 @@
 				D1ADCFB220745D5E001CCE5E /* PYTabScoreCurrentCell.xib in Resources */,
 				D1865040206E47A200C2A6D0 /* PYVCNewsNewest.xib in Resources */,
 				D176D3AC2075DD8A00EA514B /* PYVCNewsActivity.xib in Resources */,
+				A1220218212AAF25007710D4 /* Assets.xcassets in Resources */,
 				D176D3C02075DEFF00EA514B /* PYVCNewsHero.xib in Resources */,
 				D1865025206E210400C2A6D0 /* LaunchScreen.storyboard in Resources */,
 				D176D3C52075DF9000EA514B /* PYVCNewsFamous.xib in Resources */,
@@ -387,7 +451,6 @@
 				D1ADCFBD2074965A001CCE5E /* PYTabScoreNoticeView.xib in Resources */,
 				D1ADCFA8207452E7001CCE5E /* PYTabScoreHeader.xib in Resources */,
 				D176D3B12075DE3700EA514B /* PYVCNewsSpecial.xib in Resources */,
-				D1865022206E210400C2A6D0 /* Assets.xcassets in Resources */,
 				D176D3B62075DE9200EA514B /* PYVCNewsOfficial.xib in Resources */,
 				D1865020206E210400C2A6D0 /* Main.storyboard in Resources */,
 				D1ADCFAD2074535B001CCE5E /* PYTabScoreCell.xib in Resources */,
@@ -405,29 +468,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A6FFEA5C2CCD836CFD1CE29 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA0B4A3BE746F8B912B20316 /* [CP] Check Pods Manifest.lock */ = {
@@ -445,7 +495,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -457,14 +507,17 @@
 			files = (
 				D1ADCFBB20749641001CCE5E /* PYTabScoreNoticeView.m in Sources */,
 				D1865056206E703200C2A6D0 /* UIFont+PYHero.m in Sources */,
+				A1220213212AAE0F007710D4 /* PYCellShakeNumber.m in Sources */,
 				D176D3BF2075DEFF00EA514B /* PYVCNewsHero.m in Sources */,
 				D176D3BA2075DECF00EA514B /* PYVCNewsGame.m in Sources */,
 				D186503F206E47A200C2A6D0 /* PYVCNewsNewest.m in Sources */,
 				D186503A206E384E00C2A6D0 /* PYVCTabScore.m in Sources */,
 				C47A5BBE2123CAA200467618 /* PYVCOwnSetting.m in Sources */,
 				D1ACB598207313A800EB6988 /* UIImage+PYHero.m in Sources */,
+				A1220201212AADED007710D4 /* PYWinManage.m in Sources */,
 				D186504F206E692E00C2A6D0 /* UIColor+PYHero.m in Sources */,
 				C47A5BA82123C3DC00467618 /* PYVCTabMedia.m in Sources */,
+				A1220215212AAE0F007710D4 /* PYVCShake.m in Sources */,
 				D11022CC2073D4900021043E /* PYTabScoreHeader.m in Sources */,
 				D176D3B02075DE3700EA514B /* PYVCNewsSpecial.m in Sources */,
 				D1865017206E210400C2A6D0 /* AppDelegate.m in Sources */,
@@ -476,11 +529,16 @@
 				D176D3AB2075DD8A00EA514B /* PYVCNewsActivity.m in Sources */,
 				D176D3CA2075E67800EA514B /* PYVCBase.m in Sources */,
 				D176D3B52075DE9200EA514B /* PYVCNewsOfficial.m in Sources */,
+				A1220216212AAE0F007710D4 /* PYVLottery.m in Sources */,
 				D10BD2B62072803F00AA1615 /* NSDate+PYHero.m in Sources */,
+				A1220214212AAE0F007710D4 /* PYVShakeNumber.m in Sources */,
+				A1220200212AADED007710D4 /* PYUserManage.m in Sources */,
+				A1220212212AAE0F007710D4 /* PYNumber.m in Sources */,
 				D1ADCFB520747589001CCE5E /* NSDictionary+SafeAccess.m in Sources */,
 				D1ADCFB120745D5E001CCE5E /* PYTabScoreCurrentCell.m in Sources */,
 				D1865039206E384E00C2A6D0 /* PYVCTabNews.m in Sources */,
 				C47A5BAB2123C3F800467618 /* PYVCTabShake.m in Sources */,
+				A1220211212AAE0F007710D4 /* PYVCHistory.m in Sources */,
 				D1865028206E210400C2A6D0 /* main.m in Sources */,
 				C47A5BB12123C47A00467618 /* PYVCTabMonster.m in Sources */,
 				C47A5BAE2123C43700467618 /* PYVCTabLottery.m in Sources */,

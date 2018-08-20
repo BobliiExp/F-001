@@ -16,8 +16,35 @@
 #import "MacroCustom.h"
 #import "UIColor+PYHero.h"
 #import "UIFont+PYHero.h"
+#import "MJRefresh.h"
+#import <Masonry/Masonry.h>
+
+typedef NS_ENUM(NSUInteger, PYLotteryType) { // 彩票游戏类型
+    PYLotteryTypeUnionLotto = 10,     ///< 双色球
+    PYLotteryTypeLecaGreati,          ///< 七乐彩
+    PYLotteryTypeSuperLotto,          ///< 大乐透
+};
+
+typedef NS_ENUM(NSUInteger, PYWinResultType) { // 彩票游戏结果
+    PYWinResultTypeOne = 1,             ///< 一等奖
+    PYWinResultTypeTwo,             ///< 二等奖
+    PYWinResultTypeThree,           ///< 三等奖
+    PYWinResultTypeFour,            ///< 四等奖
+    PYWinResultTypefive,            ///< 五等奖
+    PYWinResultTypeSix,             ///< 六等奖
+    PYWinResultTypeSeven,           ///< 七等奖
+};
 
 #import "Protocol.h"
 #import "PYVCBase.h"
+#import "PYUserManage.h"
+#import "PYWinManage.h"
+
+#define kScreenWidth    [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight   [UIScreen mainScreen].bounds.size.height
+#define KTwoNumber(string) [NSString stringWithFormat:@"%02d",string.intValue];
+
+#define  PYiPhoneX (kScreenWidth == 375.f && kScreenHeight == 812.f ? YES : NO)
+#define  PYSafeBottomHeight (PYiPhoneX ? 34.f : 0.f)
 
 #endif /* PrefixHeader_pch */
