@@ -1,0 +1,122 @@
+/* 
+  localization.strings
+  PYHero
+ 
+  基础操作、响应等短语
+ 
+  Created by Bob Lee on 2018/8/21.
+  Copyright © 2018年 Bob Lee. All rights reserved.
+*/
+"actBack"           =       "返回";
+"actRefresh"        =       "刷新";
+"actDownload"       =       "下载";
+"actEdit"           =       "编辑";
+"actUpTop"          =       "置顶";
+"actCancelTop"      =       "取消置顶";
+"actDelete"         =       "删除";
+"actRevoke"         =       "撤回";
+"actSendFish"       =       "送鱼";
+"actAdd"            =       "添加";
+"actCancel"         =       "取消";
+"actConfirm"        =       "确定";
+"actSearch"         =       "搜索";
+"actSend"           =       "发送";
+"actSave"           =       "保存";
+"actRight"          =       "正确";
+"actWrong"          =       "错误";
+"actAccept"         =       "接受";
+"actRefuse"         =       "拒绝";
+"actStart"          =       "开始";
+"actContinue"       =       "继续";
+"actOver"           =       "结束";
+"actGameRule"       =       "游戏规则";
+"actLeave"          =       "退出";
+"actIgnore"         =       "暂不更新";
+"actClose"          =       "关闭";
+
+
+"actTakePicture"    =       "拍照";
+"actSelectPicture"  =       "从相册选取";
+"actRecord"         =       "录制";
+"actTakeVideo"      =       "拍摄";
+"actSelectVideo"    =       "从手机选取";
+"actPreview"        =       "预览";
+
+"actInform"         =       "举报";
+"actCopy"           =       "复制";
+"actTransmit"       =       "转发";
+"actResend"         =       "重发";
+"actPlay"           =       "播放";
+"actPlayMicro"      =       "听筒";
+"actPlayLoud"       =       "扬声器";
+"actPause"          =       "暂停";
+"actUse"            =       "使用";
+"actBlcak"          =       "拉黑";
+"actCollect"        =       "收藏";
+
+
+/**************** Static text ***********************/
+"strYuxin"          =       "鱼酬";
+"strYubang"         =       "鱼榜";
+"strYuxi"           =       "鱼系";
+"strYuchao"         =       "鱼潮";
+"strYulong"         =       "鱼篓";
+
+"strYumsg"          =       "消息";
+"strYusen"          =       "鱼信";
+"strYucontact"      =       "通讯本";
+"strYucenter"       =       "中间页";
+"strYuocean"        =       "海洋";
+"strYuown"          =       "我";
+"strYuwork"         =       "工作圈";
+"strYustreet"       =       "后街";
+"strYuground"       =       "后场";
+"strYuluck"         =       "网格";
+"strYulife"         =       "现场";
+"strGoldMall"         =       "购物";
+"strDiscover"         =       "发现";
+
+"strCrowHome"       =       "首页";
+"strCrowPublish"    =       "揭晓";
+"strCrowShow"       =       "晒单";
+"strCrowOwn"        =       "我的";
+
+"strRadioRank"        =       "排行榜";
+"strRadioOnline"        =       "开播";
+
+"strTBaoOrder"        =       "订单";
+"strTBaoTB"        =       "淘宝";
+"strTBaoJD"        =       "京东";
+"strDiscountHome"     =       "开心返";
+
+"strRefreshing"     =       "正在刷新...";
+"strLoading"        =       "正在加载...";
+
+"strSuccess"        =       "成功";
+"strError"          =       "错误";
+"strWarning"        =       "警告";
+"strFail"           =       "失败";
+
+"strMorning"        =       "上午";
+"strAfternood"      =       "下午";
+"strYesterday"      =       "昨日";
+"strBefYesterday"   =       "前天";
+"strYear"           =       "年";
+"strMonth"          =       "月";
+"strDay"            =       "日";
+"strHour"           =       "小时";
+"strMinute"         =       "分钟";
+"strSecond"         =       "秒";
+"strCurrentYear"    =       "本年";
+"strCurrentMonth"   =       "本月";
+"strCurrentWeek"    =       "本周";
+"strToday"          =       "今日";
+
+"strSunday"         =       "星期天";
+"strSaturday"       =       "星期六";
+"strFriday"         =       "星期五";
+"strMonday"         =       "星期一";
+"strTuesday"        =       "星期二";
+"strWednesday"      =       "星期三";
+"strThursday"       =       "星期四";
+
