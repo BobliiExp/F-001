@@ -24,7 +24,6 @@
     
     // 增加一个导航栏
     PYVCTabMain *vc = [[PYVCTabMain alloc] init];
-    //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     

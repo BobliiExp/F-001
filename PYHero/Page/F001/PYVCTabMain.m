@@ -54,7 +54,7 @@
     
     self.viewControllers = mArr;
     
-    self.tabBar.backgroundColor = [UIColor colorWithARGBString:@"#21292c"];
+    self.tabBar.backgroundColor = kColor_Graylight;
     self.tabBar.translucent = YES;
     self.tabBar.shadowImage = [UIImage new]; // 控制下导航条上边线是否显示
 }

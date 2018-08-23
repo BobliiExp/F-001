@@ -21,7 +21,7 @@
     
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kColor_Normal,NSForegroundColorAttributeName,nil]];
     self.navigationController.navigationBar.tintColor = kColor_Normal;
-    self.navigationController.navigationBar.barTintColor = KColorTheme;
+    self.navigationController.navigationBar.barTintColor = kColor_Graylight;
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupUI];

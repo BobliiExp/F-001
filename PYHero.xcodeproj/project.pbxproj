@@ -18,6 +18,8 @@
 		A1220216212AAE0F007710D4 /* PYVLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1220210212AAE0E007710D4 /* PYVLottery.m */; };
 		A1220218212AAF25007710D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1220217212AAF25007710D4 /* Assets.xcassets */; };
 		A1C4E891212D99E500C5F654 /* PYCellLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C4E890212D99E500C5F654 /* PYCellLottery.m */; };
+		C46DF5B6212B955E00C784F5 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C46DF5B5212B955E00C784F5 /* localization.strings */; };
+		C46DF5B9212B970800C784F5 /* localization_sentence.strings in Resources */ = {isa = PBXBuildFile; fileRef = C46DF5B8212B970800C784F5 /* localization_sentence.strings */; };
 		C47A5BA82123C3DC00467618 /* PYVCTabMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */; };
 		C47A5BAB2123C3F800467618 /* PYVCTabShake.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAA2123C3F800467618 /* PYVCTabShake.m */; };
 		C47A5BAE2123C43700467618 /* PYVCTabLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAD2123C43700467618 /* PYVCTabLottery.m */; };
@@ -26,6 +28,8 @@
 		C47A5BB82123C61A00467618 /* PYVCTabMain.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BB72123C61A00467618 /* PYVCTabMain.m */; };
 		C47A5BBB2123CA8C00467618 /* PYVCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BBA2123CA8C00467618 /* PYVCRecord.m */; };
 		C47A5BBE2123CAA200467618 /* PYVCOwnSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BBD2123CAA200467618 /* PYVCOwnSetting.m */; };
+		C4F63675212DAD5B00F9132A /* AFFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F63673212DAD5A00F9132A /* AFFAlertView.m */; };
+		C4F6367B212DB62000F9132A /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6367A212DB62000F9132A /* UIImage+Color.m */; };
 		D10BD2B62072803F00AA1615 /* NSDate+PYHero.m in Sources */ = {isa = PBXBuildFile; fileRef = D10BD2B52072803F00AA1615 /* NSDate+PYHero.m */; };
 		D11022CC2073D4900021043E /* PYTabScoreHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D11022CB2073D4900021043E /* PYTabScoreHeader.m */; };
 		D176D3AB2075DD8A00EA514B /* PYVCNewsActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D176D3A92075DD8A00EA514B /* PYVCNewsActivity.m */; };
@@ -86,6 +90,10 @@
 		A1C4E890212D99E500C5F654 /* PYCellLottery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYCellLottery.m; sourceTree = "<group>"; };
 		B0A4A2E29D340B738CD78F8F /* libPods-PYHero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYHero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63AECE7110E1ED0B66DBE7D /* Pods-PYHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYHero/Pods-PYHero.debug.xcconfig"; sourceTree = "<group>"; };
+		C46DF5B5212B955E00C784F5 /* localization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = localization.strings; sourceTree = "<group>"; };
+		C46DF5B7212B962E00C784F5 /* localization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = localization.h; sourceTree = "<group>"; };
+		C46DF5B8212B970800C784F5 /* localization_sentence.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = localization_sentence.strings; sourceTree = "<group>"; };
+		C46DF5BA212B973C00C784F5 /* localization_sentence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = localization_sentence.h; sourceTree = "<group>"; };
 		C47A5BA62123C3DC00467618 /* PYVCTabMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabMedia.h; sourceTree = "<group>"; };
 		C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCTabMedia.m; sourceTree = "<group>"; };
 		C47A5BA92123C3F800467618 /* PYVCTabShake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabShake.h; sourceTree = "<group>"; };
@@ -102,6 +110,10 @@
 		C47A5BBA2123CA8C00467618 /* PYVCRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCRecord.m; sourceTree = "<group>"; };
 		C47A5BBC2123CAA200467618 /* PYVCOwnSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCOwnSetting.h; sourceTree = "<group>"; };
 		C47A5BBD2123CAA200467618 /* PYVCOwnSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCOwnSetting.m; sourceTree = "<group>"; };
+		C4F63673212DAD5A00F9132A /* AFFAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFFAlertView.m; sourceTree = "<group>"; };
+		C4F63674212DAD5B00F9132A /* AFFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFFAlertView.h; sourceTree = "<group>"; };
+		C4F63679212DB62000F9132A /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		C4F6367A212DB62000F9132A /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		D10BD2B42072803F00AA1615 /* NSDate+PYHero.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+PYHero.h"; sourceTree = "<group>"; };
 		D10BD2B52072803F00AA1615 /* NSDate+PYHero.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PYHero.m"; sourceTree = "<group>"; };
 		D11022CA2073D4900021043E /* PYTabScoreHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYTabScoreHeader.h; sourceTree = "<group>"; };
@@ -228,6 +240,17 @@
 			path = PYLottery;
 			sourceTree = "<group>";
 		};
+		C4147D22212AFFFB00A8D79C /* Globalization */ = {
+			isa = PBXGroup;
+			children = (
+				C46DF5B5212B955E00C784F5 /* localization.strings */,
+				C46DF5B7212B962E00C784F5 /* localization.h */,
+				C46DF5B8212B970800C784F5 /* localization_sentence.strings */,
+				C46DF5BA212B973C00C784F5 /* localization_sentence.h */,
+			);
+			path = Globalization;
+			sourceTree = "<group>";
+		};
 		C47A5BB52123C56C00467618 /* F001 */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +346,7 @@
 		D1865014206E210400C2A6D0 /* PYHero */ = {
 			isa = PBXGroup;
 			children = (
+				C4147D22212AFFFB00A8D79C /* Globalization */,
 				D1865035206E384D00C2A6D0 /* Helper */,
 				D186502F206E384D00C2A6D0 /* Page */,
 				D1865038206E384E00C2A6D0 /* Resource */,
@@ -357,6 +381,10 @@
 		D1865035206E384D00C2A6D0 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C4F63679212DB62000F9132A /* UIImage+Color.h */,
+				C4F6367A212DB62000F9132A /* UIImage+Color.m */,
+				C4F63674212DAD5B00F9132A /* AFFAlertView.h */,
+				C4F63673212DAD5A00F9132A /* AFFAlertView.m */,
 				D1ADCFB420747589001CCE5E /* NSDictionary+SafeAccess.h */,
 				D1ADCFB320747589001CCE5E /* NSDictionary+SafeAccess.m */,
 				D1865053206E6E6C00C2A6D0 /* Protocol.h */,
@@ -396,6 +424,7 @@
 				D186500F206E210400C2A6D0 /* Frameworks */,
 				D1865010206E210400C2A6D0 /* Resources */,
 				57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */,
+				DE6727C1D6F2905EA5A7F26D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,11 +473,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46DF5B9212B970800C784F5 /* localization_sentence.strings in Resources */,
 				D1EF4FB820707F0F006C6D60 /* Podfile in Resources */,
 				D1ADCFB220745D5E001CCE5E /* PYTabScoreCurrentCell.xib in Resources */,
 				D1865040206E47A200C2A6D0 /* PYVCNewsNewest.xib in Resources */,
 				D176D3AC2075DD8A00EA514B /* PYVCNewsActivity.xib in Resources */,
 				A1220218212AAF25007710D4 /* Assets.xcassets in Resources */,
+				C46DF5B6212B955E00C784F5 /* localization.strings in Resources */,
 				D176D3C02075DEFF00EA514B /* PYVCNewsHero.xib in Resources */,
 				D1865025206E210400C2A6D0 /* LaunchScreen.storyboard in Resources */,
 				D176D3C52075DF9000EA514B /* PYVCNewsFamous.xib in Resources */,
@@ -500,7 +531,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE6727C1D6F2905EA5A7F26D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -513,6 +559,7 @@
 				D1ADCFBB20749641001CCE5E /* PYTabScoreNoticeView.m in Sources */,
 				D1865056206E703200C2A6D0 /* UIFont+PYHero.m in Sources */,
 				A1220213212AAE0F007710D4 /* PYCellShakeNumber.m in Sources */,
+				C4F63675212DAD5B00F9132A /* AFFAlertView.m in Sources */,
 				D176D3BF2075DEFF00EA514B /* PYVCNewsHero.m in Sources */,
 				D176D3BA2075DECF00EA514B /* PYVCNewsGame.m in Sources */,
 				D186503F206E47A200C2A6D0 /* PYVCNewsNewest.m in Sources */,
@@ -521,6 +568,7 @@
 				D1ACB598207313A800EB6988 /* UIImage+PYHero.m in Sources */,
 				A1220201212AADED007710D4 /* PYWinManage.m in Sources */,
 				D186504F206E692E00C2A6D0 /* UIColor+PYHero.m in Sources */,
+				C4F6367B212DB62000F9132A /* UIImage+Color.m in Sources */,
 				C47A5BA82123C3DC00467618 /* PYVCTabMedia.m in Sources */,
 				A1220215212AAE0F007710D4 /* PYVCShake.m in Sources */,
 				D11022CC2073D4900021043E /* PYTabScoreHeader.m in Sources */,
