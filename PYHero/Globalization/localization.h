@@ -11,8 +11,8 @@
 
 #define kLZ_Sentence    @"localization_sentence"
 
-#define kLocalize(key)            NSLocalizedString(key, nil)
-#define kLocalizeEx(key,localization_fileName)   NSLocalizedStringFromTable(key, localization_fileName, nil)
+#define kAFLocalize(key)            NSLocalizedString(key, nil)
+#define kAFLocalizeEx(key,localization_fileName)   NSLocalizedStringFromTable(key, localization_fileName, nil)
 
 #define kActBack        @"actBack"
 #define kActRefresh     @"actRefresh"
