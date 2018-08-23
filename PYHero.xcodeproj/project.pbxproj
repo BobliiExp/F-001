@@ -17,6 +17,7 @@
 		A1220215212AAE0F007710D4 /* PYVCShake.m in Sources */ = {isa = PBXBuildFile; fileRef = A122020D212AAE0E007710D4 /* PYVCShake.m */; };
 		A1220216212AAE0F007710D4 /* PYVLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1220210212AAE0E007710D4 /* PYVLottery.m */; };
 		A1220218212AAF25007710D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1220217212AAF25007710D4 /* Assets.xcassets */; };
+		A1C4E891212D99E500C5F654 /* PYCellLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C4E890212D99E500C5F654 /* PYCellLottery.m */; };
 		C47A5BA82123C3DC00467618 /* PYVCTabMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */; };
 		C47A5BAB2123C3F800467618 /* PYVCTabShake.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAA2123C3F800467618 /* PYVCTabShake.m */; };
 		C47A5BAE2123C43700467618 /* PYVCTabLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAD2123C43700467618 /* PYVCTabLottery.m */; };
@@ -81,6 +82,8 @@
 		A122020F212AAE0E007710D4 /* PYVLottery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVLottery.h; sourceTree = "<group>"; };
 		A1220210212AAE0E007710D4 /* PYVLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVLottery.m; sourceTree = "<group>"; };
 		A1220217212AAF25007710D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1C4E88F212D99E500C5F654 /* PYCellLottery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYCellLottery.h; sourceTree = "<group>"; };
+		A1C4E890212D99E500C5F654 /* PYCellLottery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYCellLottery.m; sourceTree = "<group>"; };
 		B0A4A2E29D340B738CD78F8F /* libPods-PYHero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYHero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63AECE7110E1ED0B66DBE7D /* Pods-PYHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYHero/Pods-PYHero.debug.xcconfig"; sourceTree = "<group>"; };
 		C47A5BA62123C3DC00467618 /* PYVCTabMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabMedia.h; sourceTree = "<group>"; };
@@ -193,8 +196,8 @@
 		A1220202212AAE0E007710D4 /* PYMine */ = {
 			isa = PBXGroup;
 			children = (
-				A1220203212AAE0E007710D4 /* PYVCHistory.m */,
 				A1220204212AAE0E007710D4 /* PYVCHistory.h */,
+				A1220203212AAE0E007710D4 /* PYVCHistory.m */,
 			);
 			path = PYMine;
 			sourceTree = "<group>";
@@ -202,14 +205,14 @@
 		A1220205212AAE0E007710D4 /* PYShake */ = {
 			isa = PBXGroup;
 			children = (
-				A1220206212AAE0E007710D4 /* PYVShakeNumber.h */,
-				A1220207212AAE0E007710D4 /* PYNumber.m */,
+				A122020C212AAE0E007710D4 /* PYCellShakeNumber.h */,
 				A1220208212AAE0E007710D4 /* PYCellShakeNumber.m */,
 				A1220209212AAE0E007710D4 /* PYVCShake.h */,
-				A122020A212AAE0E007710D4 /* PYNumber.h */,
-				A122020B212AAE0E007710D4 /* PYVShakeNumber.m */,
-				A122020C212AAE0E007710D4 /* PYCellShakeNumber.h */,
 				A122020D212AAE0E007710D4 /* PYVCShake.m */,
+				A122020A212AAE0E007710D4 /* PYNumber.h */,
+				A1220207212AAE0E007710D4 /* PYNumber.m */,
+				A122020B212AAE0E007710D4 /* PYVShakeNumber.m */,
+				A1220206212AAE0E007710D4 /* PYVShakeNumber.h */,
 			);
 			path = PYShake;
 			sourceTree = "<group>";
@@ -219,6 +222,8 @@
 			children = (
 				A122020F212AAE0E007710D4 /* PYVLottery.h */,
 				A1220210212AAE0E007710D4 /* PYVLottery.m */,
+				A1C4E88F212D99E500C5F654 /* PYCellLottery.h */,
+				A1C4E890212D99E500C5F654 /* PYCellLottery.m */,
 			);
 			path = PYLottery;
 			sourceTree = "<group>";
@@ -523,6 +528,7 @@
 				D1865017206E210400C2A6D0 /* AppDelegate.m in Sources */,
 				C47A5BB42123C49500467618 /* PYVCTabOwn.m in Sources */,
 				D176D3C42075DF9000EA514B /* PYVCNewsFamous.m in Sources */,
+				A1C4E891212D99E500C5F654 /* PYCellLottery.m in Sources */,
 				C47A5BB82123C61A00467618 /* PYVCTabMain.m in Sources */,
 				D1ADCFAC2074535B001CCE5E /* PYTabScoreCell.m in Sources */,
 				C47A5BBB2123CA8C00467618 /* PYVCRecord.m in Sources */,

@@ -22,7 +22,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    
     // 增加一个导航栏
     PYVCTabMain *vc = [[PYVCTabMain alloc] init];
     //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -31,6 +30,12 @@
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_Gray} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_HighLight} forState:UIControlStateSelected];
+    
+    NSString *isFirst = [PYUserManage py_getStringWithKey:@"isFirst"];
+    if (![isFirst isEqualToString:@"YES"]) {
+        [PYUserManage py_savePoint:@"100"];
+        [PYUserManage py_saveString:@"YES" key:@"isFirst"];
+    }
     
     return YES;
 }

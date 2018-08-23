@@ -12,6 +12,24 @@
 
 @implementation PYUserManage
 
++ (void)py_saveString:(NSString *)str key:(NSString *)key {
+    [kUserDefaults setObject:str forKey:key];
+    [kUserDefaults synchronize];
+}
+
++ (NSString *)py_getStringWithKey:(NSString *)key {
+    return [kUserDefaults objectForKey:key];
+}
+
++ (void)py_savePoint:(NSString *)point {
+    [kUserDefaults setObject:point forKey:@"UserPoint"];
+    [kUserDefaults synchronize];
+}
+
++ (NSString *)py_getPoint {
+    return [kUserDefaults objectForKey:@"UserPoint"];
+}
+
 /******************** 摇一摇相关 ************************/
 + (void)py_saveShakeData:(NSObject *)obj type:(PYLotteryType)type {
     NSMutableArray *mArr = [NSMutableArray arrayWithArray:[self py_getShakeData:type]];
@@ -23,7 +41,6 @@
 
 + (NSArray *)py_getShakeData:(PYLotteryType)type {
     NSArray *arr = [kUserDefaults objectForKey:[NSString stringWithFormat:@"%@%ld",KShakeData,type]];
-    [kUserDefaults synchronize];
     
     if (!arr) {
         arr = [NSArray array];
@@ -66,4 +83,23 @@
     NSArray *arr =@[img,name];
     return arr;
 }
+
+/******************** 转一转相关 ************************/
++ (void)py_saveLotteryData:(NSArray *)data {
+    NSMutableArray *mArr = [NSMutableArray arrayWithArray:[self py_getLotteryData]];
+    [mArr insertObject:data atIndex:0];
+    
+    [kUserDefaults setObject:mArr forKey:@"KPYLottery"];
+    [kUserDefaults synchronize];
+}
+
++ (NSArray *)py_getLotteryData {
+    NSArray *arr = [kUserDefaults objectForKey:@"KPYLottery"];
+    
+    if (!arr) {
+        arr = [NSArray array];
+    }
+    return arr;
+}
+
 @end

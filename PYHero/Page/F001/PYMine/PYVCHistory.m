@@ -8,6 +8,7 @@
 
 #import "PYVCHistory.h"
 #import "PYCellShakeNumber.h"
+#import "PYCellLottery.h"
 
 @interface PYVCHistory ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -46,7 +47,11 @@
         self.mArrData = @[[PYUserManage py_getShakeData:PYLotteryTypeUnionLotto],[PYUserManage py_getShakeData:PYLotteryTypeLecaGreati],[PYUserManage py_getShakeData:PYLotteryTypeSuperLotto]].mutableCopy;
     }else if (self.type == PYHistoryTypeVR) {
         
+    }else if (self.type == PYHistoryTypeLottery) {
+        self.mArrData = [PYUserManage py_getLotteryData].mutableCopy;
     }
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - tabelView Delegate dataSource
@@ -90,6 +95,14 @@
             [cell py_setupData:[arr objectAtIndex:indexPath.row] type:PYLotteryTypeSuperLotto];
             return cell;
         }
+    }else if (self.type == PYHistoryTypeLottery) {
+        PYCellLottery *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        if (!cell) {
+            cell = [[PYCellLottery alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        }
+        
+        [cell setup:self.mArrData[indexPath.row]];
+        return cell;
     }else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@""];
         if (!cell) {

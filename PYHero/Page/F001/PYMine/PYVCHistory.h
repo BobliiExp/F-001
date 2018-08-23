@@ -11,6 +11,7 @@
 typedef NS_ENUM(NSUInteger, PYHistoryType) {
     PYHistoryTypeVoice,    ///< 语音
     PYHistoryTypeShake,    ///< 摇一摇
+    PYHistoryTypeLottery,  ///< 转一转
     PYHistoryTypeVR,       ///< 捉妖
 };
 
