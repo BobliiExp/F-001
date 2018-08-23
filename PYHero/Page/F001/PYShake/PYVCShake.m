@@ -10,6 +10,7 @@
 #import "PYVShakeNumber.h"
 #import "PYNumber.h"
 #import "PYCellShakeNumber.h"
+#import "PYVCHistory.h"
 
 @interface PYVCShake ()<UITableViewDelegate, UITableViewDataSource>{
     CGFloat heightCenter; ///<
@@ -64,7 +65,7 @@
     labTitle.textAlignment = NSTextAlignmentCenter;
     labTitle.textColor = kColor_Normal;
     labTitle.font = [UIFont fontBold:17.f];
-    labTitle.text = @"中奖号码";
+    labTitle.text = @"幸运号码";
     [self.view addSubview:labTitle];
     
     delatY += CGRectGetHeight(labTitle.frame);
@@ -75,7 +76,7 @@
     delatY += CGRectGetHeight(vNumber.frame);
     CGFloat height = kScreenHeight - PYSafeBottomHeight;
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height - 40*4, kScreenWidth, 40*4) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height - 40*5, kScreenWidth, 40*5) style:UITableViewStylePlain];
     tableView.backgroundColor = kColor_Graylight;
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -86,14 +87,7 @@
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
     
-    UILabel *labTabView = [[UILabel alloc] initWithFrame:CGRectMake(12.f, CGRectGetMinY(tableView.frame) - 40, kScreenWidth - 12.f, 40)];
-    labTabView.textAlignment = NSTextAlignmentCenter;
-    labTabView.textColor = kColor_Normal;
-    labTabView.font = [UIFont fontBold:15.f];
-    labTabView.text = @"近期历史记录";
-    [self.view addSubview:labTabView];
-    
-    UILabel *labShake = [[UILabel alloc] initWithFrame:CGRectMake(12.f, CGRectGetMinY(labTabView.frame) - 20 - 12 - 20, kScreenWidth - 12.f*2, 20)];
+    UILabel *labShake = [[UILabel alloc] initWithFrame:CGRectMake(12.f, CGRectGetMinY(tableView.frame) - 20 - 12 - 20, kScreenWidth - 12.f*2, 20)];
     labShake.textAlignment = NSTextAlignmentCenter;
     labShake.font = kFont_Large;
     labShake.textColor = kColor_Normal;
@@ -143,8 +137,37 @@
     return cell;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [UIView new];
+    view.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *labTabView = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 150)/2.f, 0, 150, 40)];
+    labTabView.backgroundColor = [UIColor whiteColor];
+    labTabView.textAlignment = NSTextAlignmentCenter;
+    labTabView.textColor = kColor_Normal;
+    labTabView.font = [UIFont fontBold:15.f];
+    labTabView.text = @"近期历史记录";
+    labTabView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapViewOnClicked:)];
+    [labTabView addGestureRecognizer:tap];
+    
+    [view addSubview:labTabView];
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 40;
+}
+
+- (void)tapViewOnClicked:(UITapGestureRecognizer *)tap {
+    PYVCHistory *vc = [[PYVCHistory alloc] init];
+    vc.type = PYHistoryTypeShake;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark share event

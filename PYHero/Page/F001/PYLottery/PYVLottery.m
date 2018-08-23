@@ -13,28 +13,27 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.frame = CGRectMake(0, 0, kScreenWidth, kScreenWidth);
-        [self setup];
+        CGFloat space1 = 20.f;
+        self.frame = CGRectMake(space1, space1, kScreenWidth-space1*2, kScreenWidth-space1*2);
+        [self setup:space1];
     }
     return self;
 }
 
-- (void)setup {
+- (void)setup:(CGFloat)space1 {
     self.mArrImg = [NSMutableArray array];
-    CGFloat space1 = 20.f;
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(space1, space1, self.mj_w-space1*2, self.mj_h-space1*2)];
-    view.backgroundColor = [UIColor redColor];
-    [self addSubview:view];
+    self.backgroundColor = [UIColor redColor];
     
     space1 = 8.f;
-    UIView *vBg = [[UIView alloc] initWithFrame:CGRectMake(space1, space1, view.mj_w-space1*2, view.mj_h-space1*2)];
+    UIView *vBg = [[UIView alloc] initWithFrame:CGRectMake(space1, space1, self.mj_w-space1*2, self.mj_h-space1*2)];
     vBg.backgroundColor = [UIColor colorWithARGBString:@"#FF5A5E"];
-    [view addSubview:vBg];
+    [self addSubview:vBg];
     
-    view.layer.cornerRadius = vBg.layer.cornerRadius = 5.f;
-    view.layer.masksToBounds = vBg.layer.masksToBounds = YES;
+    self.layer.cornerRadius = vBg.layer.cornerRadius = 5.f;
+    self.layer.masksToBounds = vBg.layer.masksToBounds = YES;
     
-    NSArray *arrImg = @[@"banana",@"melon",@"bananas",@"orange",@"mango",@"seven",@"banana",@"sevens",@"cherry",@"mango",@"VR9",@"cherrys",@"orange",@"mango",@"seven",@"melons",@"mangos",@"cherry",@"VR9",@"orange"];
+    NSArray *arrImg = @[@"oranges",@"melon",@"banana",@"orange",@"mangos",@"seven",@"banana",@"seven",@"cherry",@"mango",@"VR9",@"cherry",@"banana",@"mango",@"sevens",@"melon",@"mango",@"cherry",@"VR9",@"orange"];
+    self.arrImgName = arrImg;
     
     CGFloat space2 = 6.f;
     CGFloat width = (vBg.mj_w - space1*2 - space2*5)/6.f;
@@ -77,6 +76,24 @@
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [vBg addSubview:btn];
     self.btnAction = btn;
+    
+    CGFloat x = space1 + width;
+    CGFloat height = (vBg.mj_h - 40 - 2*x)/2.f;
+    width = vBg.mj_w - 2*x;
+    UILabel *lab1 = [[UILabel alloc] initWithFrame:CGRectMake(x, x, width, height)];
+    lab1.textColor = KColorTheme;
+    lab1.text = @"本轮积分：0";
+    [vBg addSubview:lab1];
+    self.labGet = lab1;
+    
+    UILabel *lab2 = [[UILabel alloc] initWithFrame:CGRectMake(x, CGRectGetMaxY(btn.frame), width, height)];
+    lab2.textColor = [UIColor whiteColor];
+    lab2.text = [NSString stringWithFormat:@"当前积分：%@",[PYUserManage py_getPoint]];
+    [vBg addSubview:lab2];
+    self.labCurrent = lab2;
+    
+    lab1.font = lab2.font = [UIFont fontNormal:14.f];
+    lab1.textAlignment = lab2.textAlignment = NSTextAlignmentCenter;
 }
 
 @end

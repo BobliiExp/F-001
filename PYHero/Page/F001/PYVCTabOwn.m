@@ -44,7 +44,7 @@
 
 - (void)setupData {
     self.mArrUserInfo = [PYUserManage py_getUserInfo].mutableCopy;
-    self.mArrData = @[@"语音",@"摇一摇",@"捉妖"].mutableCopy;
+    self.mArrData = @[@"语音",@"摇一摇",@"转一转",@"捉妖"].mutableCopy;
     [self.tableView reloadData];
 }
 
@@ -114,6 +114,29 @@
         make.height.equalTo(@20);
     }];
     
+    UIView *vLine = [[UIView alloc] init];
+    vLine.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+    [view addSubview:vLine];
+    
+    [vLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(lab.mas_bottom).offset(24.f);
+        make.left.right.equalTo(view);
+        make.height.equalTo(@12);
+    }];
+    
+    UILabel *labPoint = [[UILabel alloc] init];
+    labPoint.font = lab.font;
+    labPoint.textColor = lab.textColor;
+    labPoint.text = [NSString stringWithFormat:@"当前用户积分：%@分",[PYUserManage py_getPoint]];
+    [vBg addSubview:labPoint];
+    
+    [labPoint mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(view).offset(-12);
+        make.left.equalTo(view).offset(12);
+        make.right.equalTo(view).offset(-12);
+        make.height.equalTo(@40);
+    }];
+    
     return view;
 }
 
@@ -122,7 +145,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 154.f + 24.f;
+    return 154.f + 24.f + 40.f + 12.f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
