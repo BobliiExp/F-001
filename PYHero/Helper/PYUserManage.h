@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PYModelSaveMedia.h"
 
 #define KShakeData @"ShakeData"
 #define KUserInfoData @"UserInfoData"
@@ -23,7 +24,7 @@
 + (NSString *)py_getPoint;
 
 /******************** 虫洞语音相关 ************************/
-+ (void)py_saveMediaData:(NSArray *)arr;
++ (void)py_saveMediaData:(PYModelSaveMedia *)model;
 + (NSArray *)py_getMediaData;
 
 /******************** 摇一摇相关 ************************/

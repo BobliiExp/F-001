@@ -40,9 +40,9 @@
 }
 
 /******************** 虫洞语音相关 ************************/
-+ (void)py_saveMediaData:(NSArray *)arr {
++ (void)py_saveMediaData:(PYModelSaveMedia *)model {
     NSMutableArray *mArr = [NSMutableArray arrayWithArray:[self py_getMediaData]];
-    [mArr insertObject:arr atIndex:0];
+    [mArr insertObject:model atIndex:0];
     
     [kUserDefaults setObject:mArr forKey:@"MediaData"];
     [kUserDefaults synchronize];

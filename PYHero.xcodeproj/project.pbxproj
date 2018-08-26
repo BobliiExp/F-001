@@ -17,6 +17,8 @@
 		A1220215212AAE0F007710D4 /* PYVCShake.m in Sources */ = {isa = PBXBuildFile; fileRef = A122020D212AAE0E007710D4 /* PYVCShake.m */; };
 		A1220216212AAE0F007710D4 /* PYVLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1220210212AAE0E007710D4 /* PYVLottery.m */; };
 		A1220218212AAF25007710D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1220217212AAF25007710D4 /* Assets.xcassets */; };
+		A122B5222132E80F001BDB7C /* PYModelSaveMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = A122B5212132E80F001BDB7C /* PYModelSaveMedia.m */; };
+		A122B5252132E961001BDB7C /* PYCellMediaHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = A122B5242132E961001BDB7C /* PYCellMediaHistory.m */; };
 		A127AFF42132B8D2005F0295 /* PYVAlertFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = A127AFF32132B8D2005F0295 /* PYVAlertFirst.m */; };
 		A127AFF72132CAF2005F0295 /* PYVAlertStep.m in Sources */ = {isa = PBXBuildFile; fileRef = A127AFF52132CAF1005F0295 /* PYVAlertStep.m */; };
 		A17B94152132CBD6005407EF /* PYVAlertLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94112132CBD6005407EF /* PYVAlertLottery.m */; };
@@ -177,6 +179,10 @@
 		A122020F212AAE0E007710D4 /* PYVLottery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVLottery.h; sourceTree = "<group>"; };
 		A1220210212AAE0E007710D4 /* PYVLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVLottery.m; sourceTree = "<group>"; };
 		A1220217212AAF25007710D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A122B5202132E80F001BDB7C /* PYModelSaveMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYModelSaveMedia.h; sourceTree = "<group>"; };
+		A122B5212132E80F001BDB7C /* PYModelSaveMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYModelSaveMedia.m; sourceTree = "<group>"; };
+		A122B5232132E961001BDB7C /* PYCellMediaHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYCellMediaHistory.h; sourceTree = "<group>"; };
+		A122B5242132E961001BDB7C /* PYCellMediaHistory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYCellMediaHistory.m; sourceTree = "<group>"; };
 		A127AFF22132B8D2005F0295 /* PYVAlertFirst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVAlertFirst.h; sourceTree = "<group>"; };
 		A127AFF32132B8D2005F0295 /* PYVAlertFirst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVAlertFirst.m; sourceTree = "<group>"; };
 		A127AFF52132CAF1005F0295 /* PYVAlertStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVAlertStep.m; sourceTree = "<group>"; };
@@ -871,19 +877,23 @@
 		C4BC906F212EDD1200457D76 /* PYMedia */ = {
 			isa = PBXGroup;
 			children = (
-				C4BC9070212EDD1200457D76 /* PYVCChatVideo.xib */,
-				C4BC9071212EDD1200457D76 /* PYVCChatVideo.h */,
-				C4BC9072212EDD1200457D76 /* PYVCChatAudio.xib */,
 				C4BC9073212EDD1200457D76 /* Classes */,
-				C4BC9088212EDD1200457D76 /* PYVCChatAudio.m */,
-				C4BC9089212EDD1200457D76 /* PYConfig.h */,
+				C4BC9071212EDD1200457D76 /* PYVCChatVideo.h */,
 				C4BC908A212EDD1200457D76 /* PYVCChatVideo.m */,
+				C4BC9070212EDD1200457D76 /* PYVCChatVideo.xib */,
 				C4BC908B212EDD1200457D76 /* PYVCChatAudio.h */,
+				C4BC9088212EDD1200457D76 /* PYVCChatAudio.m */,
+				C4BC9072212EDD1200457D76 /* PYVCChatAudio.xib */,
+				C4BC9089212EDD1200457D76 /* PYConfig.h */,
 				C4BC908C212EDD1200457D76 /* Helper */,
 				C4BC917E212EE61400457D76 /* PYVAudioWave.h */,
 				C4BC917F212EE61400457D76 /* PYVAudioWave.m */,
 				C43886CC21324FAA00500E58 /* PYAudioWaveLayer.h */,
 				C43886CD21324FAA00500E58 /* PYAudioWaveLayer.m */,
+				A122B5202132E80F001BDB7C /* PYModelSaveMedia.h */,
+				A122B5212132E80F001BDB7C /* PYModelSaveMedia.m */,
+				A122B5232132E961001BDB7C /* PYCellMediaHistory.h */,
+				A122B5242132E961001BDB7C /* PYCellMediaHistory.m */,
 			);
 			path = PYMedia;
 			sourceTree = "<group>";
@@ -891,26 +901,26 @@
 		C4BC9073212EDD1200457D76 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C4BC9080212EDD1200457D76 /* PYIMModeAudio.h */,
 				C4BC9074212EDD1200457D76 /* PYIMModeAudio.m */,
 				C4BC9075212EDD1200457D76 /* PYIMVideoController.h */,
+				C4BC907F212EDD1200457D76 /* PYIMVideoController.m */,
 				C4BC9076212EDD1200457D76 /* PYIMNetworkManager.h */,
+				C4BC907E212EDD1200457D76 /* PYIMNetworkManager.m */,
+				C4BC9081212EDD1200457D76 /* PYIMAudioConverter.h */,
 				C4BC9077212EDD1200457D76 /* PYIMAudioConverter.m */,
+				C4BC9083212EDD1200457D76 /* PYIMModeMedia.h */,
 				C4BC9078212EDD1200457D76 /* PYIMModeMedia.m */,
+				C4BC9082212EDD1200457D76 /* PYIMAccount.h */,
 				C4BC9079212EDD1200457D76 /* PYIMAccount.m */,
 				C4BC907A212EDD1200457D76 /* PYIMAPIChat.h */,
-				C4BC907B212EDD1200457D76 /* PYIMVideoConverter.h */,
-				C4BC907C212EDD1200457D76 /* PYIMAudioController.h */,
-				C4BC907D212EDD1200457D76 /* PYIMQueue.h */,
-				C4BC907E212EDD1200457D76 /* PYIMNetworkManager.m */,
-				C4BC907F212EDD1200457D76 /* PYIMVideoController.m */,
-				C4BC9080212EDD1200457D76 /* PYIMModeAudio.h */,
-				C4BC9081212EDD1200457D76 /* PYIMAudioConverter.h */,
-				C4BC9082212EDD1200457D76 /* PYIMAccount.h */,
-				C4BC9083212EDD1200457D76 /* PYIMModeMedia.h */,
-				C4BC9084212EDD1200457D76 /* PYIMQueue.m */,
-				C4BC9085212EDD1200457D76 /* PYIMAudioController.m */,
-				C4BC9086212EDD1200457D76 /* PYIMVideoConverter.m */,
 				C4BC9087212EDD1200457D76 /* PYIMAPIChat.m */,
+				C4BC907B212EDD1200457D76 /* PYIMVideoConverter.h */,
+				C4BC9086212EDD1200457D76 /* PYIMVideoConverter.m */,
+				C4BC907C212EDD1200457D76 /* PYIMAudioController.h */,
+				C4BC9085212EDD1200457D76 /* PYIMAudioController.m */,
+				C4BC907D212EDD1200457D76 /* PYIMQueue.h */,
+				C4BC9084212EDD1200457D76 /* PYIMQueue.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -919,14 +929,14 @@
 			isa = PBXGroup;
 			children = (
 				C4BC908D212EDD1200457D76 /* DotEnginePixelBuffer.h */,
+				C4BC90A6212EDD1200457D76 /* DotEnginePixelBuffer.m */,
+				C4BC90C7212EDD1200457D76 /* PYNoteManager.h */,
+				C4BC90A5212EDD1200457D76 /* PYNoteManager.m */,
 				C4BC908E212EDD1200457D76 /* RainbowAV */,
 				C4BC9099212EDD1200457D76 /* Category */,
 				C4BC90A2212EDD1200457D76 /* GPUImageBeautifyFilter */,
-				C4BC90A5212EDD1200457D76 /* PYNoteManager.m */,
-				C4BC90A6212EDD1200457D76 /* DotEnginePixelBuffer.m */,
 				C4BC90A7212EDD1200457D76 /* NetworkCheck */,
 				C4BC90AC212EDD1200457D76 /* libyuv */,
-				C4BC90C7212EDD1200457D76 /* PYNoteManager.h */,
 				C4BC90C8212EDD1200457D76 /* OpenGL */,
 			);
 			path = Helper;
@@ -953,11 +963,11 @@
 			isa = PBXGroup;
 			children = (
 				C4BC909A212EDD1200457D76 /* UIApplication+Permissions.h */,
-				C4BC909C212EDD1200457D76 /* UIView+Toast.h */,
-				C4BC909D212EDD1200457D76 /* UIButton+Swizzle.m */,
 				C4BC909E212EDD1200457D76 /* UIApplication+Permissions.m */,
-				C4BC90A0212EDD1200457D76 /* UIButton+Swizzle.h */,
+				C4BC909C212EDD1200457D76 /* UIView+Toast.h */,
 				C4BC90A1212EDD1200457D76 /* UIView+Toast.m */,
+				C4BC90A0212EDD1200457D76 /* UIButton+Swizzle.h */,
+				C4BC909D212EDD1200457D76 /* UIButton+Swizzle.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -965,8 +975,8 @@
 		C4BC90A2212EDD1200457D76 /* GPUImageBeautifyFilter */ = {
 			isa = PBXGroup;
 			children = (
-				C4BC90A3212EDD1200457D76 /* GPUImageBeautifyFilter.m */,
 				C4BC90A4212EDD1200457D76 /* GPUImageBeautifyFilter.h */,
+				C4BC90A3212EDD1200457D76 /* GPUImageBeautifyFilter.m */,
 			);
 			path = GPUImageBeautifyFilter;
 			sourceTree = "<group>";
@@ -975,8 +985,8 @@
 			isa = PBXGroup;
 			children = (
 				C4BC90A8212EDD1200457D76 /* LDNetworkFlowTool.h */,
-				C4BC90A9212EDD1200457D76 /* LDNetworkSpeedTool.h */,
 				C4BC90AA212EDD1200457D76 /* LDNetworkFlowTool.m */,
+				C4BC90A9212EDD1200457D76 /* LDNetworkSpeedTool.h */,
 				C4BC90AB212EDD1200457D76 /* LDNetworkSpeedTool.m */,
 			);
 			path = NetworkCheck;
@@ -1239,8 +1249,8 @@
 		C4BC913B212EDD1200457D76 /* OpenGLView */ = {
 			isa = PBXGroup;
 			children = (
-				C4BC913C212EDD1200457D76 /* STMGLView.m */,
 				C4BC913D212EDD1200457D76 /* STMGLView.h */,
+				C4BC913C212EDD1200457D76 /* STMGLView.m */,
 			);
 			path = OpenGLView;
 			sourceTree = "<group>";
@@ -1607,6 +1617,7 @@
 				C4F63675212DAD5B00F9132A /* AFFAlertView.m in Sources */,
 				C4BC915C212EDD1200457D76 /* PYNoteManager.m in Sources */,
 				C4BC9149212EDD1200457D76 /* PYIMAccount.m in Sources */,
+				A122B5222132E80F001BDB7C /* PYModelSaveMedia.m in Sources */,
 				A17B94192132CCD3005407EF /* PYVCPointInfo.m in Sources */,
 				C438872F2132739F00500E58 /* YSCMatrixCircleAnimationView.m in Sources */,
 				C43887302132739F00500E58 /* YSCCircleLoadAnimationView.m in Sources */,
@@ -1669,6 +1680,7 @@
 				C4BC9153212EDD1200457D76 /* pdu.c in Sources */,
 				A1220200212AADED007710D4 /* PYUserManage.m in Sources */,
 				C4BC9156212EDD1200457D76 /* adpcm.c in Sources */,
+				A122B5252132E961001BDB7C /* PYCellMediaHistory.m in Sources */,
 				A1220212212AAE0F007710D4 /* PYNumber.m in Sources */,
 				C43887352132739F00500E58 /* UITableViewController+YSCRefresh.m in Sources */,
 				C438872E2132739F00500E58 /* YSCCircleRippleView.m in Sources */,

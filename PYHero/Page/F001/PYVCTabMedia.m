@@ -14,6 +14,7 @@
 #import "PYVCOwnSetting.h"
 #import "PYVCPointInfo.h"
 #import "PYVCHistory.h"
+#import "PYCellMediaHistory.h"
 
 #import "PYUserManage.h"
 #import "YSCRippleView.h"
@@ -65,12 +66,10 @@ static int code = 10102;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.scrollEnabled = NO;
     tableView.allowsSelection = NO;
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
-    
     
     YSCRippleView *view = [[YSCRippleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CGRectGetMinY(tableView.frame))];
     [self.view insertSubview:view belowSubview:tableView];
@@ -158,6 +157,10 @@ static int code = 10102;
             NSLog(@"接收到信息但有错误：cmd %04x", error.cmdID);
         }
     }];
+    
+    // 获取历史记录，刷新列表
+    self.mArrData = [PYUserManage py_getMediaData].mutableCopy;
+    [self.tableView reloadData];
 }
 
 - (void)buttonnClicked {
@@ -204,7 +207,6 @@ static int code = 10102;
         [SVProgressHUD dismiss];
         [self.rippleView cleanTheme];
     }];
-    
 }
 
 - (void)connect {
@@ -329,12 +331,13 @@ static int code = 10102;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    PYCellMediaHistory *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        
+        cell = [[PYCellMediaHistory alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
+    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : [UIColor colorWithARGBString:@"#eeeeee"];
+    [cell setupData:self.mArrData[indexPath.row]];
     return cell;
 }
 
@@ -360,6 +363,11 @@ static int code = 10102;
     }
     [view addSubview:self.btn];
     
+    CALayer *line = [[CALayer alloc] init];
+    line.backgroundColor = kColor_Graylight.CGColor;
+    line.frame = CGRectMake(0, 40, kScreenWidth, 1);
+    [view.layer addSublayer:line];
+    
     [view addSubview:labTabView];
     return view;
 }
@@ -369,7 +377,7 @@ static int code = 10102;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
+    return 50;
 }
 
 - (void)tapViewOnClicked:(UITapGestureRecognizer *)tap {

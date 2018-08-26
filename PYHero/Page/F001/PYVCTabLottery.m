@@ -81,7 +81,7 @@
     
     height = kScreenHeight - PYSafeBottomHeight;
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(vLottery.frame), kScreenWidth, height - CGRectGetMaxY(vLottery.frame) - self.navigationController.navigationBar.frame.size.height) style:UITableViewStylePlain];
-    tableView.backgroundColor = [UIColor lightGrayColor];
+    tableView.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
@@ -269,6 +269,11 @@
         [self.btn addTarget:self action:@selector(btnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     [view addSubview:self.btn];
+    
+    CALayer *line = [[CALayer alloc] init];
+    line.backgroundColor = kColor_Graylight.CGColor;
+    line.frame = CGRectMake(0, 40, kScreenWidth, 1);
+    [view.layer addSublayer:line];
     
     [view addSubview:labTabView];
     return view;
