@@ -27,8 +27,8 @@
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_Content} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_Highlight} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_TabBarItemNor} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_TabBarItemTint} forState:UIControlStateSelected];
     
     return YES;
 }

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSString (PY)
 
 - (CGFloat)getStringWidth:(CGFloat)height attributes:(NSDictionary<NSString *, id> *)attribute;
+- (CGFloat)getStringHeight:(CGFloat)width attributes:(NSDictionary<NSString *, id> *)attribute;
 
 @end
 

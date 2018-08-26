@@ -19,10 +19,14 @@
 #define kFont_Content [UIFont systemFontOfSize:12]
 
 #define kColor_Title [UIColor colorWithARGBString:@"#333333"]
-#define kColor_Content [UIColor colorWithARGBString:@"#d7d7d7"]
+#define kColor_Content [UIColor colorWithARGBString:@"#666666"]
 #define kColor_Select [UIColor colorWithARGBString:@"#16a8ef"]
 #define kColor_Highlight [UIColor colorWithARGBString:@"#d7ac6b"]
 #define kColor_Background [UIColor colorWithARGBString:@"#eeeeee"]
+#define kColor_TabBarItemTint [UIColor colorWithARGBString:@"#4ca7e9"]
+#define kColor_NavBg [UIColor colorWithARGBString:@"#d7d7d7"]
+#define kColor_TabBarItemNor [UIColor colorWithARGBString:@"#666666"]
+
 
 //NavBar高度
 #define kCurrentStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height

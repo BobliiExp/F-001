@@ -30,10 +30,10 @@
     [super viewDidLoad];
     
     NSArray *config = @[
-                        @{@"title":@"虫洞语音", @"icon":@"msg", @"class":@"PYVCTabMedia"},
+                        @{@"title":@"语音", @"icon":@"msg", @"class":@"PYVCTabMedia"},
                         @{@"title":@"摇一摇", @"icon":@"ocean", @"class":@"PYVCTabShake"},
                         @{@"title":@"转一转", @"icon":@"life", @"class":@"PYVCTabLottery"},
-                        @{@"title":@"太空捉妖", @"icon":@"work", @"class":@"PYVCTabMonster"},
+                        @{@"title":@"捉妖", @"icon":@"work", @"class":@"PYVCTabMonster"},
                         @{@"title":@"我的", @"icon":@"own", @"class":@"PYVCTabOwn"},
                         ];
     
@@ -44,9 +44,10 @@
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
         
         UITabBarItem *item = [[UITabBarItem alloc] init];
-        [item setSelectedImage:[UIImage imageNamed:[NSString stringWithFormat:@"ic_navb_%@_sel", dic[@"icon"]]]];
+        [item setSelectedImage:[[UIImage imageNamed:[NSString stringWithFormat:@"ic_navb_%@_sel", dic[@"icon"]]] imageWithTintColor:kColor_TabBarItemTint]];
         [item setImage:[UIImage imageNamed:[NSString stringWithFormat:@"ic_navb_%@_nor", dic[@"icon"]]]];
         [item setTitle:dic[@"title"]];
+        
         vc.tabBarItem = item;
         
         [mArr addObject:nav];
@@ -54,7 +55,7 @@
     
     self.viewControllers = mArr;
     
-    self.tabBar.backgroundColor = kColor_Content;
+    self.tabBar.backgroundColor = kColor_NavBg;
     self.tabBar.translucent = YES;
     self.tabBar.shadowImage = [UIImage new]; // 控制下导航条上边线是否显示
 }
@@ -63,15 +64,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

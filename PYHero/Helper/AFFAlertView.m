@@ -122,19 +122,18 @@
     if ([obj isKindOfClass:[NSString class]]) {//处理文字
         
         NSString *str = obj;
-        CGSize size = [str sizeWithAttributes:@{NSFontAttributeName:kFont_Title, NSStrokeWidthAttributeName:@(kAlertViewWidth-2*kAlertEdgeWidth)}];
-        
-        UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(kAlertEdgeWidth, height, kAlertViewWidth-2*kAlertEdgeWidth, size.height)];
+        CGFloat heightEx = [str getStringHeight:kAlertViewWidth-kAlertEdgeWidth*2 attributes:@{NSFontAttributeName:kFont_Title}];
+        UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(kAlertEdgeWidth, height, kAlertViewWidth-2*kAlertEdgeWidth, heightEx)];
         labelView.font = kFont_Title;
         labelView.numberOfLines = 0;
         labelView.lineBreakMode = NSLineBreakByWordWrapping;
-        labelView.textColor = kColor_Content;
+        labelView.textColor = kColor_Title;
         labelView.backgroundColor = [UIColor clearColor];
         labelView.textAlignment = NSTextAlignmentCenter;
         labelView.text = str;
         [alerView addSubview:labelView];
         
-        height += size.height + kAlertEdgeWidth;
+        height += heightEx + kAlertEdgeWidth;
     } else if (obj != nil) {//处理view
         alerView = obj;
         
@@ -144,19 +143,19 @@
     //处理content
     if (cbj) {
         NSString *str = (NSString*)cbj;
-        CGSize size = [str sizeWithAttributes:@{NSFontAttributeName:kFont_Title, NSStrokeWidthAttributeName:@(kAlertViewWidth-2*kAlertEdgeWidth)}];
+        CGFloat heightEx = [str getStringHeight:kAlertViewWidth-kAlertEdgeWidth*2 attributes:@{NSFontAttributeName:kFont_Title}];
         
-        UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(kAlertEdgeWidth, height, kAlertViewWidth-2*kAlertEdgeWidth, size.height)];
+        UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(kAlertEdgeWidth, height, kAlertViewWidth-2*kAlertEdgeWidth, heightEx)];
         labelView.font = kFont_Content;
         labelView.numberOfLines = 0;
         labelView.lineBreakMode = NSLineBreakByWordWrapping;
-        labelView.textColor = kColor_Content;
+        labelView.textColor = obj ? kColor_Content : kColor_Title;
         labelView.backgroundColor = [UIColor clearColor];
         labelView.textAlignment = NSTextAlignmentCenter;
         labelView.text = str;
         [alerView addSubview:labelView];
         
-        height += size.height + kAlertEdgeWidth;
+        height += heightEx + kAlertEdgeWidth;
     }
     
     //添加button
@@ -176,14 +175,14 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(xOffset, height, width, kAlertBtnHeight);
         
-        button.titleLabel.font = kFont_Title;
+        button.titleLabel.font = kFont_Content;
         button.titleLabel.textAlignment = NSTextAlignmentCenter;
         button.backgroundColor = [UIColor clearColor];
         button.tag = 100000 + i;
         
         [button setBackgroundImage:image forState:UIControlStateNormal];
         [button setBackgroundImage:highLighImg forState:UIControlStateHighlighted];
-        [button setTitleColor:self.specColor ? self.specColor : [UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:self.specColor ? self.specColor : kColor_Title forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [button setTitle:title forState:UIControlStateNormal];
         button.accessibilityLabel = title;
@@ -357,9 +356,9 @@
         height = 16;
         
         NSString *desc = obj;
-        CGSize size = [desc sizeWithAttributes:@{NSFontAttributeName:kFont_Title, NSStrokeWidthAttributeName:@(width-2*kAlertEdgeWidth)}];
+        CGFloat heightEx = [desc getStringHeight:kAlertViewWidth-kAlertEdgeWidth*2 attributes:@{NSFontAttributeName:kFont_Title}];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kAlertEdgeWidth, height, width-2*kAlertEdgeWidth, size.height)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kAlertEdgeWidth, height, width-2*kAlertEdgeWidth, heightEx)];
         label.backgroundColor = [UIColor clearColor];
         label.font = kFont_Title;
         label.textAlignment = NSTextAlignmentCenter;
@@ -368,7 +367,7 @@
         label.numberOfLines = 0;
         [headerView addSubview:label];
         
-        height += size.height + kAlertEdgeWidth;
+        height += heightEx + kAlertEdgeWidth;
     } else {
         if (obj) {
             height = 0;
@@ -408,7 +407,7 @@
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, height, width, kHeight_Fish)];
             button.backgroundColor = [UIColor whiteColor];
             button.titleLabel.textAlignment = NSTextAlignmentCenter;
-            button.titleLabel.font = kFont_Title;
+            button.titleLabel.font = kFont_Content;
             [button setTitleColor:self.specColor ? self.specColor : kColor_Title forState:UIControlStateNormal];
             [button setTitle:[titles objectAtIndex:i] forState:UIControlStateNormal];
             [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:0. alpha:.15]] forState:UIControlStateHighlighted];

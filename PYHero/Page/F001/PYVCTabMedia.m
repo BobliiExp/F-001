@@ -253,10 +253,17 @@ static int code = 10102;
 
 -(void)invate:(NSString *)code{
     NSInteger coin = [[PYUserManage py_getPoint] integerValue];
-    if(coin<10){
-        [AFFAlertView alertWithTitle:[NSString stringWithFormat:@"您当前积分为:%zi", coin] content:@"至少需要10积分才能使用语音功能" btnTitle:@[@"赚取积分", @"取消"] block:^(NSInteger index, BOOL isCancel) {
+    if(coin<1000){
+        [AFFAlertView alertWithTitle:[NSString stringWithFormat:@"您当前积分为:%zi，至少需要10积分才能使用语音功能", coin] btnTitle:@[@"赚取积分", @"取消"] block:^(NSInteger index, BOOL isCancel) {
             if(!isCancel){
-                self.tabBarController.selectedIndex = 2;
+                for(UINavigationController *nav in self.tabBarController.viewControllers){
+                    if([nav.viewControllers.firstObject isKindOfClass:NSClassFromString(@"PYVCTabLottery")]){
+                        self.tabBarController.selectedIndex = [self.tabBarController.viewControllers indexOfObject:nav];
+                        break;
+                    }
+                }
+                
+                [self.rippleView cleanTheme];
                 [AFFAlertView dismiss];
             }
         }];
