@@ -14,12 +14,19 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import "MacroCustom.h"
+#import "NSString+PY.h"
+#import "NSDate+PYHero.h"
 #import "UIColor+PYHero.h"
 #import "UIFont+PYHero.h"
 #import "MJRefresh.h"
 #import <Masonry/Masonry.h>
 #import "UIImage+Color.h"
 #import "NSDictionary+SafeAccess.h"
+
+#import <SVProgressHUD.h>
+
+#import "PYIMAccount.h"
+
 #import "AFFAlertView.h"
 
 typedef NS_ENUM(NSUInteger, PYLotteryType) { // 彩票游戏类型

@@ -20,5 +20,13 @@ pod 'SDWebImage'
 pod 'Masonry'
 pod 'PYPageScrollView'
 
+pod 'RSSwizzle'
+
+
+pod 'GPUImage', '~> 0.1.7'  # 视频美化
+pod 'YUCIHighPassSkinSmoothing'
+pod 'CocoaAsyncSocket'
+pod 'libextobjc'
+
 end
 
