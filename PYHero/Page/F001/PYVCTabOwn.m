@@ -9,11 +9,17 @@
 #import "PYVCTabOwn.h"
 #import "PYVCOwnSetting.h"
 #import "PYVCHistory.h"
+#import <CoreMotion/CoreMotion.h>
+#import "NSDate+PYHero.h"
+#import "PYVAlertStep.h"
 
-@interface PYVCTabOwn ()<UITableViewDelegate, UITableViewDataSource>
+@interface PYVCTabOwn ()<UITableViewDelegate, UITableViewDataSource>{
+    NSNumber *step;
+}
 
 @property (nonatomic, weak) UITableView *tableView; ///<
 @property (nonatomic, strong) NSMutableArray *mArrUserInfo;    ///< 用户信息
+@property (nonatomic, strong) CMPedometer *pedometer;
 
 @end
 
@@ -27,6 +33,8 @@
     
     [self setup];
     [self setupData];
+    
+    
 }
 
 - (void)setup {
@@ -39,13 +47,57 @@
     tableView.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
-    
 }
 
 - (void)setupData {
     self.mArrUserInfo = [PYUserManage py_getUserInfo].mutableCopy;
-    self.mArrData = @[@"语音",@"摇一摇",@"转一转",@"捉妖"].mutableCopy;
-    [self.tableView reloadData];
+    self.mArrData = @[@"语音"/*,@"摇一摇"*/,@"转一转"/*,@"捉妖"*/].mutableCopy;
+    step = @0;
+    [self py_getUserStep];
+}
+
+- (void)py_getUserStep {
+    self.pedometer = [[CMPedometer alloc]init];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *startDate = [self zeroOfDate];
+    NSString *time = [NSDate date2String:startDate];
+    NSDate *endDate = [calendar dateByAddingUnit:NSCalendarUnitDay value:-1 toDate:startDate options:0];
+    NSString *time2 = [NSDate date2String:endDate];
+    NSLog(@"%@--%@",time,time2);
+    
+    //判断记步功能
+    if ([CMPedometer isStepCountingAvailable]) {
+        [self.pedometer queryPedometerDataFromDate:endDate toDate:startDate withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (error) {
+                    NSLog(@">>>error====%@",error);
+                    [self.tableView reloadData];
+                }else {
+                    step = pedometerData.numberOfSteps;
+                    [self.tableView reloadData];
+                    NSLog(@"步数====%@",pedometerData.numberOfSteps);
+                    NSLog(@"距离====%@",pedometerData.distance);
+                }
+            });
+        }];
+    }else{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            NSLog(@"记步功能不可用");
+        });
+    }
+}
+
+- (NSDate *)zeroOfDate {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSUIntegerMax fromDate:[NSDate date]];
+    components.hour = 0;
+    components.minute = 0;
+    components.second = 0;
+    
+    // components.nanosecond = 0 not available in iOS
+    NSTimeInterval ts = (double)(int)[[calendar dateFromComponents:components] timeIntervalSince1970];
+    return [NSDate dateWithTimeIntervalSince1970:ts];
 }
 
 #pragma mark - tabelView Delegate dataSource
@@ -114,6 +166,7 @@
         make.height.equalTo(@20);
     }];
     
+    // 我的积分
     UIView *vLine = [[UIView alloc] init];
     vLine.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
     [view addSubview:vLine];
@@ -131,11 +184,39 @@
     [vBg addSubview:labPoint];
     
     [labPoint mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(vLine.mas_bottom);
+        make.left.equalTo(view).offset(12);
+        make.right.equalTo(view).offset(-12);
+        make.height.equalTo(@40);
+    }];
+    
+    // 我的步数
+    UIView *vLine2 = [[UIView alloc] init];
+    vLine2.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+    [view addSubview:vLine2];
+    
+    [vLine2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(labPoint.mas_bottom);
+        make.left.right.equalTo(view);
+        make.height.equalTo(@12);
+    }];
+    
+    UILabel *labStep = [[UILabel alloc] init];
+    labStep.font = lab.font;
+    labStep.textColor = lab.textColor;
+    labStep.userInteractionEnabled = YES;
+    labStep.text = [NSString stringWithFormat:@"当前用户步数：%@步",step];
+    [vBg addSubview:labStep];
+    
+    [labStep mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(view).offset(-12);
         make.left.equalTo(view).offset(12);
         make.right.equalTo(view).offset(-12);
         make.height.equalTo(@40);
     }];
+    
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapViewOnClicked:)];
+    [labStep addGestureRecognizer:tap2];
     
     return view;
 }
@@ -145,7 +226,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 154.f + 24.f + 40.f + 12.f;
+    return 154.f + 24.f + 40.f*2 + 12.f*2;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -166,6 +247,33 @@
         [weakSelf.tableView reloadData];
     };
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)tapViewOnClicked:(UITapGestureRecognizer *)tap {
+    if (![self isSameDay:(NSDate *)[PYUserManage py_getObjectWithKey:@"ConvertStep"]]) {
+        [PYUserManage py_saveObject:[NSDate date] key:@"ConvertStep"];
+        
+        [AFFAlertView alertWithView:[[PYVAlertStep alloc] initWithStep:step.integerValue] block:^(NSInteger index, BOOL isCancel) {
+            if (index) {
+                [self.tableView reloadData];
+            }
+        }];
+    }else {
+        [AFFAlertView alertWithView:[[PYVAlertStep alloc] initWithStep:0] block:^(NSInteger index, BOOL isCancel) {}];
+    }
+}
+
+- (BOOL)isSameDay:(NSDate*)date {
+    NSDate *currentDate = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
+    NSDateComponents *comp1 = [calendar components:unitFlags fromDate:date];
+    NSDateComponents *comp2 = [calendar components:unitFlags fromDate:currentDate];
+    
+    return [comp1 day] == [comp2 day] &&
+    [comp1 month] == [comp2 month] &&
+    [comp1 year] == [comp2 year];
 }
 
 /*

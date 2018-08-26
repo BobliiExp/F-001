@@ -10,6 +10,10 @@
 #import "PYVAudioWave.h"
 #import "PYIMAudioController.h"
 #import "PYAudioWaveLayer.h"
+#import "PYVAlertFirst.h"
+#import "PYVCOwnSetting.h"
+#import "PYVCPointInfo.h"
+#import "PYVCHistory.h"
 
 #import "PYUserManage.h"
 #import "YSCRippleView.h"
@@ -23,7 +27,9 @@
 
 #import <MessageUI/MFMessageComposeViewController.h>
 
-@interface PYVCTabMedia ()<UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate>
+@interface PYVCTabMedia ()<UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate>{
+    BOOL isOpen;    ///< 是否展开
+}
 
 @property (nonatomic, weak) UITableView *tableView; ///<
 @property (nonatomic, weak) PYVAudioWave *viewWave;
@@ -31,6 +37,8 @@
 @property (nonatomic, strong) PYIMAudioController *audioControl;   ///< 语音控制
 
 @property (nonatomic, weak) YSCRippleView *rippleView;
+@property (nonatomic, strong) UIButton *btn; ///< 折叠按钮
+
 
 @end
 
@@ -75,6 +83,27 @@ static int code = 10102;
         @strongify(self);
         [self buttonnClicked];
     }];
+    
+    NSString *isFirst = [PYUserManage py_getStringWithKey:@"isFirst"];
+    if (![isFirst isEqualToString:@"YES"]) {
+        [PYUserManage py_savePoint:@"20"];
+        [PYUserManage py_saveString:@"YES" key:@"isFirst"];
+        
+        @weakify(self);
+        [AFFAlertView alertWithView:[[PYVAlertFirst alloc] init] block:^(NSInteger index, BOOL isCancel) {
+            @strongify(self);
+            if (index == 10) {
+                PYVCOwnSetting *vc = [[PYVCOwnSetting alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            }else if (index == 11){
+                PYVCPointInfo *vc = [[PYVCPointInfo alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }];
+    }
+    
 }
 
 - (void)setupData {
@@ -296,7 +325,7 @@ static int code = 10102;
 #pragma mark - tableView delegate - dataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.mArrData.count > 3 ? 3 : self.mArrData.count;
+    return isOpen ? (self.mArrData.count > 3 ? 3 : self.mArrData.count) : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -324,6 +353,13 @@ static int code = 10102;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapViewOnClicked:)];
     [labTabView addGestureRecognizer:tap];
     
+    if (!self.btn) {
+        self.btn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 24 - 12.f, 8.f, 24, 24)];
+        [self.btn setImage:[UIImage imageNamed:@"ic_down_arrow"] forState:UIControlStateNormal];
+        [self.btn addTarget:self action:@selector(btnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    [view addSubview:self.btn];
+    
     [view addSubview:labTabView];
     return view;
 }
@@ -337,7 +373,16 @@ static int code = 10102;
 }
 
 - (void)tapViewOnClicked:(UITapGestureRecognizer *)tap {
-    
+    PYVCHistory *vc = [[PYVCHistory alloc] init];
+    vc.type = PYHistoryTypeLottery;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)btnOnClicked:(UIButton *)btn {
+    isOpen = !isOpen;
+    [btn setImage:[UIImage imageNamed:isOpen ? @"ic_up_arrow" : @"ic_down_arrow"] forState:UIControlStateNormal];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

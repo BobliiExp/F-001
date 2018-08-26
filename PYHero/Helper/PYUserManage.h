@@ -16,8 +16,15 @@
 + (void)py_saveString:(NSString *)str key:(NSString *)key;
 + (NSString *)py_getStringWithKey:(NSString *)key;
 
++ (void)py_saveObject:(NSObject *)obj key:(NSString *)key;
++ (NSObject *)py_getObjectWithKey:(NSString *)key;
+
 + (void)py_savePoint:(NSString *)point;
 + (NSString *)py_getPoint;
+
+/******************** 虫洞语音相关 ************************/
++ (void)py_saveMediaData:(NSArray *)arr;
++ (NSArray *)py_getMediaData;
 
 /******************** 摇一摇相关 ************************/
 + (void)py_saveShakeData:(NSObject *)obj type:(PYLotteryType)type;

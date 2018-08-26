@@ -17,6 +17,11 @@
 		A1220215212AAE0F007710D4 /* PYVCShake.m in Sources */ = {isa = PBXBuildFile; fileRef = A122020D212AAE0E007710D4 /* PYVCShake.m */; };
 		A1220216212AAE0F007710D4 /* PYVLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1220210212AAE0E007710D4 /* PYVLottery.m */; };
 		A1220218212AAF25007710D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1220217212AAF25007710D4 /* Assets.xcassets */; };
+		A127AFF42132B8D2005F0295 /* PYVAlertFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = A127AFF32132B8D2005F0295 /* PYVAlertFirst.m */; };
+		A127AFF72132CAF2005F0295 /* PYVAlertStep.m in Sources */ = {isa = PBXBuildFile; fileRef = A127AFF52132CAF1005F0295 /* PYVAlertStep.m */; };
+		A17B94152132CBD6005407EF /* PYVAlertLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94112132CBD6005407EF /* PYVAlertLottery.m */; };
+		A17B94162132CBD6005407EF /* PYImgVLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94142132CBD6005407EF /* PYImgVLottery.m */; };
+		A17B94192132CCD3005407EF /* PYVCPointInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94182132CCD3005407EF /* PYVCPointInfo.m */; };
 		A1C4E891212D99E500C5F654 /* PYCellLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C4E890212D99E500C5F654 /* PYCellLottery.m */; };
 		C43886CE21324FAA00500E58 /* PYAudioWaveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C43886CD21324FAA00500E58 /* PYAudioWaveLayer.m */; };
 		C438871A2132739F00500E58 /* YSCWaterWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = C43886D12132739F00500E58 /* YSCWaterWaveView.m */; };
@@ -172,6 +177,16 @@
 		A122020F212AAE0E007710D4 /* PYVLottery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVLottery.h; sourceTree = "<group>"; };
 		A1220210212AAE0E007710D4 /* PYVLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVLottery.m; sourceTree = "<group>"; };
 		A1220217212AAF25007710D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A127AFF22132B8D2005F0295 /* PYVAlertFirst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVAlertFirst.h; sourceTree = "<group>"; };
+		A127AFF32132B8D2005F0295 /* PYVAlertFirst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVAlertFirst.m; sourceTree = "<group>"; };
+		A127AFF52132CAF1005F0295 /* PYVAlertStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVAlertStep.m; sourceTree = "<group>"; };
+		A127AFF62132CAF2005F0295 /* PYVAlertStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVAlertStep.h; sourceTree = "<group>"; };
+		A17B94112132CBD6005407EF /* PYVAlertLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVAlertLottery.m; sourceTree = "<group>"; };
+		A17B94122132CBD6005407EF /* PYVAlertLottery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYVAlertLottery.h; sourceTree = "<group>"; };
+		A17B94132132CBD6005407EF /* PYImgVLottery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYImgVLottery.h; sourceTree = "<group>"; };
+		A17B94142132CBD6005407EF /* PYImgVLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYImgVLottery.m; sourceTree = "<group>"; };
+		A17B94172132CCD3005407EF /* PYVCPointInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCPointInfo.h; sourceTree = "<group>"; };
+		A17B94182132CCD3005407EF /* PYVCPointInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCPointInfo.m; sourceTree = "<group>"; };
 		A1C4E88F212D99E500C5F654 /* PYCellLottery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYCellLottery.h; sourceTree = "<group>"; };
 		A1C4E890212D99E500C5F654 /* PYCellLottery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYCellLottery.m; sourceTree = "<group>"; };
 		B0A4A2E29D340B738CD78F8F /* libPods-PYHero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYHero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -579,8 +594,14 @@
 		A1220202212AAE0E007710D4 /* PYMine */ = {
 			isa = PBXGroup;
 			children = (
+				A127AFF62132CAF2005F0295 /* PYVAlertStep.h */,
+				A127AFF52132CAF1005F0295 /* PYVAlertStep.m */,
 				A1220204212AAE0E007710D4 /* PYVCHistory.h */,
 				A1220203212AAE0E007710D4 /* PYVCHistory.m */,
+				A127AFF22132B8D2005F0295 /* PYVAlertFirst.h */,
+				A127AFF32132B8D2005F0295 /* PYVAlertFirst.m */,
+				A17B94172132CCD3005407EF /* PYVCPointInfo.h */,
+				A17B94182132CCD3005407EF /* PYVCPointInfo.m */,
 			);
 			path = PYMine;
 			sourceTree = "<group>";
@@ -603,6 +624,10 @@
 		A122020E212AAE0E007710D4 /* PYLottery */ = {
 			isa = PBXGroup;
 			children = (
+				A17B94132132CBD6005407EF /* PYImgVLottery.h */,
+				A17B94142132CBD6005407EF /* PYImgVLottery.m */,
+				A17B94122132CBD6005407EF /* PYVAlertLottery.h */,
+				A17B94112132CBD6005407EF /* PYVAlertLottery.m */,
 				A122020F212AAE0E007710D4 /* PYVLottery.h */,
 				A1220210212AAE0E007710D4 /* PYVLottery.m */,
 				A1C4E88F212D99E500C5F654 /* PYCellLottery.h */,
@@ -1395,7 +1420,6 @@
 				D186500F206E210400C2A6D0 /* Frameworks */,
 				D1865010206E210400C2A6D0 /* Resources */,
 				57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */,
-				DE6727C1D6F2905EA5A7F26D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1489,13 +1513,63 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-resources.sh",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/Vivid/Sources/YUCIBilateralFilter.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIBlobsGenerator.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCICLAHE.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIColorLookup.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIColorLookupTableDefault.png",
+				"${PODS_ROOT}/Vivid/Sources/YUCICrossZoomTransition.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIFilmBurnTransition.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIFlashTransition.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIFXAA.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIHSLToRGB.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIReflectedTile.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIRGBToHSL.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIRGBToneCurve.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCISkyGenerator.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCIStarfieldGenerator.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCISurfaceBlur.cikernel",
+				"${PODS_ROOT}/Vivid/Sources/YUCITriangularPixellate.cikernel",
+				"${PODS_ROOT}/YUCIHighPassSkinSmoothing/Sources/YUCIGreenBlueChannelOverlayBlend.cikernel",
+				"${PODS_ROOT}/YUCIHighPassSkinSmoothing/Sources/YUCIHighPass.cikernel",
+				"${PODS_ROOT}/YUCIHighPassSkinSmoothing/Sources/YUCIHighPassSkinSmoothingMaskBoost.cikernel",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_2.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIBilateralFilter.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIBlobsGenerator.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCICLAHE.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIColorLookup.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIColorLookupTableDefault.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCICrossZoomTransition.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIFilmBurnTransition.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIFlashTransition.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIFXAA.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIHSLToRGB.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIReflectedTile.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIRGBToHSL.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIRGBToneCurve.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCISkyGenerator.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIStarfieldGenerator.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCISurfaceBlur.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCITriangularPixellate.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIGreenBlueChannelOverlayBlend.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIHighPass.cikernel",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YUCIHighPassSkinSmoothingMaskBoost.cikernel",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1517,22 +1591,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DE6727C1D6F2905EA5A7F26D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1548,6 +1607,7 @@
 				C4F63675212DAD5B00F9132A /* AFFAlertView.m in Sources */,
 				C4BC915C212EDD1200457D76 /* PYNoteManager.m in Sources */,
 				C4BC9149212EDD1200457D76 /* PYIMAccount.m in Sources */,
+				A17B94192132CCD3005407EF /* PYVCPointInfo.m in Sources */,
 				C438872F2132739F00500E58 /* YSCMatrixCircleAnimationView.m in Sources */,
 				C43887302132739F00500E58 /* YSCCircleLoadAnimationView.m in Sources */,
 				C438873F21327B0400500E58 /* NSString+PY.m in Sources */,
@@ -1566,11 +1626,13 @@
 				D186503A206E384E00C2A6D0 /* PYVCTabScore.m in Sources */,
 				C47A5BBE2123CAA200467618 /* PYVCOwnSetting.m in Sources */,
 				D1ACB598207313A800EB6988 /* UIImage+PYHero.m in Sources */,
+				A127AFF72132CAF2005F0295 /* PYVAlertStep.m in Sources */,
 				A1220201212AADED007710D4 /* PYWinManage.m in Sources */,
 				D186504F206E692E00C2A6D0 /* UIColor+PYHero.m in Sources */,
 				C4F6367B212DB62000F9132A /* UIImage+Color.m in Sources */,
 				C47A5BA82123C3DC00467618 /* PYVCTabMedia.m in Sources */,
 				A1220215212AAE0F007710D4 /* PYVCShake.m in Sources */,
+				A17B94152132CBD6005407EF /* PYVAlertLottery.m in Sources */,
 				C4BC915B212EDD1200457D76 /* GPUImageBeautifyFilter.m in Sources */,
 				D11022CC2073D4900021043E /* PYTabScoreHeader.m in Sources */,
 				C4BC915F212EDD1200457D76 /* LDNetworkSpeedTool.m in Sources */,
@@ -1582,6 +1644,7 @@
 				C47A5BB42123C49500467618 /* PYVCTabOwn.m in Sources */,
 				D176D3C42075DF9000EA514B /* PYVCNewsFamous.m in Sources */,
 				C43887342132739F00500E58 /* YSCTableRefreshFooterView.m in Sources */,
+				A127AFF42132B8D2005F0295 /* PYVAlertFirst.m in Sources */,
 				C4BC9148212EDD1200457D76 /* PYIMModeMedia.m in Sources */,
 				C4BC9159212EDD1200457D76 /* UIApplication+Permissions.m in Sources */,
 				A1C4E891212D99E500C5F654 /* PYCellLottery.m in Sources */,
@@ -1628,6 +1691,7 @@
 				C4BC9180212EE61400457D76 /* PYVAudioWave.m in Sources */,
 				A1220211212AAE0F007710D4 /* PYVCHistory.m in Sources */,
 				C4BC915A212EDD1200457D76 /* UIView+Toast.m in Sources */,
+				A17B94162132CBD6005407EF /* PYImgVLottery.m in Sources */,
 				C43887372132739F00500E58 /* YSCTableRefreshLabelView.m in Sources */,
 				D1865028206E210400C2A6D0 /* main.m in Sources */,
 				C47A5BB12123C47A00467618 /* PYVCTabMonster.m in Sources */,
