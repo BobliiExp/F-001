@@ -47,12 +47,24 @@
     self.btnCancel.layer.cornerRadius = CGRectGetHeight(self.btnCancel.frame)/2;
     self.btnCancel.layer.masksToBounds = YES;
     
+    
     self.laycCloseTop.constant = [UIApplication sharedApplication].statusBarFrame.size.height+10;
     [self.view layoutIfNeeded];
     
     self.viewSmall.userInteractionEnabled = YES;
     [self.viewSmall addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)]];
     
+    [self.btnCancel setTitleColor:kColor_Select forState:UIControlStateNormal];
+    [self.btnCancel setTitle:kAFLocalize(@"取消") forState:UIControlStateNormal];
+    self.btnCancel.layer.cornerRadius = CGRectGetHeight(self.btnCancel.frame)/2;
+    self.btnCancel.layer.borderColor = kColor_Select.CGColor;
+    self.btnCancel.layer.borderWidth = 1.0;
+    
+    [self.btnClose setTitleColor:kColor_Content forState:UIControlStateNormal];
+    [self.btnClose setTitle:kAFLocalize(@"关闭") forState:UIControlStateNormal];
+    self.btnClose.layer.cornerRadius = CGRectGetHeight(self.btnClose.frame)/2;
+    self.btnClose.layer.borderColor = kColor_Content.CGColor;
+    self.btnClose.layer.borderWidth = 1.0;
     
     kPermissionAccess acc = [[UIApplication sharedApplication] hasAccessToMicrophone];
     if(acc == kPermissionAccessGranted){

@@ -10,11 +10,6 @@
 
 #define kNaviFrame CGRectMake(0, 0, SCREEN_WIDTH, kNavigationBar_Height+kCurrentStatusBarHeight)
 
-#define kFont_Title [UIFont systemFontOfSize:15]
-#define kFont_Content [UIFont systemFontOfSize:15]
-#define kColor_Text [UIColor blackColor]
-#define kColor_Content [UIColor blackColor]
-
 @interface AFFAlertView()
 
 @property (nonatomic, assign) BOOL isShowInBackgound;///< 判断当前是否有弹出框在后台显示
@@ -133,7 +128,7 @@
         labelView.font = kFont_Title;
         labelView.numberOfLines = 0;
         labelView.lineBreakMode = NSLineBreakByWordWrapping;
-        labelView.textColor = kColor_Text;
+        labelView.textColor = kColor_Content;
         labelView.backgroundColor = [UIColor clearColor];
         labelView.textAlignment = NSTextAlignmentCenter;
         labelView.text = str;
@@ -368,7 +363,7 @@
         label.backgroundColor = [UIColor clearColor];
         label.font = kFont_Title;
         label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = kColor_Text;
+        label.textColor = kColor_Title;
         label.text = obj;
         label.numberOfLines = 0;
         [headerView addSubview:label];
@@ -414,7 +409,7 @@
             button.backgroundColor = [UIColor whiteColor];
             button.titleLabel.textAlignment = NSTextAlignmentCenter;
             button.titleLabel.font = kFont_Title;
-            [button setTitleColor:self.specColor ? self.specColor : kColor_Text forState:UIControlStateNormal];
+            [button setTitleColor:self.specColor ? self.specColor : kColor_Title forState:UIControlStateNormal];
             [button setTitle:[titles objectAtIndex:i] forState:UIControlStateNormal];
             [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:0. alpha:.15]] forState:UIControlStateHighlighted];
             button.tag = 100000 + i;

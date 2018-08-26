@@ -53,7 +53,7 @@ static int code = 10102;
     CGFloat height = kScreenHeight - self.tabBarController.tabBar.frame.size.height;
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height - 40*4, kScreenWidth, 40*4) style:UITableViewStylePlain];
-    tableView.backgroundColor = kColor_Graylight;
+    tableView.backgroundColor = kColor_Content;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
@@ -117,7 +117,7 @@ static int code = 10102;
                     
                 default: {
                     if(error.cmdID == C2C_CANCEL_REQUEST){
-                        
+                        [AFFAlertView dismiss];
                     }
                     
                     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationPY_ResponseServer object:error];
@@ -141,12 +141,14 @@ static int code = 10102;
     UIView *view = [[UIView alloc] init];
     CGRect frame = CGRectMake(paddinng, paddinng, kAlertViewWidth-paddinng*2, 20);
     UILabel *lab = [[UILabel alloc] initWithFrame:frame];
+    lab.textColor = kColor_Title;
+    lab.textAlignment = NSTextAlignmentCenter;
     lab.text = @"请输入短信中的语音邀请码！";
     [view addSubview:lab];
     
     __block UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake((kAlertViewWidth-100)/2, CGRectGetMaxY(frame)+paddinng, 100, 40)];
     field.placeholder = @"语音邀请码";
-    field.layer.borderColor = kColor_Graylight.CGColor;
+    field.layer.borderColor = kColor_Content.CGColor;
     field.layer.borderWidth = 1.0;
     field.textColor = [UIColor blackColor];
     field.font = [UIFont boldSystemFontOfSize:15];
@@ -217,7 +219,6 @@ static int code = 10102;
         }];
     }
 }
-
 
 -(void)invate:(NSString *)code{
     NSInteger coin = [[PYUserManage py_getPoint] integerValue];
@@ -316,7 +317,7 @@ static int code = 10102;
     UILabel *labTabView = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 150)/2.f, 0, 150, 40)];
     labTabView.backgroundColor = [UIColor whiteColor];
     labTabView.textAlignment = NSTextAlignmentCenter;
-    labTabView.textColor = kColor_Normal;
+    labTabView.textColor = kColor_Title;
     labTabView.font = [UIFont fontBold:15.f];
     labTabView.text = @"近期历史记录";
     labTabView.userInteractionEnabled = YES;

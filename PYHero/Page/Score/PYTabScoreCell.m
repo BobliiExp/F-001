@@ -22,7 +22,7 @@
     
     // 风格统一
     self.labResult.font = kFont_XL;
-    self.labResult.textColor = kColor_Normal;
+    self.labResult.textColor = kColor_Title;
     
     self.labTime.font =
     self.labGameType.font =
@@ -34,13 +34,13 @@
     self.labGameType.textColor =
     self.labKill.textColor =
     self.labDeath.textColor =
-    self.labAssist.textColor = kColor_Gray;
+    self.labAssist.textColor = kColor_Content;
 }
 
 - (void)setupData:(NSDictionary*)dic {
     BOOL result = [dic boolForKey:@"result"];
     self.labResult.text = result ? @"胜利" : @"失败";
-    self.labResult.textColor = result ? kColor_Blue : kColor_Red;
+    self.labResult.textColor = result ? kColor_Select : kColor_Select;
     self.labGameType.text = [dic stringForKey:@"gameType"];
     self.labTime.text = [NSDate date2String:[NSDate dateWithTimeIntervalSince1970:[dic integerForKey:@"createdTime"]] formatType:ETimeFormatTimeShortDateTime];
     

@@ -15,7 +15,7 @@
     // Initialization code
     
     self.labCurrent.font = kFont_XL;
-    self.labCurrent.textColor = kColor_Normal;
+    self.labCurrent.textColor = kColor_Title;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

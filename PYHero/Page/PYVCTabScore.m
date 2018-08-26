@@ -49,8 +49,8 @@ static NSString *scoreIdentifier2 = @"scoreIdentifier2";
     self.headerHeightContraint.constant = 44+kCurrentStatusBarHeight;
     [self.view layoutIfNeeded];
     
-    self.labArea.textColor = kColor_Normal;
-    self.labUserinfo.textColor = kColor_Gray;
+    self.labArea.textColor = kColor_Title;
+    self.labUserinfo.textColor = kColor_Content;
     self.labArea.font = kFont_XL;
     self.labUserinfo.font = kFont_Small;
     

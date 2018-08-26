@@ -66,7 +66,7 @@
 //    [self closeRippleTimer];
 //    [self addRippleLayer];
     
-    _ringColor = [UIColor colorWithARGBString:@"#d7ac6b"];
+    _ringColor = kColor_Highlight;
     [_rippleButton setTitle:kAFLocalize(@"") forState:UIControlStateNormal];
     [_rippleButton setBackgroundImage:[UIImage imageNamed:@"ic_avatar_default"] forState:UIControlStateNormal];
     _rippleButton.layer.borderColor = [UIColor colorWithARGBString:@"#d7ac6b" alpha:0.9].CGColor;
@@ -82,7 +82,7 @@
     _rippleButton.layer.backgroundColor = [UIColor colorWithARGBString:@"#16a8ef" alpha:0.7].CGColor;
     _rippleButton.layer.borderColor = [UIColor colorWithARGBString:@"#16a8ef" alpha:0.9].CGColor;
     _rippleButton.layer.masksToBounds = YES;
-    _ringColor = [UIColor colorWithARGBString:@"#16a8ef"];
+    _ringColor = kColor_Select;
     
     [_rippleButton setTitle:kAFLocalize(@"开始语音") forState:UIControlStateNormal];
 }
@@ -99,7 +99,7 @@
     [_rippleButton setTitle:kAFLocalize(@"开始语音") forState:UIControlStateNormal];
     [_rippleButton setBackgroundImage:nil forState:UIControlStateNormal];
     _rippleButton.selected = NO;
-    _ringColor = [UIColor colorWithARGBString:@"#16a8ef"];
+    _ringColor = kColor_Select;
     _rippleButton.layer.borderColor = [UIColor colorWithARGBString:@"#16a8ef" alpha:0.9].CGColor;
 }
 

@@ -19,9 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kColor_Normal,NSForegroundColorAttributeName,nil]];
-    self.navigationController.navigationBar.tintColor = kColor_Normal;
-    self.navigationController.navigationBar.barTintColor = kColor_Graylight;
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kColor_Title,NSForegroundColorAttributeName,nil]];
+    self.navigationController.navigationBar.tintColor = kColor_Title;
+    self.navigationController.navigationBar.barTintColor = kColor_Content;
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupUI];

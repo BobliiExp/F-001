@@ -239,7 +239,7 @@
     UILabel *labTabView = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 150)/2.f, 0, 150, 40)];
     labTabView.backgroundColor = [UIColor whiteColor];
     labTabView.textAlignment = NSTextAlignmentCenter;
-    labTabView.textColor = kColor_Normal;
+    labTabView.textColor = kColor_Title;
     labTabView.font = [UIFont fontBold:15.f];
     labTabView.text = @"近期历史记录";
     labTabView.userInteractionEnabled = YES;

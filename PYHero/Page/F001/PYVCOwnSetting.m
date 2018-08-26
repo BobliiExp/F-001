@@ -26,7 +26,7 @@
     self.title = @"设置";
     self.view.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemOnClicked:)];
-    item.tintColor = kColor_Normal;
+    item.tintColor = kColor_Title;
     self.navigationItem.rightBarButtonItem = item;
     
     NSArray *arr = [PYUserManage py_getUserInfo];
@@ -46,7 +46,7 @@
     CGFloat space = 12.f;
     UILabel *lab = [[UILabel alloc] init];
     lab.font = kFont_XL;
-    lab.textColor = kColor_Normal;
+    lab.textColor = kColor_Title;
     lab.text = @"头像";
     [view addSubview:lab];
     [lab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -88,7 +88,7 @@
     
     UILabel *labNick = [[UILabel alloc] init];
     labNick.font = kFont_XL;
-    labNick.textColor = kColor_Normal;
+    labNick.textColor = kColor_Title;
     labNick.text = arr.lastObject;
     labNick.textAlignment = NSTextAlignmentRight;
     [view addSubview:labNick];

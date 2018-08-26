@@ -100,7 +100,7 @@
     lab.textAlignment = NSTextAlignmentCenter;
     lab.text = self.mArrUserInfo.lastObject;
     lab.font = kFont_XL;
-    lab.textColor = kColor_Normal;
+    lab.textColor = kColor_Title;
     [vBg addSubview:lab];
     
     lab.userInteractionEnabled = YES;

@@ -165,14 +165,14 @@ typedef NS_ENUM(NSInteger, PYNewType) {
     
     UILabel *labTitle = [[UILabel alloc] initWithFrame:CGRectMake(padding, padding, widthCell-padding*2-(hasImg?margin+widthImg:0), height*2)];
     labTitle.font = kFont_XL;
-    labTitle.textColor = kColor_Normal;
+    labTitle.textColor = kColor_Title;
     labTitle.tag = 10100;
     [cell.contentView addSubview:labTitle];
     
     // 类型和时间
     UILabel *labType = [[UILabel alloc] initWithFrame:CGRectMake(padding, CGRectGetMaxY(labTitle.frame), CGRectGetWidth(labTitle.frame)/2, height)];
     labType.font = kFont_Normal;
-    labType.textColor = kColor_Gray;
+    labType.textColor = kColor_Content;
     labType.tag = 10101;
     [cell.contentView addSubview:labType];
     
@@ -186,7 +186,7 @@ typedef NS_ENUM(NSInteger, PYNewType) {
     
     UILabel *labAssist = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgVAssist.frame), CGRectGetMaxY(labTitle.frame), widthAC, height)];
     labAssist.font = kFont_Normal;
-    labAssist.textColor = kColor_Gray;
+    labAssist.textColor = kColor_Content;
     labAssist.tag = 10102;
     [cell.contentView addSubview:labAssist];
     
@@ -197,7 +197,7 @@ typedef NS_ENUM(NSInteger, PYNewType) {
     
     UILabel *labCom = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgVCom.frame), CGRectGetMaxY(labTitle.frame), widthAC, height)];
     labCom.font = kFont_Normal;
-    labCom.textColor = kColor_Gray;
+    labCom.textColor = kColor_Content;
     labCom.tag = 10103;
     [cell.contentView addSubview:labCom];
     

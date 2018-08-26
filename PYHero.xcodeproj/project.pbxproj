@@ -1771,6 +1771,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S86KA93GD7;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PYHero",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PYHero/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
@@ -1793,6 +1797,7 @@
 					"\"${PODS_ROOT}/Headers/Public/YUCIHighPassSkinSmoothing\"",
 					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
 					"\"$(SRCROOT)/PYHero/Page/F001/PYMedia/Helper/OpenGL/FFmpeg-iOS/include\"",
+					"\"$(SRCROOT)/../Assistent/\"",
 				);
 				INFOPLIST_FILE = PYHero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1816,6 +1821,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S86KA93GD7;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PYHero",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PYHero/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
@@ -1838,6 +1847,7 @@
 					"\"${PODS_ROOT}/Headers/Public/YUCIHighPassSkinSmoothing\"",
 					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
 					"\"$(SRCROOT)/PYHero/Page/F001/PYMedia/Helper/OpenGL/FFmpeg-iOS/include\"",
+					"\"$(SRCROOT)/../Assistent/\"",
 				);
 				INFOPLIST_FILE = PYHero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

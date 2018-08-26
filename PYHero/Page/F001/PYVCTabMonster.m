@@ -26,7 +26,7 @@
     CGFloat height = kScreenHeight - self.tabBarController.tabBar.frame.size.height;
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height - 40*4, kScreenWidth, 40*4) style:UITableViewStylePlain];
-    tableView.backgroundColor = kColor_Graylight;
+    tableView.backgroundColor = kColor_Content;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
@@ -60,7 +60,7 @@
     UILabel *labTabView = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 150)/2.f, 0, 150, 40)];
     labTabView.backgroundColor = [UIColor whiteColor];
     labTabView.textAlignment = NSTextAlignmentCenter;
-    labTabView.textColor = kColor_Normal;
+    labTabView.textColor = kColor_Title;
     labTabView.font = [UIFont fontBold:15.f];
     labTabView.text = @"近期历史记录";
     labTabView.userInteractionEnabled = YES;

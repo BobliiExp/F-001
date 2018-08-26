@@ -345,7 +345,7 @@
                    isCircle:(BOOL)isCircle
                    isDashed:(BOOL)isDashed {
     
-    return [self imageWithShape:shape size:size shapeBgColor:[UIColor clearColor] shapeColor:kColor_Graylight lineWidth:1.5 linePadding:size.width/5 raduis:isCircle?size.height/2:0 edgeWidth:1.0 isDashed:isDashed];
+    return [self imageWithShape:shape size:size shapeBgColor:[UIColor clearColor] shapeColor:kColor_Content lineWidth:1.5 linePadding:size.width/5 raduis:isCircle?size.height/2:0 edgeWidth:1.0 isDashed:isDashed];
 }
 
 + (UIImage *)imageWithShape:(EShapeType)shape
@@ -369,7 +369,7 @@
     
     if (isDashed || edgeWidth > 0) {//画边框虚线
         
-        [kColor_Graylight setStroke];
+        [kColor_Content setStroke];
         
         UIBezierPath *dashPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(edgeWidth/2, edgeWidth/2, size.width-edgeWidth, size.height-edgeWidth) cornerRadius:raduis];
         
@@ -379,7 +379,7 @@
         }
         
         if (edgeWidth > 0.) {//设置边框
-            [kColor_Graylight setStroke];
+            [kColor_Content setStroke];
             dashPath.lineWidth = edgeWidth;
             [dashPath stroke];
         }

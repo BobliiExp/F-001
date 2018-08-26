@@ -117,7 +117,7 @@
     if (self.type == PYHistoryTypeShake) {
         UILabel *lab = [[UILabel alloc] init];
         lab.font = kFont_XL;
-        lab.textColor = kColor_Normal;
+        lab.textColor = kColor_Title;
         lab.text = section == 0 ? @"    双色球中奖记录" : section == 1 ? @"    七乐彩中奖记录" : @"    大乐透中奖记录";
         lab.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
         return lab;

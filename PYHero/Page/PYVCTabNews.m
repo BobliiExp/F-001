@@ -74,7 +74,7 @@
         UIView *viewSel = [[UIView alloc] initWithFrame:framex];
         viewSel.layer.cornerRadius = CGRectGetHeight(viewSel.frame)/2;
         viewSel.layer.masksToBounds = YES;
-        viewSel.layer.backgroundColor = kColor_HighLight.CGColor;
+        viewSel.layer.backgroundColor = kColor_Highlight.CGColor;
         [self.scrollVActivities addSubview:viewSel];
         self.viewSelected = viewSel;
     }
@@ -91,7 +91,7 @@
         frame.origin.x = idx*width;
         UILabel *lab = [[UILabel alloc] initWithFrame:frame];
         lab.font = kFont_XL;
-        lab.textColor = kColor_Normal;
+        lab.textColor = kColor_Title;
         lab.text = [dic allKeys][0];
         lab.textAlignment = NSTextAlignmentCenter;
         lab.tag = idx+10000;
@@ -159,12 +159,12 @@
 - (void)pageScrollView:(PYPageScrollView *)pageScrollView didChangeToIndex:(NSInteger)pageIndex {
     UILabel *labC = self.labSelected;
     labC.font = kFont_XL;
-    labC.textColor = kColor_Normal;
+    labC.textColor = kColor_Title;
     
     UILabel *lab = [self.scrollVActivities viewWithTag:self.scrollVPages.currentPage+10000];
     self.labSelected = lab;
     lab.font = kFont_XXL;
-    lab.textColor = kColor_HighLight;
+    lab.textColor = kColor_Highlight;
     
     CGFloat duration = 0.25;
     

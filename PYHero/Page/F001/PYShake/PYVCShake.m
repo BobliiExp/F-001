@@ -63,7 +63,7 @@
     
     UILabel *labTitle = [[UILabel alloc] initWithFrame:CGRectMake(12.f, delatY, kScreenWidth - 12.f*2, 40)];
     labTitle.textAlignment = NSTextAlignmentCenter;
-    labTitle.textColor = kColor_Normal;
+    labTitle.textColor = kColor_Title;
     labTitle.font = [UIFont fontBold:17.f];
     labTitle.text = @"幸运号码";
     [self.view addSubview:labTitle];
@@ -77,7 +77,7 @@
     CGFloat height = kScreenHeight - PYSafeBottomHeight;
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height - 40*5, kScreenWidth, 40*5) style:UITableViewStylePlain];
-    tableView.backgroundColor = kColor_Graylight;
+    tableView.backgroundColor = kColor_Content;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
@@ -90,7 +90,7 @@
     UILabel *labShake = [[UILabel alloc] initWithFrame:CGRectMake(12.f, CGRectGetMinY(tableView.frame) - 20 - 12 - 20, kScreenWidth - 12.f*2, 20)];
     labShake.textAlignment = NSTextAlignmentCenter;
     labShake.font = kFont_Large;
-    labShake.textColor = kColor_Normal;
+    labShake.textColor = kColor_Title;
     labShake.text = @"摇一摇试试您的手气";
     [self.view addSubview:labShake];
     
@@ -132,7 +132,7 @@
         
     }
     
-    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : kColor_Graylight;
+    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : kColor_Content;
     [cell py_setupData:[self.mArrData objectAtIndex:indexPath.row] type:self.type];
     return cell;
 }
@@ -144,7 +144,7 @@
     UILabel *labTabView = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 150)/2.f, 0, 150, 40)];
     labTabView.backgroundColor = [UIColor whiteColor];
     labTabView.textAlignment = NSTextAlignmentCenter;
-    labTabView.textColor = kColor_Normal;
+    labTabView.textColor = kColor_Title;
     labTabView.font = [UIFont fontBold:15.f];
     labTabView.text = @"近期历史记录";
     labTabView.userInteractionEnabled = YES;
@@ -195,12 +195,12 @@
         UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(12.f, 20.f, kScreenWidth - 12.f*2, 20)];
         lab.font = [UIFont fontNormal:15.f];
         lab.text = @"摇一摇结果：";
-        lab.textColor = kColor_Normal;
+        lab.textColor = kColor_Title;
         [view addSubview:lab];
         
         UILabel *labResult = [[UILabel alloc] initWithFrame:CGRectMake(12.f, view.mj_h - 20 - 10.f, lab.mj_w, 20)];
         labResult.font = [UIFont fontNormal:15.f];
-        labResult.textColor = kColor_Normal;
+        labResult.textColor = kColor_Title;
         labResult.textAlignment = NSTextAlignmentCenter;
         [view addSubview:labResult];
         self.labResult = labResult;
@@ -216,7 +216,7 @@
     
     [self.shakeNumber py_setupData:arr];
     
-    self.labResult.textColor = str.length ? [UIColor redColor] : kColor_Normal;
+    self.labResult.textColor = str.length ? [UIColor redColor] : kColor_Title;
     self.labResult.text = str.length ? [NSString stringWithFormat:@"恭喜你，中了%@!",str] : @"很遗憾，没有中奖，再摇一摇试试手气吧";
 }
 

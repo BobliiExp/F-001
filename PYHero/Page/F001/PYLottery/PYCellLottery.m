@@ -32,7 +32,7 @@
     
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(12.f, 0, kScreenWidth - 12*3 - 30, 40.f)];
     lab.font = kFont_XL;
-    lab.textColor = kColor_Normal;
+    lab.textColor = kColor_Title;
     [self.contentView addSubview:lab];
     self.lab = lab;
 }

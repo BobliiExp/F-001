@@ -15,6 +15,15 @@
 #define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define kFont_Title [UIFont systemFontOfSize:15]
+#define kFont_Content [UIFont systemFontOfSize:12]
+
+#define kColor_Title [UIColor colorWithARGBString:@"#333333"]
+#define kColor_Content [UIColor colorWithARGBString:@"#d7d7d7"]
+#define kColor_Select [UIColor colorWithARGBString:@"#16a8ef"]
+#define kColor_Highlight [UIColor colorWithARGBString:@"#d7ac6b"]
+#define kColor_Background [UIColor colorWithARGBString:@"#eeeeee"]
+
 //NavBar高度
 #define kCurrentStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 #define kNavigationBar_Height 44.0f
