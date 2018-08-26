@@ -83,7 +83,7 @@
     UILabel *lab1 = [[UILabel alloc] initWithFrame:CGRectMake(x, x, width, height)];
     lab1.textColor = KColorTheme;
     lab1.text = @"本轮积分：0";
-    [vBg addSubview:lab1];
+//    [vBg addSubview:lab1];
     self.labGet = lab1;
     
     UILabel *lab2 = [[UILabel alloc] initWithFrame:CGRectMake(x, CGRectGetMaxY(btn.frame), width, height)];

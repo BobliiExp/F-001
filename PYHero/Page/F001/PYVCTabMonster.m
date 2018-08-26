@@ -7,10 +7,14 @@
 //
 
 #import "PYVCTabMonster.h"
+#import "PYVCHistory.h"
 
-@interface PYVCTabMonster ()<UITableViewDelegate, UITableViewDataSource>
+@interface PYVCTabMonster ()<UITableViewDelegate, UITableViewDataSource>{
+    BOOL isOpen;    ///< 是否展开
+}
 
 @property (nonatomic, weak) UITableView *tableView; ///<
+@property (nonatomic, strong) UIButton *btn; ///< 折叠按钮
 
 @end
 
@@ -40,7 +44,7 @@
 #pragma mark - tableView delegate - dataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.mArrData.count > 3 ? 3 : self.mArrData.count;
+    return isOpen ? (self.mArrData.count > 3 ? 3 : self.mArrData.count) : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -68,6 +72,18 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapViewOnClicked:)];
     [labTabView addGestureRecognizer:tap];
     
+    if (!self.btn) {
+        self.btn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 24 - 12.f, 8.f, 24, 24)];
+        [self.btn setImage:[UIImage imageNamed:@"ic_down_arrow"] forState:UIControlStateNormal];
+        [self.btn addTarget:self action:@selector(btnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    [view addSubview:self.btn];
+    
+    CALayer *line = [[CALayer alloc] init];
+    line.backgroundColor = kColor_Graylight.CGColor;
+    line.frame = CGRectMake(0, 40, kScreenWidth, 1);
+    [view.layer addSublayer:line];
+    
     [view addSubview:labTabView];
     return view;
 }
@@ -81,8 +97,18 @@
 }
 
 - (void)tapViewOnClicked:(UITapGestureRecognizer *)tap {
-    
+    PYVCHistory *vc = [[PYVCHistory alloc] init];
+    vc.type = PYHistoryTypeLottery;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (void)btnOnClicked:(UIButton *)btn {
+    isOpen = !isOpen;
+    [btn setImage:[UIImage imageNamed:isOpen ? @"ic_up_arrow" : @"ic_down_arrow"] forState:UIControlStateNormal];
+    [self.tableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

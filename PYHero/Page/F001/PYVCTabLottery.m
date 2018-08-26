@@ -10,6 +10,8 @@
 #import "PYVLottery.h"
 #import "PYCellLottery.h"
 #import "PYVCHistory.h"
+#import "PYImgVLottery.h"
+#import "PYVAlertLottery.h"
 
 @interface PYVCTabLottery ()<UITableViewDelegate, UITableViewDataSource>{
     CGFloat _currentTimes;
@@ -17,6 +19,7 @@
     NSInteger _lastIndex;
     BOOL _isFirst;
     BOOL _isPlay;  ///< 是否开始游戏
+    BOOL isOpen;    ///< 是否展开
 }
 
 @property (nonatomic, weak) UITableView *tableView; ///<
@@ -24,6 +27,7 @@
 @property (nonatomic, strong) NSMutableArray *mArrTime;    ///< 时间数组
 @property (nonatomic, strong) NSMutableDictionary *mDicPoint;    ///< 积分字典
 @property (nonatomic, weak) PYVLottery *vLottery; ///< 转一转视图
+@property (nonatomic, strong) UIButton *btn; ///< 折叠按钮
 
 @end
 
@@ -48,7 +52,7 @@
     
     [vLottery.btnAction addTarget:self action:@selector(btnActionOnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    NSArray *arrImg = @[@"seventer",@"mangoter",@"orangeter"];
+    NSArray *arrImg = @[@"seven",@"mango",@"melon",@"banana",@"orange"];
     CGFloat width = 35.f;
     CGFloat height = 49.f;
     CGFloat space = 20.f;
@@ -68,17 +72,16 @@
     view.layer.masksToBounds = YES;
     
     space = 12.f;
-    CGFloat margin = (view.mj_w - 2*space - width*arrImg.count)/(arrImg.count-1);
+    CGFloat margin = (view.mj_w - 4*space - width*arrImg.count)/2;
     
     for (NSInteger i = 0; i < arrImg.count; i++) {
-        UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake(margin + (width+space)*i, y, width, height)];
-        imgV.image = [UIImage imageNamed:arrImg[i]];
+        PYImgVLottery *imgV = [[PYImgVLottery alloc] initWithFrame:CGRectMake(margin + (width+space)*i, y, width, height) imgName:arrImg[i] point:5-i];
         [view addSubview:imgV];
     }
     
     height = kScreenHeight - PYSafeBottomHeight;
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(vLottery.frame), kScreenWidth, height - CGRectGetMaxY(vLottery.frame) - self.navigationController.navigationBar.frame.size.height) style:UITableViewStylePlain];
-    tableView.backgroundColor = [UIColor lightGrayColor];
+    tableView.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
@@ -91,7 +94,7 @@
     _isFirst = YES;
     _currentIndex = -1;
     
-    NSArray *arrImg = @[@"seven",@"mango",@"orange",@"sevens",@"mangos",@"oranges"];
+    NSArray *arrImg = @[@"sevens",@"mangos",@"melons",@"bananas",@"oranges",@"seven",@"mango",@"melon",@"banana",@"orange"];
     self.mDicPoint = [NSMutableDictionary dictionary];
     for (NSInteger i = 0; i<self.vLottery.arrImgName.count; i++) {
         NSString *str = self.vLottery.arrImgName[i];
@@ -107,17 +110,25 @@
 - (NSString *)getNumberWithImageName:(NSString *)imgName {
     NSString *number = @"0";
     if ([imgName isEqualToString:@"seven"]) {
-        number = @"30";
-    }else if ([imgName isEqualToString:@"mango"]) {
-        number = @"15";
-    }else if ([imgName isEqualToString:@"orange"]) {
         number = @"5";
+    }else if ([imgName isEqualToString:@"mango"]) {
+        number = @"4";
+    }else if ([imgName isEqualToString:@"melon"]) {
+        number = @"3";
+    }else if ([imgName isEqualToString:@"banana"]) {
+        number = @"2";
+    }else if ([imgName isEqualToString:@"orange"]) {
+        number = @"1";
     }else if ([imgName isEqualToString:@"sevens"]) {
-        number = @"60";
-    }else if ([imgName isEqualToString:@"mangos"]) {
-        number = @"30";
-    }else if ([imgName isEqualToString:@"oranges"]) {
         number = @"10";
+    }else if ([imgName isEqualToString:@"mangos"]) {
+        number = @"8";
+    }else if ([imgName isEqualToString:@"melons"]) {
+        number = @"6";
+    }else if ([imgName isEqualToString:@"bananas"]) {
+        number = @"4";
+    }else if ([imgName isEqualToString:@"oranges"]) {
+        number = @"2";
     }
     
     return number;
@@ -205,11 +216,16 @@
             [PYUserManage py_savePoint:currentPoint];
             self.vLottery.labCurrent.text = [NSString stringWithFormat:@"当前积分：%@",currentPoint];
             
-            if (point.integerValue > 0) {
+            if (point.integerValue > 0) { // 获得积分
                 [PYUserManage py_saveLotteryData:@[point,self.vLottery.arrImgName[index]]];
                 
                 self.mArrData = [PYUserManage py_getLotteryData].mutableCopy;
                 [self.tableView reloadData];
+                
+                PYVAlertLottery *alert = [[PYVAlertLottery alloc] initWithImgName:self.vLottery.arrImgName[index] point:point];
+                [AFFAlertView alertWithView:alert block:^(NSInteger index, BOOL isCancel) {
+                    
+                }];
             }
         }
     }
@@ -218,7 +234,7 @@
 #pragma mark - tableView delegate - dataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.mArrData.count > 3 ? 3 : self.mArrData.count;
+    return isOpen ? (self.mArrData.count > 3 ? 3 : self.mArrData.count) : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -247,6 +263,18 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapViewOnClicked:)];
     [labTabView addGestureRecognizer:tap];
     
+    if (!self.btn) {
+        self.btn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 24 - 12.f, 8.f, 24, 24)];
+        [self.btn setImage:[UIImage imageNamed:@"ic_down_arrow"] forState:UIControlStateNormal];
+        [self.btn addTarget:self action:@selector(btnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    [view addSubview:self.btn];
+    
+    CALayer *line = [[CALayer alloc] init];
+    line.backgroundColor = kColor_Graylight.CGColor;
+    line.frame = CGRectMake(0, 40, kScreenWidth, 1);
+    [view.layer addSublayer:line];
+    
     [view addSubview:labTabView];
     return view;
 }
@@ -264,6 +292,12 @@
     vc.type = PYHistoryTypeLottery;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)btnOnClicked:(UIButton *)btn {
+    isOpen = !isOpen;
+    [btn setImage:[UIImage imageNamed:isOpen ? @"ic_up_arrow" : @"ic_down_arrow"] forState:UIControlStateNormal];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
