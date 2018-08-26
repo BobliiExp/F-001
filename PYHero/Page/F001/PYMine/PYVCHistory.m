@@ -9,6 +9,7 @@
 #import "PYVCHistory.h"
 #import "PYCellShakeNumber.h"
 #import "PYCellLottery.h"
+#import "PYCellMediaHistory.h"
 
 @interface PYVCHistory ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -42,7 +43,7 @@
 
 - (void)setupData {
     if (self.type == PYHistoryTypeVoice) {
-        
+        self.mArrData = [PYUserManage py_getMediaData].mutableCopy;
     }else if (self.type == PYHistoryTypeShake) {
         self.mArrData = @[[PYUserManage py_getShakeData:PYLotteryTypeUnionLotto],[PYUserManage py_getShakeData:PYLotteryTypeLecaGreati],[PYUserManage py_getShakeData:PYLotteryTypeSuperLotto]].mutableCopy;
     }else if (self.type == PYHistoryTypeVR) {
@@ -102,6 +103,15 @@
         }
         
         [cell setup:self.mArrData[indexPath.row]];
+        return cell;
+    }else if (self.type == PYHistoryTypeVoice) {
+        PYCellMediaHistory *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        if (!cell) {
+            cell = [[PYCellMediaHistory alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        }
+        
+        cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : [UIColor colorWithARGBString:@"#eeeeee"];
+        [cell setupData:self.mArrData[indexPath.row]];
         return cell;
     }else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@""];

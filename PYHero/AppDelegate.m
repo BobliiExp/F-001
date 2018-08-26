@@ -30,12 +30,6 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_Content} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_Highlight} forState:UIControlStateSelected];
     
-    NSString *isFirst = [PYUserManage py_getStringWithKey:@"isFirst"];
-    if (![isFirst isEqualToString:@"YES"]) {
-        [PYUserManage py_savePoint:@"100"];
-        [PYUserManage py_saveString:@"YES" key:@"isFirst"];
-    }
-    
     return YES;
 }
 

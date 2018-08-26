@@ -21,6 +21,15 @@
     return [kUserDefaults objectForKey:key];
 }
 
++ (void)py_saveObject:(NSObject *)obj key:(NSString *)key {
+    [kUserDefaults setObject:obj forKey:key];
+    [kUserDefaults synchronize];
+}
+
++ (NSObject *)py_getObjectWithKey:(NSString *)key {
+    return [kUserDefaults objectForKey:key];
+}
+
 + (void)py_savePoint:(NSString *)point {
     [kUserDefaults setObject:point forKey:@"UserPoint"];
     [kUserDefaults synchronize];
@@ -28,6 +37,24 @@
 
 + (NSString *)py_getPoint {
     return [kUserDefaults objectForKey:@"UserPoint"];
+}
+
+/******************** 虫洞语音相关 ************************/
++ (void)py_saveMediaData:(PYModelSaveMedia *)model {
+    NSMutableArray *mArr = [NSMutableArray arrayWithArray:[self py_getMediaData]];
+    [mArr insertObject:model atIndex:0];
+    
+    [kUserDefaults setObject:mArr forKey:@"MediaData"];
+    [kUserDefaults synchronize];
+}
+
++ (NSArray *)py_getMediaData {
+    NSArray *arr = [kUserDefaults objectForKey:@"MediaData"];
+    
+    if (!arr) {
+        arr = [NSArray array];
+    }
+    return arr;
 }
 
 /******************** 摇一摇相关 ************************/
@@ -72,7 +99,7 @@
     }
     
     if (!img) {
-        img = [UIImage imageNamed:@"ic_score_combat_value"];
+        img = [UIImage imageNamed:@"ic_avatar_default"];
     }
     
     NSString *name = [kUserDefaults objectForKey:KUserInfoData];

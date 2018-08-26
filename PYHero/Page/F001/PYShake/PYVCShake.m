@@ -14,6 +14,7 @@
 
 @interface PYVCShake ()<UITableViewDelegate, UITableViewDataSource>{
     CGFloat heightCenter; ///<
+    BOOL isOpen;
 }
 
 @property (nonatomic, weak) UITableView *tableView; ///<
@@ -22,6 +23,7 @@
 @property (nonatomic, weak) UIImageView *imgV;      ///< 摇一摇图片
 @property (nonatomic, strong) NSArray *arrData;     ///< 随机获取一组彩票，get方法会获取一组随机数据，所以不能乱用
 @property (nonatomic, strong) NSArray *arrWin;      ///< 中奖号码
+@property (nonatomic, strong) UIButton *btn; ///< 折叠按钮
 
 @end
 
@@ -96,10 +98,6 @@
     
     heightCenter = labShake.mj_y - vNumber.mj_y - vNumber.mj_h;
     
-    labShake.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labOnClicked:)];
-    [labShake addGestureRecognizer:tap];
-    
     height = CGRectGetMidY(labShake.frame) - delatY;
     CGFloat widthImg = 100;
     CGFloat heightImg = 100;
@@ -110,10 +108,6 @@
     self.imgV = imgV;
 }
 
-- (void)labOnClicked:(UITapGestureRecognizer *)tap {
-    [self motionEnded:nil withEvent:nil];
-}
-
 - (void)setupData {
     self.mArrData = [NSMutableArray arrayWithArray:[PYUserManage py_getShakeData:self.type]];
     [self.tableView reloadData];
@@ -122,7 +116,7 @@
 #pragma mark - tableView delegate - dataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.mArrData.count > 4 ? 4 : self.mArrData.count;
+    return isOpen ? (self.mArrData.count > 4 ? 4 : self.mArrData.count) : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -152,6 +146,18 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapViewOnClicked:)];
     [labTabView addGestureRecognizer:tap];
     
+    if (!self.btn) {
+        self.btn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 24 - 12.f, 8.f, 24, 24)];
+        [self.btn setImage:[UIImage imageNamed:@"ic_down_arrow"] forState:UIControlStateNormal];
+        [self.btn addTarget:self action:@selector(btnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    [view addSubview:self.btn];
+    
+    CALayer *line = [[CALayer alloc] init];
+    line.backgroundColor = kColor_Graylight.CGColor;
+    line.frame = CGRectMake(0, 40, kScreenWidth, 1);
+    [view.layer addSublayer:line];
+    
     [view addSubview:labTabView];
     return view;
 }
@@ -168,6 +174,12 @@
     PYVCHistory *vc = [[PYVCHistory alloc] init];
     vc.type = PYHistoryTypeShake;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)btnOnClicked:(UIButton *)btn {
+    isOpen = !isOpen;
+    [btn setImage:[UIImage imageNamed:isOpen ? @"ic_up_arrow" : @"ic_down_arrow"] forState:UIControlStateNormal];
+    [self.tableView reloadData];
 }
 
 #pragma mark share event
