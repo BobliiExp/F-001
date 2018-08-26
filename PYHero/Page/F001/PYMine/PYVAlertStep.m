@@ -17,7 +17,7 @@
         self.backgroundColor = [UIColor whiteColor];
         
         UILabel *labTitle = [[UILabel alloc] initWithFrame:CGRectMake(12.f, 0, width - 12.f*2, 40)];
-        labTitle.textColor = kColor_Normal;
+        labTitle.textColor = kColor_Title;
         labTitle.text = @"步数兑换";
         labTitle.textAlignment = NSTextAlignmentCenter;
         labTitle.font = kFont_XL;
@@ -26,7 +26,7 @@
         UILabel *labContent = [[UILabel alloc] initWithFrame:CGRectMake(12.f, CGRectGetMaxY(labTitle.frame), labTitle.mj_w, 100)];
         labContent.textAlignment = labTitle.textAlignment;
         labContent.font = kFont_Normal;
-        labContent.textColor = kColor_Normal;
+        labContent.textColor = kColor_Title;
         labContent.numberOfLines = 0;
         labContent.text = step ? [NSString stringWithFormat:@"现有%ld步，可兑换积分%ld\n（100步兑1分）",step,step/100] : @"今天已经兑换步数了，请明天再来吧";
         [self addSubview:labContent];
@@ -35,7 +35,7 @@
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((self.mj_w - width)/2.f, CGRectGetMaxY(labContent.frame), width, 30)];
         btn.titleLabel.font = kFont_Normal;
         [btn setTitle:step ? @"收入囊中" : @"好的" forState:UIControlStateNormal];
-        [btn setTitleColor:kColor_Normal forState:UIControlStateNormal];
+        [btn setTitleColor:kColor_Title forState:UIControlStateNormal];
         btn.layer.borderColor = KColorTheme.CGColor;
         btn.layer.borderWidth = 1.f;
         btn.layer.masksToBounds = YES;

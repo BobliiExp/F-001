@@ -26,12 +26,12 @@
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(12.f, 0, width - 12.f*2, 40.f)];
     lab.textAlignment = NSTextAlignmentCenter;
     lab.font = kFont_XL;
-    lab.textColor = kColor_Normal;
+    lab.textColor = kColor_Title;
     lab.text = @"喜迎新人";
     [self addSubview:lab];
     
     CALayer *line1 = [[CALayer alloc] init];
-    line1.backgroundColor = kColor_Graylight.CGColor;
+    line1.backgroundColor = kColor_Content.CGColor;
     line1.frame = CGRectMake(0, CGRectGetMaxY(lab.frame), self.mj_w, 1.f);
     [self.layer addSublayer:line1];
     
@@ -45,7 +45,7 @@
     UILabel *labContent = [[UILabel alloc] initWithFrame:CGRectMake(12.f, CGRectGetMaxY(imgV.frame) + 12.f, lab.mj_w, 60)];
     labContent.textAlignment = lab.textAlignment;
     labContent.font = kFont_Normal;
-    labContent.textColor = kColor_Normal;
+    labContent.textColor = kColor_Title;
     labContent.numberOfLines = 0;
     labContent.text = @"恭喜您获得新人奖励20积分！\n赶快去更新自己的头像和昵称吧！";
     [self addSubview:labContent];
@@ -54,14 +54,14 @@
     UIButton *btnSetting = [[UIButton alloc] initWithFrame:CGRectMake(12.f, CGRectGetMaxY(labContent.frame) + 12.f, width, 35)];
     btnSetting.tag = 10;
     [btnSetting setTitle:@"去设置" forState:UIControlStateNormal];
-    [btnSetting setTitleColor:kColor_Normal forState:UIControlStateNormal];
+    [btnSetting setTitleColor:kColor_Title forState:UIControlStateNormal];
     [self addSubview:btnSetting];
     [btnSetting addTarget:self action:@selector(btnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *btnPoint = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(btnSetting.frame) + 12.f, btnSetting.mj_y, width, 35)];
     btnPoint.tag = 11;
     [btnPoint setTitle:@"了解积分" forState:UIControlStateNormal];
-    [btnPoint setTitleColor:kColor_Normal forState:UIControlStateNormal];
+    [btnPoint setTitleColor:kColor_Title forState:UIControlStateNormal];
     [self addSubview:btnPoint];
     [btnPoint addTarget:self action:@selector(btnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
     

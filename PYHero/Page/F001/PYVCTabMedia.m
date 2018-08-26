@@ -365,7 +365,7 @@ static int code = 10102;
     [view addSubview:self.btn];
     
     CALayer *line = [[CALayer alloc] init];
-    line.backgroundColor = kColor_Graylight.CGColor;
+    line.backgroundColor = kColor_Content.CGColor;
     line.frame = CGRectMake(0, 40, kScreenWidth, 1);
     [view.layer addSublayer:line];
     

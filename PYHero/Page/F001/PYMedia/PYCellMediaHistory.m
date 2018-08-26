@@ -28,19 +28,19 @@
 - (void)setupUI {
     UILabel *labTime = [[UILabel alloc] initWithFrame:CGRectMake(12.f, 5, kScreenWidth - 12.f*2, 20)];
     labTime.font = kFont_Normal;
-    labTime.textColor = kColor_Normal;
+    labTime.textColor = kColor_Title;
     [self.contentView addSubview:labTime];
     self.labTime = labTime;
     
     UILabel *labDuration = [[UILabel alloc] initWithFrame:CGRectMake(12.f, CGRectGetMaxY(labTime.frame), (kScreenWidth - 12.f*2)/2.f, 20)];
     labDuration.font = kFont_Normal;
-    labTime.textColor = kColor_Normal;
+    labTime.textColor = kColor_Title;
     [self.contentView addSubview:labDuration];
     self.labDuration = labDuration;
     
     UILabel *labPoint = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(labDuration.frame)+5.f, labDuration.mj_y, labDuration.mj_w, labDuration.mj_h)];
     labPoint.font = kFont_Normal;
-    labPoint.textColor = kColor_Normal;
+    labPoint.textColor = kColor_Title;
     [self.contentView addSubview:labPoint];
     self.labPoint = labPoint;
 }

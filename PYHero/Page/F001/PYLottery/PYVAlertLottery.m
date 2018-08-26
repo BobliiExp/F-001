@@ -22,13 +22,13 @@
         UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(12.f, 0, width-12.f*2, 40)];
         lab.textAlignment = NSTextAlignmentCenter;
         lab.font = kFont_XL;
-        lab.textColor = kColor_Normal;
+        lab.textColor = kColor_Title;
         lab.text = [NSString stringWithFormat:@"恭喜您获得 %@ 积分",point];
         [self addSubview:lab];
         
         CALayer *line = [[CALayer alloc] init];
         line.frame = CGRectMake(0, lab.mj_h, width, 1.f);
-        line.backgroundColor = kColor_Graylight.CGColor;
+        line.backgroundColor = kColor_Content.CGColor;
         [self.layer addSublayer:line];
         
         width = 50;
@@ -40,7 +40,7 @@
         width = 100;
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((self.mj_w - width)/2.f, CGRectGetMaxY(imgV.frame) + 12.f, width, 35)];
         btn.titleLabel.font = [UIFont fontNormal:13.f];
-        [btn setTitleColor:kColor_Normal forState:UIControlStateNormal];
+        [btn setTitleColor:kColor_Title forState:UIControlStateNormal];
         [btn setTitle:@"收入囊中" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(btnOnClicked) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];

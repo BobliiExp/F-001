@@ -45,9 +45,9 @@
     [self.view addSubview:labContent2];
     
     labTitle1.font = labTitle2.font = kFont_XL;
-    labTitle1.textColor = labTitle2.textColor = kColor_Normal;
+    labTitle1.textColor = labTitle2.textColor = kColor_Title;
     labContent2.font = labContent1.font = kFont_Normal;
-    labContent2.textColor = labContent1.textColor = kColor_Normal;
+    labContent2.textColor = labContent1.textColor = kColor_Title;
 }
 
 - (void)didReceiveMemoryWarning {
