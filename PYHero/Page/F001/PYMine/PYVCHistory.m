@@ -157,6 +157,10 @@
     return [[NSAttributedString alloc] initWithString:@"暂无数据"];
 }
 
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"ic_error_empty_net"];
+}
+
 /*
 #pragma mark - Navigation
 
