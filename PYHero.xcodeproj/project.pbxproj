@@ -19,6 +19,7 @@
 		A1220218212AAF25007710D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1220217212AAF25007710D4 /* Assets.xcassets */; };
 		A122B5222132E80F001BDB7C /* PYModelSaveMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = A122B5212132E80F001BDB7C /* PYModelSaveMedia.m */; };
 		A122B5252132E961001BDB7C /* PYCellMediaHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = A122B5242132E961001BDB7C /* PYCellMediaHistory.m */; };
+		A122B52821343C4D001BDB7C /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A122B52621343C4C001BDB7C /* UIScrollView+EmptyDataSet.m */; };
 		A127AFF42132B8D2005F0295 /* PYVAlertFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = A127AFF32132B8D2005F0295 /* PYVAlertFirst.m */; };
 		A127AFF72132CAF2005F0295 /* PYVAlertStep.m in Sources */ = {isa = PBXBuildFile; fileRef = A127AFF52132CAF1005F0295 /* PYVAlertStep.m */; };
 		A17B94152132CBD6005407EF /* PYVAlertLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94112132CBD6005407EF /* PYVAlertLottery.m */; };
@@ -183,6 +184,8 @@
 		A122B5212132E80F001BDB7C /* PYModelSaveMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYModelSaveMedia.m; sourceTree = "<group>"; };
 		A122B5232132E961001BDB7C /* PYCellMediaHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYCellMediaHistory.h; sourceTree = "<group>"; };
 		A122B5242132E961001BDB7C /* PYCellMediaHistory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYCellMediaHistory.m; sourceTree = "<group>"; };
+		A122B52621343C4C001BDB7C /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		A122B52721343C4D001BDB7C /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		A127AFF22132B8D2005F0295 /* PYVAlertFirst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVAlertFirst.h; sourceTree = "<group>"; };
 		A127AFF32132B8D2005F0295 /* PYVAlertFirst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVAlertFirst.m; sourceTree = "<group>"; };
 		A127AFF52132CAF1005F0295 /* PYVAlertStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYVAlertStep.m; sourceTree = "<group>"; };
@@ -1407,6 +1410,8 @@
 				A12201FE212AADED007710D4 /* PYWinManage.m */,
 				C438873D21327B0400500E58 /* NSString+PY.h */,
 				C438873E21327B0400500E58 /* NSString+PY.m */,
+				A122B52721343C4D001BDB7C /* UIScrollView+EmptyDataSet.h */,
+				A122B52621343C4C001BDB7C /* UIScrollView+EmptyDataSet.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1430,7 +1435,6 @@
 				D186500F206E210400C2A6D0 /* Frameworks */,
 				D1865010206E210400C2A6D0 /* Resources */,
 				57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */,
-				4A8FE30E2D3A8D7D3EAC9F05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1517,21 +1521,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A8FE30E2D3A8D7D3EAC9F05 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1617,7 +1606,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1681,6 +1670,7 @@
 				C4BC9146212EDD1200457D76 /* PYIMModeAudio.m in Sources */,
 				D1ADCFAC2074535B001CCE5E /* PYTabScoreCell.m in Sources */,
 				C43887202132739F00500E58 /* YSCFanShapedView.m in Sources */,
+				A122B52821343C4D001BDB7C /* UIScrollView+EmptyDataSet.m in Sources */,
 				C47A5BBB2123CA8C00467618 /* PYVCRecord.m in Sources */,
 				D176D3AB2075DD8A00EA514B /* PYVCNewsActivity.m in Sources */,
 				C4BC9152212EDD1200457D76 /* c2s.c in Sources */,

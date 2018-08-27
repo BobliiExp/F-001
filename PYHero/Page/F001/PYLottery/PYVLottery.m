@@ -77,14 +77,21 @@
     [vBg addSubview:btn];
     self.btnAction = btn;
     
+    NSNumber *count = (NSNumber *)[PYUserManage py_getObjectWithKey:@"LotteryCount"];
+    if (![NSDate isSameDay:(NSDate *)[PYUserManage py_getObjectWithKey:@"LotteryFirstTime"]]) {
+        [PYUserManage py_saveObject:[NSDate date] key:@"LotteryFirstTime"];
+        count = @5;
+        [PYUserManage py_saveObject:count key:@"LotteryCount"];
+    }
+    
     CGFloat x = space1 + width;
     CGFloat height = (vBg.mj_h - 40 - 2*x)/2.f;
     width = vBg.mj_w - 2*x;
     UILabel *lab1 = [[UILabel alloc] initWithFrame:CGRectMake(x, x, width, height)];
     lab1.textColor = KColorTheme;
-    lab1.text = @"本轮积分：0";
-//    [vBg addSubview:lab1];
-    self.labGet = lab1;
+    lab1.text = [NSString stringWithFormat:@"当前可用次数：%@",count];
+    [vBg addSubview:lab1];
+    self.labCount = lab1;
     
     UILabel *lab2 = [[UILabel alloc] initWithFrame:CGRectMake(x, CGRectGetMaxY(btn.frame), width, height)];
     lab2.textColor = [UIColor whiteColor];

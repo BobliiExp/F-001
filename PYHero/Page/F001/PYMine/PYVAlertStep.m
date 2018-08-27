@@ -53,7 +53,7 @@
 - (void)btnOnClicked:(UIButton *)btn {
     if (btn.tag) {
         NSInteger point = [PYUserManage py_getPoint].integerValue;
-        point += btn.tag/100;
+        point += (btn.tag - 3000)/100;
         [PYUserManage py_savePoint:[NSString stringWithFormat:@"%ld",point]];
         
         AlertBlock block = objc_getAssociatedObject(self, @"block_key");

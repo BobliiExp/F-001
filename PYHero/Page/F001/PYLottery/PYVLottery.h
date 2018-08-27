@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSArray *arrImgName;    ///< 图片名称
 @property (nonatomic, weak) UIButton *btnAction; ///< 开始按钮
 @property (nonatomic, weak) UILabel *labCurrent; ///< 当前lab
-@property (nonatomic, weak) UILabel *labGet; ///< 当前获得的
+@property (nonatomic, weak) UILabel *labCount; ///< 当前获得的
 
 @end

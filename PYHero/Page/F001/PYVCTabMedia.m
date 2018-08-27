@@ -61,13 +61,11 @@ static int code = 10102;
     
     CGFloat height = kScreenHeight - self.tabBarController.tabBar.frame.size.height;
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height - 40*4, kScreenWidth, 40*4) style:UITableViewStylePlain];
-    tableView.backgroundColor = kColor_Content;
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height - 40, kScreenWidth, 40) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
     tableView.scrollEnabled = NO;
-    tableView.allowsSelection = NO;
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
     
@@ -335,17 +333,22 @@ static int code = 10102;
 #pragma mark - tableView delegate - dataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return isOpen ? (self.mArrData.count > 3 ? 3 : self.mArrData.count) : 0;
+//    return isOpen ? (self.mArrData.count > 3 ? 3 : self.mArrData.count) : 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PYCellMediaHistory *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[PYCellMediaHistory alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.textAlignment = NSTextAlignmentRight;
+        cell.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
     }
     
-    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : [UIColor colorWithARGBString:@"#eeeeee"];
-    [cell setupData:self.mArrData[indexPath.row]];
+    cell.textLabel.text = @"历史记录";
+//    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : [UIColor colorWithARGBString:@"#eeeeee"];
+//    [cell setupData:self.mArrData[indexPath.row]];
     return cell;
 }
 
@@ -377,15 +380,24 @@ static int code = 10102;
     [view.layer addSublayer:line];
     
     [view addSubview:labTabView];
-    return view;
+    return [UIView new];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40;
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
+    return 40;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    PYVCHistory *vc = [[PYVCHistory alloc] init];
+    vc.type = PYHistoryTypeVoice;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)tapViewOnClicked:(UITapGestureRecognizer *)tap {
