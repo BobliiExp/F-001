@@ -47,6 +47,11 @@
 - (void)setupData {
     if (self.type == PYHistoryTypeVoice) {
         self.mArrData = [PYUserManage py_getMediaData].mutableCopy;
+        PYModelSaveMedia *model = [[PYModelSaveMedia alloc] init];
+        model.startTime = @"2019-09-20 10:30";
+        model.duration = @"1时20分";
+        model.point = 20;
+        [self.mArrData addObject:model];
     }else if (self.type == PYHistoryTypeShake) {
         self.mArrData = @[[PYUserManage py_getShakeData:PYLotteryTypeUnionLotto],[PYUserManage py_getShakeData:PYLotteryTypeLecaGreati],[PYUserManage py_getShakeData:PYLotteryTypeSuperLotto]].mutableCopy;
     }else if (self.type == PYHistoryTypeVR) {
@@ -113,7 +118,6 @@
             cell = [[PYCellMediaHistory alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         }
         
-        cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : [UIColor colorWithARGBString:@"#eeeeee"];
         [cell setupData:self.mArrData[indexPath.row]];
         return cell;
     }else {
@@ -132,7 +136,7 @@
         lab.font = kFont_XL;
         lab.textColor = kColor_Title;
         lab.text = section == 0 ? @"    双色球中奖记录" : section == 1 ? @"    七乐彩中奖记录" : @"    大乐透中奖记录";
-        lab.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+        lab.backgroundColor = kColor_Background;
         return lab;
     }else {
         return [UIView new];
@@ -140,7 +144,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
+    return self.type == PYHistoryTypeVoice ? 50 : 40;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

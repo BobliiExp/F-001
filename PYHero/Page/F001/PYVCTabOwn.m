@@ -9,17 +9,15 @@
 #import "PYVCTabOwn.h"
 #import "PYVCOwnSetting.h"
 #import "PYVCHistory.h"
-#import <CoreMotion/CoreMotion.h>
 #import "NSDate+PYHero.h"
 #import "PYVAlertStep.h"
 
 @interface PYVCTabOwn ()<UITableViewDelegate, UITableViewDataSource>{
-    NSNumber *step;
+    
 }
 
 @property (nonatomic, weak) UITableView *tableView; ///<
 @property (nonatomic, strong) NSMutableArray *mArrUserInfo;    ///< 用户信息
-@property (nonatomic, strong) CMPedometer *pedometer;
 
 @end
 
@@ -44,7 +42,7 @@
     tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
     //    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+    tableView.backgroundColor = kColor_Background;
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
 }
@@ -52,40 +50,8 @@
 - (void)setupData {
     self.mArrUserInfo = [PYUserManage py_getUserInfo].mutableCopy;
     self.mArrData = @[@"语音"/*,@"摇一摇"*/,@"转一转"/*,@"捉妖"*/].mutableCopy;
-    step = @0;
-    [self py_getUserStep];
-}
-
-- (void)py_getUserStep {
-    self.pedometer = [[CMPedometer alloc]init];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDate *startDate = [self zeroOfDate];
-    NSString *time = [NSDate date2String:startDate];
-    NSDate *endDate = [calendar dateByAddingUnit:NSCalendarUnitDay value:-1 toDate:startDate options:0];
-    NSString *time2 = [NSDate date2String:endDate];
-    NSLog(@"%@--%@",time,time2);
     
-    //判断记步功能
-    if ([CMPedometer isStepCountingAvailable]) {
-        [self.pedometer queryPedometerDataFromDate:endDate toDate:startDate withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (error) {
-                    NSLog(@">>>error====%@",error);
-                    [self.tableView reloadData];
-                }else {
-                    step = pedometerData.numberOfSteps;
-                    [self.tableView reloadData];
-                    NSLog(@"步数====%@",pedometerData.numberOfSteps);
-                    NSLog(@"距离====%@",pedometerData.distance);
-                }
-            });
-        }];
-    }else{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-            NSLog(@"记步功能不可用");
-        });
-    }
+    [self.tableView reloadData];
 }
 
 - (NSDate *)zeroOfDate {
@@ -111,6 +77,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.font = kFont_Title;
+        cell.textLabel.textColor = kColor_Title;
     }
     
     cell.textLabel.text = self.mArrData[indexPath.row];
@@ -151,7 +119,7 @@
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(12.f, imgV.mj_y+imgV.mj_h + 20.f, kScreenWidth - 12.f*2, 20)];
     lab.textAlignment = NSTextAlignmentCenter;
     lab.text = self.mArrUserInfo.lastObject;
-    lab.font = kFont_XL;
+    lab.font = kFont_Title;
     lab.textColor = kColor_Title;
     [vBg addSubview:lab];
     
@@ -168,7 +136,7 @@
     
     // 我的积分
     UIView *vLine = [[UIView alloc] init];
-    vLine.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+    vLine.backgroundColor = kColor_Background;
     [view addSubview:vLine];
     
     [vLine mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -180,8 +148,12 @@
     UILabel *labPoint = [[UILabel alloc] init];
     labPoint.font = lab.font;
     labPoint.textColor = lab.textColor;
-    labPoint.text = [NSString stringWithFormat:@"当前用户积分：%@分",[PYUserManage py_getPoint]];
     [vBg addSubview:labPoint];
+    
+    PYModelAttr *model = [[PYModelAttr alloc] init];
+    model.arrText = @[@"当前用户积分：", [PYUserManage py_getPoint], @"分"];
+    model.arrFgColor = @[kColor_Title, kColor_Select, kColor_Title];
+    [labPoint setAttributedTextWithModel:model];
     
     [labPoint mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(vLine.mas_bottom);
@@ -192,7 +164,7 @@
     
     // 我的步数
     UIView *vLine2 = [[UIView alloc] init];
-    vLine2.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+    vLine2.backgroundColor = kColor_Background;
     [view addSubview:vLine2];
     
     [vLine2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -205,7 +177,7 @@
     labStep.font = lab.font;
     labStep.textColor = lab.textColor;
     labStep.userInteractionEnabled = YES;
-    labStep.text = [NSString stringWithFormat:@"当前用户步数：%@步",step];
+    labStep.text = @"步数兑换";
     [vBg addSubview:labStep];
     
     [labStep mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -250,16 +222,19 @@
 }
 
 - (void)tapViewOnClicked:(UITapGestureRecognizer *)tap {
-    if (![NSDate isSameDay:(NSDate *)[PYUserManage py_getObjectWithKey:@"ConvertStep"]]) {
-        [PYUserManage py_saveObject:[NSDate date] key:@"ConvertStep"];
-        
-        [AFFAlertView alertWithView:[[PYVAlertStep alloc] initWithStep:step.integerValue] block:^(NSInteger index, BOOL isCancel) {
-            if (index) {
-                [self.tableView reloadData];
-            }
-        }];
-    }else {
-        [AFFAlertView alertWithView:[[PYVAlertStep alloc] initWithStep:0] block:^(NSInteger index, BOOL isCancel) {}];
+    if (![NSDate isSameDay:(NSDate *)[PYUserManage py_getObjectWithKey:@"ConvertStep"]]) { // 未兑换
+        if ([NSDate validateWithStartTime:@"18:00" expireTime:@"20:00"]) { // 在兑换时间段内
+            [AFFAlertView alertWithView:[[PYVAlertStep alloc] initWithType:0] block:^(NSInteger index, BOOL isCancel) {
+                if (index) {
+                    [PYUserManage py_saveObject:[NSDate date] key:@"ConvertStep"];
+                    [self.tableView reloadData];
+                }
+            }];
+        }else { // 未在兑换时间内
+            [AFFAlertView alertWithView:[[PYVAlertStep alloc] initWithType:1] block:^(NSInteger index, BOOL isCancel) {}];
+        }
+    }else { // 已兑换
+        [AFFAlertView alertWithView:[[PYVAlertStep alloc] initWithType:2] block:^(NSInteger index, BOOL isCancel) {}];
     }
 }
 

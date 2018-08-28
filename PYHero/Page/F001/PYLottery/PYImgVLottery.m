@@ -12,7 +12,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame imgName:(NSString *)imgName point:(NSInteger)point {
     if (self == [super initWithFrame:frame]) {
-        self.backgroundColor = KColorTheme;
+        self.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
         self.layer.cornerRadius = 4.f;
         self.layer.masksToBounds = YES;
         
@@ -23,7 +23,7 @@
         
         UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.width-3, frame.size.width, frame.size.height - frame.size.width)];
         lab.textAlignment = NSTextAlignmentCenter;
-        lab.textColor = [UIColor colorWithARGBString:@"#FE7473"];
+        lab.textColor = kColor_Title;
         lab.font = [UIFont fontBold:15.f];
         lab.text = [NSString stringWithFormat:@"%ld",point];
         [self addSubview:lab];

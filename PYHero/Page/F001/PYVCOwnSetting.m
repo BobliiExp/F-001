@@ -24,7 +24,7 @@
 
 - (void)setupUI {
     self.title = @"设置";
-    self.view.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+    self.view.backgroundColor = kColor_Background;
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemOnClicked:)];
     item.tintColor = kColor_Title;
     self.navigationItem.rightBarButtonItem = item;
@@ -71,7 +71,7 @@
     [imgV addGestureRecognizer:tapImg];
     
     CALayer *line = [[CALayer alloc] init];
-    line.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"].CGColor;
+    line.backgroundColor = kColor_Background.CGColor;
     line.frame = CGRectMake(space, height+1, kScreenWidth - space, 1.f);
     [view.layer addSublayer:line];
     

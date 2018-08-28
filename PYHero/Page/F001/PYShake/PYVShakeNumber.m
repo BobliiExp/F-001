@@ -63,7 +63,7 @@
         lab.layer.cornerRadius = height/2.f;
         lab.layer.masksToBounds = YES;
         lab.layer.borderWidth = 1.f;
-        lab.layer.borderColor = i >= index ? [UIColor blueColor].CGColor : [UIColor redColor].CGColor;
+        lab.layer.borderColor = i >= index ? kColor_Select.CGColor : [UIColor redColor].CGColor;
         [self.contentView addSubview:lab];
     }
 }

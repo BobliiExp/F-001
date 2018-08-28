@@ -57,10 +57,10 @@
     lab.textAlignment = NSTextAlignmentCenter;
     lab.text = title;
     lab.font = [UIFont fontBold:17.f];
-    lab.textColor = KColorTheme;
+    lab.textColor = kColor_Title;
     [vbg addSubview:lab];
     
-    vbg.layer.borderColor = KColorTheme.CGColor;
+    vbg.layer.borderColor = kColor_Background.CGColor;
     vbg.layer.borderWidth = 1.f;
     vbg.layer.cornerRadius = CGRectGetHeight(vbg.frame)/2.f;
     vbg.layer.masksToBounds = YES;

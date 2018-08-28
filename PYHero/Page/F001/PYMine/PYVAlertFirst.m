@@ -37,7 +37,7 @@
     [self addSubview:btnClose];
     
     CALayer *line1 = [[CALayer alloc] init];
-    line1.backgroundColor = kColor_Content.CGColor;
+    line1.backgroundColor = kColor_Background.CGColor;
     line1.frame = CGRectMake(0, CGRectGetMaxY(lab.frame), self.mj_w, 1.f);
     [self.layer addSublayer:line1];
     
@@ -74,7 +74,7 @@
     btnPoint.titleLabel.font = btnSetting.titleLabel.font = kFont_Normal;
     btnPoint.layer.cornerRadius = btnSetting.layer.cornerRadius = btnSetting.mj_h/2.f;
     btnPoint.layer.masksToBounds = btnSetting.layer.masksToBounds = YES;
-    btnPoint.layer.borderColor = btnSetting.layer.borderColor = KColorTheme.CGColor;
+    btnPoint.layer.borderColor = btnSetting.layer.borderColor = kColor_Background.CGColor;
     btnPoint.layer.borderWidth = btnSetting.layer.borderWidth = 1.f;
     
     self.frame = CGRectMake(0, 0, 270, CGRectGetMaxY(btnPoint.frame) + 12.f);
