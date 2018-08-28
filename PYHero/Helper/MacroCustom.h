@@ -18,14 +18,14 @@
 #define kFont_Title [UIFont systemFontOfSize:15]
 #define kFont_Content [UIFont systemFontOfSize:12]
 
-#define kColor_Title [UIColor colorWithARGBString:@"#333333"]
-#define kColor_Content [UIColor colorWithARGBString:@"#666666"]
-#define kColor_Select [UIColor colorWithARGBString:@"#16a8ef"]
-#define kColor_Highlight [UIColor colorWithARGBString:@"#d7ac6b"]
-#define kColor_Background [UIColor colorWithARGBString:@"#eeeeee"]
-#define kColor_TabBarItemTint [UIColor colorWithARGBString:@"#4ca7e9"]
-#define kColor_NavBg [UIColor colorWithARGBString:@"#d7d7d7"]
-#define kColor_TabBarItemNor [UIColor colorWithARGBString:@"#666666"]
+#define kColor_Title [UIColor colorWithARGBString:@"#333333"]       // 标题，第一栏文字
+#define kColor_Content [UIColor colorWithARGBString:@"#666666"]     // 备注，第二栏文字
+#define kColor_Select [UIColor colorWithARGBString:@"#16a8ef"]      // 选中、特殊文字
+#define kColor_Highlight [UIColor colorWithARGBString:@"#d7ac6b"]   // 高亮、特效功能
+#define kColor_Background [UIColor colorWithARGBString:@"#eeeeee"]  // 界面背景
+#define kColor_TabBarItemTint [UIColor colorWithARGBString:@"#4ca7e9"]  // 下导航文字选中颜色
+#define kColor_NavBg [UIColor colorWithARGBString:@"#d7d7d7"]       // 上下导航背景
+#define kColor_TabBarItemNor [UIColor colorWithARGBString:@"#666666"]   // 下导航默认文字
 
 
 //NavBar高度
