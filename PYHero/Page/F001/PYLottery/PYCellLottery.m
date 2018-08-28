@@ -38,7 +38,11 @@
 }
 
 - (void)setup:(NSArray *)data {
-    self.lab.text = [NSString stringWithFormat:@"获得积分：%@",data.firstObject];
+    PYModelAttr *model = [[PYModelAttr alloc] init];
+    model.arrText = @[@"获得积分：", data.firstObject];
+    model.arrFgColor = @[kColor_Title, kColor_Select];
+    [self.lab setAttributedTextWithModel:model];
+    
     self.imgV.image = [UIImage imageNamed:data.lastObject];
 }
 

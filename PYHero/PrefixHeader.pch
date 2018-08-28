@@ -15,6 +15,7 @@
 
 #import "MacroCustom.h"
 #import "NSString+PY.h"
+#import "UILabel+AttributeString.h"
 #import "NSDate+PYHero.h"
 #import "UIColor+PYHero.h"
 #import "UIFont+PYHero.h"

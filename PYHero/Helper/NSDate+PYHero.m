@@ -169,4 +169,21 @@
     [comp1 year] == [comp2 year];
 }
 
++ (BOOL)validateWithStartTime:(NSString *)startTime expireTime:(NSString *)expireTime {
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    
+    [dateFormat setDateFormat:@"HH:mm"];
+    NSString *todayStr=[dateFormat stringFromDate:today];   //将日期转换成字符串
+    today = [dateFormat dateFromString:todayStr];          //转换成NSDate类型。日期置为方法默认日期
+    
+    NSDate *start = [dateFormat dateFromString:startTime];
+    NSDate *expire = [dateFormat dateFromString:expireTime];
+    
+    if ([today compare:start] == NSOrderedDescending && [today compare:expire] == NSOrderedAscending) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

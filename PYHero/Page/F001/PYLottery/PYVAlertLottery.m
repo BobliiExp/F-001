@@ -21,32 +21,32 @@
         
         UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(12.f, 0, width-12.f*2, 40)];
         lab.textAlignment = NSTextAlignmentCenter;
-        lab.font = kFont_XL;
+        lab.font = kFont_Title;
         lab.textColor = kColor_Title;
-        lab.text = [NSString stringWithFormat:@"恭喜您获得 %@ 积分",point];
+        lab.text = point.integerValue ? [NSString stringWithFormat:@"恭喜您获得 %@ 积分",point] : @"很遗憾，再玩一次吧！";
         [self addSubview:lab];
         
         CALayer *line = [[CALayer alloc] init];
         line.frame = CGRectMake(0, lab.mj_h, width, 1.f);
-        line.backgroundColor = kColor_Content.CGColor;
+        line.backgroundColor = kColor_Background.CGColor;
         [self.layer addSublayer:line];
         
         width = 50;
         UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake((self.mj_w - width)/2.f, CGRectGetMaxY(line.frame) + 12.f, width, width)];
         imgV.image = [UIImage imageNamed:imgName];
-        imgV.contentMode = UIViewContentModeCenter;
+        imgV.contentMode = point.integerValue ? UIViewContentModeCenter : UIViewContentModeScaleAspectFit;
         [self addSubview:imgV];
         
         width = 100;
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((self.mj_w - width)/2.f, CGRectGetMaxY(imgV.frame) + 12.f, width, 35)];
         btn.titleLabel.font = [UIFont fontNormal:13.f];
         [btn setTitleColor:kColor_Title forState:UIControlStateNormal];
-        [btn setTitle:@"收入囊中" forState:UIControlStateNormal];
+        [btn setTitle:point.integerValue ? @"收入囊中" : @"好的" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(btnOnClicked) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
         btn.layer.cornerRadius = btn.mj_h/2.f;
         btn.layer.masksToBounds = YES;
-        btn.layer.borderColor = KColorTheme.CGColor;
+        btn.layer.borderColor = kColor_Background.CGColor;
         btn.layer.borderWidth = 1.f;
         
         self.frame = CGRectMake(0, 0, 260, CGRectGetMaxY(btn.frame) + 20);

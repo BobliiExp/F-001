@@ -125,11 +125,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.textAlignment = NSTextAlignmentRight;
-        cell.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+        cell.textLabel.font = kFont_Title;
+        cell.textLabel.textColor = kColor_Title;
+        cell.backgroundColor = kColor_Background;
     }
     
     cell.textLabel.text = @"历史记录";
-    //    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : [UIColor colorWithARGBString:@"#eeeeee"];
+    //    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : kColor_Background;
     //    [cell setupData:self.mArrData[indexPath.row]];
     return cell;
 }

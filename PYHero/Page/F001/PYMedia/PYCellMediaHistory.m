@@ -26,13 +26,13 @@
 }
 
 - (void)setupUI {
-    UILabel *labTime = [[UILabel alloc] initWithFrame:CGRectMake(12.f, 5, kScreenWidth - 12.f*2, 20)];
+    UILabel *labTime = [[UILabel alloc] initWithFrame:CGRectMake(15.f, 5, kScreenWidth - 15.f*2, 20)];
     labTime.font = kFont_Normal;
     labTime.textColor = kColor_Title;
     [self.contentView addSubview:labTime];
     self.labTime = labTime;
     
-    UILabel *labDuration = [[UILabel alloc] initWithFrame:CGRectMake(12.f, CGRectGetMaxY(labTime.frame), (kScreenWidth - 12.f*2)/2.f, 20)];
+    UILabel *labDuration = [[UILabel alloc] initWithFrame:CGRectMake(15.f, CGRectGetMaxY(labTime.frame), (kScreenWidth - 15.f*2)/2.f, 20)];
     labDuration.font = kFont_Normal;
     labTime.textColor = kColor_Title;
     [self.contentView addSubview:labDuration];
@@ -46,11 +46,21 @@
 }
 
 - (void)setupData:(PYModelSaveMedia *)data {
-    self.labTime.text = [NSString stringWithFormat:@"开始时间：%@",data.startTime];
-    self.labDuration.text = [NSString stringWithFormat:@"时长：%@",data.duration];
+    PYModelAttr *model = [[PYModelAttr alloc] init];
+    model.arrText = @[@"开始时间：", data.startTime];
+    model.arrFgColor = @[kColor_Title, kColor_Select];
+    [self.labTime setAttributedTextWithModel:model];
+    
+    model = [[PYModelAttr alloc] init];
+    model.arrText = @[@"时长：", data.duration];
+    model.arrFgColor = @[kColor_Title, kColor_Select];
+    [self.labDuration setAttributedTextWithModel:model];
     
     if (!data.beInvited) {
-        self.labPoint.text = [NSString stringWithFormat:@"使用积分：%ld",data.point];
+        model = [[PYModelAttr alloc] init];
+        model.arrText = @[@"使用积分：", [NSString stringWithFormat:@"%ld",data.point]];
+        model.arrFgColor = @[kColor_Title, kColor_Select];
+        [self.labPoint setAttributedTextWithModel:model];
     }else {
         self.labPoint.text = @"被邀请，不使用积分";
     }

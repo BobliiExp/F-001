@@ -26,6 +26,7 @@
 		A17B94162132CBD6005407EF /* PYImgVLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94142132CBD6005407EF /* PYImgVLottery.m */; };
 		A17B94192132CCD3005407EF /* PYVCPointInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94182132CCD3005407EF /* PYVCPointInfo.m */; };
 		A1C4E891212D99E500C5F654 /* PYCellLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C4E890212D99E500C5F654 /* PYCellLottery.m */; };
+		A1D023D22134ECC400A3FDC3 /* UILabel+AttributeString.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D023D12134ECC400A3FDC3 /* UILabel+AttributeString.m */; };
 		C43886CE21324FAA00500E58 /* PYAudioWaveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C43886CD21324FAA00500E58 /* PYAudioWaveLayer.m */; };
 		C438871A2132739F00500E58 /* YSCWaterWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = C43886D12132739F00500E58 /* YSCWaterWaveView.m */; };
 		C438871B2132739F00500E58 /* YSCSeaGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C43886D42132739F00500E58 /* YSCSeaGLView.m */; };
@@ -198,6 +199,8 @@
 		A17B94182132CCD3005407EF /* PYVCPointInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCPointInfo.m; sourceTree = "<group>"; };
 		A1C4E88F212D99E500C5F654 /* PYCellLottery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYCellLottery.h; sourceTree = "<group>"; };
 		A1C4E890212D99E500C5F654 /* PYCellLottery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYCellLottery.m; sourceTree = "<group>"; };
+		A1D023D02134ECC400A3FDC3 /* UILabel+AttributeString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+AttributeString.h"; sourceTree = "<group>"; };
+		A1D023D12134ECC400A3FDC3 /* UILabel+AttributeString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AttributeString.m"; sourceTree = "<group>"; };
 		B0A4A2E29D340B738CD78F8F /* libPods-PYHero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYHero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63AECE7110E1ED0B66DBE7D /* Pods-PYHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYHero/Pods-PYHero.debug.xcconfig"; sourceTree = "<group>"; };
 		C43886CC21324FAA00500E58 /* PYAudioWaveLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYAudioWaveLayer.h; sourceTree = "<group>"; };
@@ -1410,6 +1413,8 @@
 				A12201FE212AADED007710D4 /* PYWinManage.m */,
 				C438873D21327B0400500E58 /* NSString+PY.h */,
 				C438873E21327B0400500E58 /* NSString+PY.m */,
+				A1D023D02134ECC400A3FDC3 /* UILabel+AttributeString.h */,
+				A1D023D12134ECC400A3FDC3 /* UILabel+AttributeString.m */,
 				A122B52721343C4D001BDB7C /* UIScrollView+EmptyDataSet.h */,
 				A122B52621343C4C001BDB7C /* UIScrollView+EmptyDataSet.m */,
 			);
@@ -1435,7 +1440,6 @@
 				D186500F206E210400C2A6D0 /* Frameworks */,
 				D1865010206E210400C2A6D0 /* Resources */,
 				57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */,
-				7E7C599D9FC8C5FC8752C437 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1592,21 +1596,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E7C599D9FC8C5FC8752C437 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DA0B4A3BE746F8B912B20316 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1622,7 +1611,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1679,6 +1668,7 @@
 				A127AFF42132B8D2005F0295 /* PYVAlertFirst.m in Sources */,
 				C4BC9148212EDD1200457D76 /* PYIMModeMedia.m in Sources */,
 				C4BC9159212EDD1200457D76 /* UIApplication+Permissions.m in Sources */,
+				A1D023D22134ECC400A3FDC3 /* UILabel+AttributeString.m in Sources */,
 				A1C4E891212D99E500C5F654 /* PYCellLottery.m in Sources */,
 				C47A5BB82123C61A00467618 /* PYVCTabMain.m in Sources */,
 				C43887292132739F00500E58 /* YSCVoiceWaveView.m in Sources */,
@@ -1867,7 +1857,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S86KA93GD7;
+				DEVELOPMENT_TEAM = UEMD52M26A;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1905,7 +1895,7 @@
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/FFmpeg-iOS/lib",
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/x264-iOS/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHeroer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1917,7 +1907,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S86KA93GD7;
+				DEVELOPMENT_TEAM = UEMD52M26A;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1955,7 +1945,7 @@
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/FFmpeg-iOS/lib",
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/x264-iOS/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHeroer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

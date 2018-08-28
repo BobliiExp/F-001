@@ -10,6 +10,6 @@
 
 @interface PYVAlertStep : UIView
 
-- (instancetype)initWithStep:(NSInteger)step;
+- (instancetype)initWithType:(NSInteger)type; // type == 0：在时间段内，未兑换, type == 1：不在时间段内, type == 2：已兑换
 
 @end

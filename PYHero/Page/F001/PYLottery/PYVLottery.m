@@ -22,11 +22,11 @@
 
 - (void)setup:(CGFloat)space1 {
     self.mArrImg = [NSMutableArray array];
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = kColor_Select;
     
     space1 = 8.f;
     UIView *vBg = [[UIView alloc] initWithFrame:CGRectMake(space1, space1, self.mj_w-space1*2, self.mj_h-space1*2)];
-    vBg.backgroundColor = [UIColor colorWithARGBString:@"#FF5A5E"];
+    vBg.backgroundColor = [UIColor colorWithARGBString:@"#148EEF"];
     [self addSubview:vBg];
     
     self.layer.cornerRadius = vBg.layer.cornerRadius = 5.f;
@@ -71,9 +71,10 @@
     [btn setTitle:@"开始游戏" forState:UIControlStateNormal];
     btn.layer.cornerRadius = 10.f;
     btn.layer.masksToBounds = YES;
-    btn.backgroundColor = KColorTheme;
-    btn.titleLabel.font = [UIFont fontBold:14.f];
-    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont fontBold:15.f];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageWithColor:KColorTheme frame:btn.bounds] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageWithColor:kColor_Highlight frame:btn.bounds] forState:UIControlStateHighlighted];
     [vBg addSubview:btn];
     self.btnAction = btn;
     
@@ -88,18 +89,26 @@
     CGFloat height = (vBg.mj_h - 40 - 2*x)/2.f;
     width = vBg.mj_w - 2*x;
     UILabel *lab1 = [[UILabel alloc] initWithFrame:CGRectMake(x, x, width, height)];
-    lab1.textColor = KColorTheme;
-    lab1.text = [NSString stringWithFormat:@"当前可用次数：%@",count];
+    lab1.font = kFont_Title;
     [vBg addSubview:lab1];
     self.labCount = lab1;
     
+    PYModelAttr *model = [[PYModelAttr alloc] init];
+    model.arrText = @[@"当前可用次数：", count.stringValue];
+    model.arrFgColor = @[kColor_Title, KColorTheme];
+    [lab1 setAttributedTextWithModel: model];
+    
+    
     UILabel *lab2 = [[UILabel alloc] initWithFrame:CGRectMake(x, CGRectGetMaxY(btn.frame), width, height)];
-    lab2.textColor = [UIColor whiteColor];
-    lab2.text = [NSString stringWithFormat:@"当前积分：%@",[PYUserManage py_getPoint]];
+    lab2.font = kFont_Title;
     [vBg addSubview:lab2];
     self.labCurrent = lab2;
     
-    lab1.font = lab2.font = [UIFont fontNormal:14.f];
+    model = [[PYModelAttr alloc] init];
+    model.arrText = @[@"当前积分：", [PYUserManage py_getPoint]];
+    model.arrFgColor = @[kColor_Title, KColorTheme];
+    [lab2 setAttributedTextWithModel: model];
+    
     lab1.textAlignment = lab2.textAlignment = NSTextAlignmentCenter;
 }
 

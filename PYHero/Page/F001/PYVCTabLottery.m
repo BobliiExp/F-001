@@ -60,7 +60,7 @@
     CGFloat delatY = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(space, delatY + 25.f, kScreenWidth - 2*space, height+20.f)];
-    view.backgroundColor = [UIColor colorWithARGBString:@"#FE7473"];
+    view.backgroundColor = kColor_Select;
     [self.view addSubview:view];
     
     CGFloat y = 10.f;
@@ -166,10 +166,11 @@
             [sameSpeedArr addObject:@(0.1)];
         }
         
-        self.mArrTime =[NSMutableArray array];
+        self.mArrTime = [NSMutableArray array];
         [self.mArrTime addObjectsFromArray:mArrUp];
-        [self.mArrTime addObjectsFromArray:[sameSpeedArr mutableCopy]];
+        [self.mArrTime addObjectsFromArray:sameSpeedArr];
         [self.mArrTime addObjectsFromArray:mArrDown];
+        
         btn.enabled = NO;
         self.displayLink.paused = NO;
         _lastIndex = 100;
@@ -184,7 +185,6 @@
             _currentIndex = _currentIndex%(self.vLottery.mArrImg.count);
         }
         _isPlay = YES;
-//        self.vLottery.labCount.text = @"本轮积分：0";
     }else {
         [AFFAlertView alertWithTitle:@"温馨提示" content:@"今日游戏次数已经用光，请明天再来吧！" btnTitle:@[@"确定"] block:^(NSInteger index, BOOL isCancel) {
             [AFFAlertView dismiss];
@@ -227,12 +227,18 @@
             if (!point || [point isKindOfClass:[NSNull class]]) {
                 point = @"0";
             }
-            self.vLottery.labCount.text = [NSString stringWithFormat:@"当前可用次数：%ld",_count];
+            PYModelAttr *model = [[PYModelAttr alloc] init];
+            model.arrText = @[@"当前可用次数：", [NSString stringWithFormat:@"%ld",_count]];
+            model.arrFgColor = @[kColor_Title, KColorTheme];
+            [self.vLottery.labCount setAttributedTextWithModel:model];
             
             NSString *lastPoint = [PYUserManage py_getPoint];
             NSString *currentPoint = [NSString stringWithFormat:@"%ld",(lastPoint.integerValue + point.integerValue)];
             [PYUserManage py_savePoint:currentPoint];
-            self.vLottery.labCurrent.text = [NSString stringWithFormat:@"当前积分：%@",currentPoint];
+            
+            model = [[PYModelAttr alloc] init];
+            model.arrText = @[@"当前积分：", currentPoint];
+            model.arrFgColor = @[kColor_Title, KColorTheme];
             
             if (point.integerValue > 0) { // 获得积分
                 [PYUserManage py_saveLotteryData:@[point,self.vLottery.arrImgName[index]]];
@@ -241,6 +247,11 @@
                 [self.tableView reloadData];
                 
                 PYVAlertLottery *alert = [[PYVAlertLottery alloc] initWithImgName:self.vLottery.arrImgName[index] point:point];
+                [AFFAlertView alertWithView:alert block:^(NSInteger index, BOOL isCancel) {
+                    
+                }];
+            }else {
+                PYVAlertLottery *alert = [[PYVAlertLottery alloc] initWithImgName:@"ic_error_empty_net1" point:point];
                 [AFFAlertView alertWithView:alert block:^(NSInteger index, BOOL isCancel) {
                     
                 }];
@@ -262,11 +273,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.textAlignment = NSTextAlignmentRight;
-        cell.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+        cell.textLabel.font = kFont_Title;
+        cell.textLabel.textColor = kColor_Title;
+        cell.backgroundColor = kColor_Background;
     }
     
     cell.textLabel.text = @"历史记录";
-    //    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : [UIColor colorWithARGBString:@"#eeeeee"];
+    //    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : kColor_Background;
     //    [cell setupData:self.mArrData[indexPath.row]];
     return cell;
 }
