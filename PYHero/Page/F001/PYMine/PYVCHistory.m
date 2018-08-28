@@ -10,8 +10,9 @@
 #import "PYCellShakeNumber.h"
 #import "PYCellLottery.h"
 #import "PYCellMediaHistory.h"
+#import "UIScrollView+EmptyDataSet.h"
 
-@interface PYVCHistory ()<UITableViewDelegate, UITableViewDataSource>
+@interface PYVCHistory ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (nonatomic, weak) UITableView *tableView; ///<
 
@@ -35,6 +36,8 @@
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, bottomNav, kScreenWidth, kScreenHeight - bottomNav - PYSafeBottomHeight) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.emptyDataSetSource = self;
+    tableView.emptyDataSetDelegate = self;
     tableView.tableFooterView = [UIView new];
     tableView.backgroundColor = [UIColor clearColor];
     self.tableView = tableView;
@@ -148,6 +151,15 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+#pragma mark - empty delegate
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    return [[NSAttributedString alloc] initWithString:@"暂无数据"];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"ic_error_empty_net"];
+}
 
 /*
 #pragma mark - Navigation

@@ -20,6 +20,7 @@
     BOOL _isFirst;
     BOOL _isPlay;  ///< 是否开始游戏
     BOOL isOpen;    ///< 是否展开
+    NSInteger _count; ///< 已经游戏的次数
 }
 
 @property (nonatomic, weak) UITableView *tableView; ///<
@@ -79,13 +80,12 @@
         [view addSubview:imgV];
     }
     
-    height = kScreenHeight - PYSafeBottomHeight;
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(vLottery.frame), kScreenWidth, height - CGRectGetMaxY(vLottery.frame) - self.navigationController.navigationBar.frame.size.height) style:UITableViewStylePlain];
-    tableView.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
+    height = kScreenHeight - self.tabBarController.tabBar.frame.size.height;
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height - 40, kScreenWidth, 40) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
-    tableView.allowsSelection = NO;
+    tableView.scrollEnabled = NO;
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
 }
@@ -135,43 +135,61 @@
 }
 
 - (void)btnActionOnClicked:(UIButton *)btn {
-    NSMutableArray *mArrUp = [NSMutableArray array];
-    NSMutableArray *mArrDown = [NSMutableArray array];
-    CGFloat numberUp = 2.6;
-    CGFloat numberDown = 0.2;
-    for (NSInteger i = 0; i < 12; i++) {
-        numberUp -= 0.2;
-        numberDown += 0.2;
-        [mArrUp addObject:@(numberUp)];
-        [mArrDown addObject:@(numberDown)];
+    NSNumber *count = (NSNumber *)[PYUserManage py_getObjectWithKey:@"LotteryCount"];
+    _count = count.integerValue;
+    
+    if (![NSDate isSameDay:(NSDate *)[PYUserManage py_getObjectWithKey:@"LotteryFirstTime"]]) {
+        [PYUserManage py_saveObject:[NSDate date] key:@"LotteryFirstTime"];
+        _count = 5;
+        [PYUserManage py_saveObject:[NSNumber numberWithInteger:_count] key:@"LotteryCount"];
     }
     
-    NSMutableArray *sameSpeedArr =[NSMutableArray array];
-    
-    NSInteger random = arc4random()%50;
-    for (int i = 0; i<(12*7+random); i++) {
-        [sameSpeedArr addObject:@(0.1)];
-    }
-    
-    self.mArrTime =[NSMutableArray array];
-    [self.mArrTime addObjectsFromArray:mArrUp];
-    [self.mArrTime addObjectsFromArray:[sameSpeedArr mutableCopy]];
-    [self.mArrTime addObjectsFromArray:mArrDown];
-    btn.enabled = NO;
-    self.displayLink.paused = NO;
-    _lastIndex = 100;
-    
-    if (_isFirst) {
-        _isFirst = NO;
+    if (_count) {
+        _count--;
+        [PYUserManage py_saveObject:[NSNumber numberWithInteger:_count] key:@"LotteryCount"];
+        
+        NSMutableArray *mArrUp = [NSMutableArray array];
+        NSMutableArray *mArrDown = [NSMutableArray array];
+        CGFloat numberUp = 2.6;
+        CGFloat numberDown = 0.2;
+        for (NSInteger i = 0; i < 12; i++) {
+            numberUp -= 0.2;
+            numberDown += 0.2;
+            [mArrUp addObject:@(numberUp)];
+            [mArrDown addObject:@(numberDown)];
+        }
+        
+        NSMutableArray *sameSpeedArr =[NSMutableArray array];
+        
+        NSInteger random = arc4random()%50;
+        for (int i = 0; i<(12*7+random); i++) {
+            [sameSpeedArr addObject:@(0.1)];
+        }
+        
+        self.mArrTime =[NSMutableArray array];
+        [self.mArrTime addObjectsFromArray:mArrUp];
+        [self.mArrTime addObjectsFromArray:[sameSpeedArr mutableCopy]];
+        [self.mArrTime addObjectsFromArray:mArrDown];
+        btn.enabled = NO;
+        self.displayLink.paused = NO;
+        _lastIndex = 100;
+        
+        if (_isFirst) {
+            _isFirst = NO;
+        }else {
+            _currentIndex--;
+        }
+        
+        if (_currentIndex > 888888) {
+            _currentIndex = _currentIndex%(self.vLottery.mArrImg.count);
+        }
+        _isPlay = YES;
+//        self.vLottery.labCount.text = @"本轮积分：0";
     }else {
-        _currentIndex--;
+        [AFFAlertView alertWithTitle:@"温馨提示" content:@"今日游戏次数已经用光，请明天再来吧！" btnTitle:@[@"确定"] block:^(NSInteger index, BOOL isCancel) {
+            [AFFAlertView dismiss];
+        }];
     }
-    
-    if (_currentIndex > 888888) {
-        _currentIndex = _currentIndex%(self.vLottery.mArrImg.count);
-    }
-    _isPlay = YES;
-    self.vLottery.labGet.text = @"本轮积分：0";
 }
 
 - (void)changeUI {
@@ -209,7 +227,7 @@
             if (!point || [point isKindOfClass:[NSNull class]]) {
                 point = @"0";
             }
-            self.vLottery.labGet.text = [NSString stringWithFormat:@"本轮积分：%@",point];
+            self.vLottery.labCount.text = [NSString stringWithFormat:@"当前可用次数：%ld",_count];
             
             NSString *lastPoint = [PYUserManage py_getPoint];
             NSString *currentPoint = [NSString stringWithFormat:@"%ld",(lastPoint.integerValue + point.integerValue)];
@@ -234,17 +252,22 @@
 #pragma mark - tableView delegate - dataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return isOpen ? (self.mArrData.count > 3 ? 3 : self.mArrData.count) : 0;
+//    return isOpen ? (self.mArrData.count > 3 ? 3 : self.mArrData.count) : 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PYCellLottery *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[PYCellLottery alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.textAlignment = NSTextAlignmentRight;
+        cell.backgroundColor = [UIColor colorWithARGBString:@"#eeeeee"];
     }
     
-    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : [UIColor colorWithARGBString:@"#eeeeee"];
-    [cell setup:self.mArrData[indexPath.row]];
+    cell.textLabel.text = @"历史记录";
+    //    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : [UIColor colorWithARGBString:@"#eeeeee"];
+    //    [cell setupData:self.mArrData[indexPath.row]];
     return cell;
 }
 
@@ -276,15 +299,24 @@
     [view.layer addSublayer:line];
     
     [view addSubview:labTabView];
-    return view;
+    return [UIView new];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40;
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 40;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    PYVCHistory *vc = [[PYVCHistory alloc] init];
+    vc.type = PYHistoryTypeLottery;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)tapViewOnClicked:(UITapGestureRecognizer *)tap {

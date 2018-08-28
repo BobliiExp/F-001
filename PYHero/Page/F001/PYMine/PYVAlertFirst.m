@@ -30,6 +30,12 @@
     lab.text = @"喜迎新人";
     [self addSubview:lab];
     
+    UIButton *btnClose = [[UIButton alloc] initWithFrame:CGRectMake(self.mj_w - 12.f - 20, 10, 20, 20)];
+    [btnClose setImage:[UIImage imageNamed:@"ic_close"] forState:UIControlStateNormal];
+    [btnClose setContentMode:UIViewContentModeCenter];
+    [btnClose addTarget:self action:@selector(btnClosedOnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:btnClose];
+    
     CALayer *line1 = [[CALayer alloc] init];
     line1.backgroundColor = kColor_Content.CGColor;
     line1.frame = CGRectMake(0, CGRectGetMaxY(lab.frame), self.mj_w, 1.f);
@@ -82,4 +88,9 @@
     
     [AFFAlertView dismiss];
 }
+
+- (void)btnClosedOnClicked {
+    [AFFAlertView dismiss];
+}
+
 @end

@@ -69,4 +69,6 @@ typedef NS_ENUM(char, PYTimeFormatType) {
 + (NSString *)date2StringWithInterval:(NSInteger)interval;
 + (NSString *)date2String:(NSDate *)date formatType:(PYTimeFormatType)type;
 
++ (BOOL)isSameDay:(NSDate*)date; ///< 是否是今天
+
 @end

@@ -250,7 +250,7 @@
 }
 
 - (void)tapViewOnClicked:(UITapGestureRecognizer *)tap {
-    if (![self isSameDay:(NSDate *)[PYUserManage py_getObjectWithKey:@"ConvertStep"]]) {
+    if (![NSDate isSameDay:(NSDate *)[PYUserManage py_getObjectWithKey:@"ConvertStep"]]) {
         [PYUserManage py_saveObject:[NSDate date] key:@"ConvertStep"];
         
         [AFFAlertView alertWithView:[[PYVAlertStep alloc] initWithStep:step.integerValue] block:^(NSInteger index, BOOL isCancel) {
@@ -261,19 +261,6 @@
     }else {
         [AFFAlertView alertWithView:[[PYVAlertStep alloc] initWithStep:0] block:^(NSInteger index, BOOL isCancel) {}];
     }
-}
-
-- (BOOL)isSameDay:(NSDate*)date {
-    NSDate *currentDate = [NSDate date];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
-    NSDateComponents *comp1 = [calendar components:unitFlags fromDate:date];
-    NSDateComponents *comp2 = [calendar components:unitFlags fromDate:currentDate];
-    
-    return [comp1 day] == [comp2 day] &&
-    [comp1 month] == [comp2 month] &&
-    [comp1 year] == [comp2 year];
 }
 
 /*
