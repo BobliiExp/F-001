@@ -47,7 +47,7 @@
         btn.titleLabel.font = kFont_Normal;
         [btn setTitle:@"好的" forState:UIControlStateNormal];
         [btn setTitleColor:kColor_Title forState:UIControlStateNormal];
-        btn.layer.borderColor = kColor_Background.CGColor;
+        btn.layer.borderColor = kColor_Select.CGColor;
         btn.layer.borderWidth = 1.f;
         btn.layer.masksToBounds = YES;
         btn.layer.cornerRadius = btn.mj_h/2.f;
