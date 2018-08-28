@@ -251,7 +251,7 @@ static int code = 10102;
 
 -(void)invate:(NSString *)code{
     NSInteger coin = [[PYUserManage py_getPoint] integerValue];
-    if(coin<1000){
+    if(coin<10){
         [AFFAlertView alertWithTitle:[NSString stringWithFormat:@"您当前积分为:%zi，至少需要10积分才能使用语音功能", coin] btnTitle:@[@"赚取积分", @"取消"] block:^(NSInteger index, BOOL isCancel) {
             if(!isCancel){
                 for(UINavigationController *nav in self.tabBarController.viewControllers){
@@ -260,10 +260,10 @@ static int code = 10102;
                         break;
                     }
                 }
-                
-                [self.rippleView cleanTheme];
                 [AFFAlertView dismiss];
             }
+            
+            [self.rippleView cleanTheme];
         }];
         return;
     }

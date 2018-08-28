@@ -631,6 +631,8 @@ adpcm_state decode_state;
     NSInteger heartTimespan;
     NSData *dataPartial; // 上一次socket回调接收不完整部分
     dispatch_queue_t queueSock; // 控制队列
+    
+    dispatch_semaphore_t semaphoreRec;
 }
 
 @property (nonatomic, strong) NSOperationQueue *queue;   ///< 操作队列
@@ -675,7 +677,7 @@ adpcm_state decode_state;
         _queue.maxConcurrentOperationCount = 10; // 任务队列最大并发数量，语音发送具有时效性
         queueSock = dispatch_queue_create("sockettask", DISPATCH_QUEUE_SERIAL); // the socket queue must not be a concurrent queue
         heartTimespan = 15; // 默认30s
-        
+        semaphoreRec = dispatch_semaphore_create(1);
         self.sType = EServer_Login;
     }
     
@@ -1150,6 +1152,8 @@ adpcm_state decode_state;
 
 // 接收完成
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext {
+    dispatch_semaphore_wait(semaphoreRec, DISPATCH_TIME_FOREVER);
+    
     /**
      解决粘包问题：
      1.读取完成后解析数据以前后对称的3E标志分段
@@ -1237,7 +1241,7 @@ adpcm_state decode_state;
                 }else {
                     NSLog(@"上一个分包未完成，收到了新的分包数据, finish:%@ frameID:%lld frameIDNew:%lld", first.isFinish?@"YES":@"NO", first.frameID, other.frameID);
                     kVideo_Partion = package;
-                    return;
+                    break;
                 }
                 
                 if(((PYIMModeVideo*)kVideo_Partion.mode).isFinish){
@@ -1250,13 +1254,15 @@ adpcm_state decode_state;
             }else if(_modeServer){
                 if(!kAccount.hadLogin){
                     NSLog(@"receive data but didn't login so ignored cmd:0x%04x host:%@ port:%d", package.cmdID, kAccount.rspIp, kAccount.rspPort);
-                    return;
+                    break;
                 }
                 
                 [_modeServer finished:package];
             }
         }
     }
+    
+    dispatch_semaphore_signal(semaphoreRec);
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didNotSendDataWithTag:(long)tag dueToError:(NSError *)error {

@@ -66,6 +66,8 @@
     self.btnClose.layer.borderColor = kColor_Content.CGColor;
     self.btnClose.layer.borderWidth = 1.0;
     
+    self.labName.text = [NSString stringWithFormat:@"%lld", kAccount.toAccount];
+    
     kPermissionAccess acc = [[UIApplication sharedApplication] hasAccessToMicrophone];
     if(acc == kPermissionAccessGranted){
         [self setupData];

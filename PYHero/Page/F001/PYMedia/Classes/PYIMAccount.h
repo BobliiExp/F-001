@@ -95,7 +95,7 @@ extern NSString * const kNotificationPY_ResponseServer;     ///< PYIMError 对�
 @property (nonatomic, assign) BOOL hadLogin; ///< 是否登录登录服务器
 
 // 携带从某个服务器、客户端得到数据时的ip，port
-@property (nonatomic, strong) NSString *rspIp;        // 收到服务器、客户端ip
+@property (nonatomic, copy) NSString *rspIp;        // 收到服务器、客户端ip
 @property (nonatomic, assign) uint16_t rspPort;        // 收到服务器、客户端端口
 
 @property (nonatomic, strong) NSMutableArray<PYIMAccount*> *mArrP2P;    ///< p2p链接列表
