@@ -47,22 +47,22 @@
 
 - (void)setupData:(PYModelSaveMedia *)data {
     PYModelAttr *model = [[PYModelAttr alloc] init];
-    model.arrText = @[@"开始时间：", data.startTime];
+    model.arrText = @[KLocalizable(@"startTime"), data.startTime];
     model.arrFgColor = @[kColor_Title, kColor_Select];
     [self.labTime setAttributedTextWithModel:model];
     
     model = [[PYModelAttr alloc] init];
-    model.arrText = @[@"时长：", data.duration];
+    model.arrText = @[KLocalizable(@"duration"), data.duration];
     model.arrFgColor = @[kColor_Title, kColor_Select];
     [self.labDuration setAttributedTextWithModel:model];
     
     if (!data.beInvited) {
         model = [[PYModelAttr alloc] init];
-        model.arrText = @[@"使用积分：", [NSString stringWithFormat:@"%ld",data.point]];
+        model.arrText = @[KLocalizable(@"usePoints"), [NSString stringWithFormat:@"%ld",data.point]];
         model.arrFgColor = @[kColor_Title, kColor_Select];
         [self.labPoint setAttributedTextWithModel:model];
     }else {
-        self.labPoint.text = @"被邀请，不使用积分";
+        self.labPoint.text = KLocalizable(@"unusePoints");
     }
 }
 

@@ -68,7 +68,7 @@
     
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     btn.center = CGPointMake(vBg.mj_w/2.f, vBg.mj_h/2.f);
-    [btn setTitle:@"开始游戏" forState:UIControlStateNormal];
+    [btn setTitle:KLocalizable(@"startPlay") forState:UIControlStateNormal];
     btn.layer.cornerRadius = 10.f;
     btn.layer.masksToBounds = YES;
     btn.titleLabel.font = [UIFont fontBold:15.f];
@@ -94,7 +94,7 @@
     self.labCount = lab1;
     
     PYModelAttr *model = [[PYModelAttr alloc] init];
-    model.arrText = @[@"当前可用次数：", count.stringValue];
+    model.arrText = @[KLocalizable(@"currentAvailableTimes"), count.stringValue];
     model.arrFgColor = @[kColor_Title, KColorTheme];
     [lab1 setAttributedTextWithModel: model];
     
@@ -105,7 +105,7 @@
     self.labCurrent = lab2;
     
     model = [[PYModelAttr alloc] init];
-    model.arrText = @[@"当前积分：", [PYUserManage py_getPoint]];
+    model.arrText = @[KLocalizable(@"currentPoints"), [PYUserManage py_getPoint]];
     model.arrFgColor = @[kColor_Title, KColorTheme];
     [lab2 setAttributedTextWithModel: model];
     

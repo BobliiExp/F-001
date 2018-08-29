@@ -57,7 +57,9 @@ typedef NS_ENUM(NSUInteger, PYWinResultType) { // 彩票游戏结果
 #define kScreenHeight   [UIScreen mainScreen].bounds.size.height
 #define KTwoNumber(string) [NSString stringWithFormat:@"%02d",string.intValue];
 
-#define  PYiPhoneX (kScreenWidth == 375.f && kScreenHeight == 812.f ? YES : NO)
-#define  PYSafeBottomHeight (PYiPhoneX ? 34.f : 0.f)
+#define PYiPhoneX (kScreenWidth == 375.f && kScreenHeight == 812.f ? YES : NO)
+#define PYSafeBottomHeight (PYiPhoneX ? 34.f : 0.f)
+
+#define KLocalizable(string) NSLocalizedString(string, nil)
 
 #endif /* PrefixHeader_pch */

@@ -39,7 +39,7 @@
 
 - (void)setup:(NSArray *)data {
     PYModelAttr *model = [[PYModelAttr alloc] init];
-    model.arrText = @[@"获得积分：", data.firstObject];
+    model.arrText = @[KLocalizable(@"earnPoints"), data.firstObject];
     model.arrFgColor = @[kColor_Title, kColor_Select];
     [self.lab setAttributedTextWithModel:model];
     

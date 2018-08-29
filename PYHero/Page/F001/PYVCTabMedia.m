@@ -177,6 +177,10 @@ static int code = 10102;
     [view addSubview:lab];
     
     __block UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake((kAlertViewWidth-100)/2, CGRectGetMaxY(frame)+paddinng, 100, 40)];
+    field.placeholder = KLocalizable(@"voiceInviteCode");
+    [view addSubview:lab];
+    
+    __block UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake((kAlertViewWidth-100)/2, CGRectGetMaxY(frame)+paddinng, 100, 40)];
     field.placeholder = kAFLocalizeEx(kstrAudioInviteCode, kLZ_Sentence);
     field.layer.borderColor = kColor_Content.CGColor;
     field.layer.borderWidth = 1.0;
@@ -187,7 +191,7 @@ static int code = 10102;
     [view addSubview:field];
     
     view.frame = CGRectMake(0, 0, kAlertViewWidth, CGRectGetMaxY(field.frame)+paddinng);
-    
+   
     [AFFAlertView alertWithView:view btnTitle:@[kAFLocalizeEx(kstrAudioConnect, kLZ_Sentence), kAFLocalize(kActCancel)] block:^(NSInteger index, BOOL isCancel) {
         if(!isCancel){
             if(field.text==nil || field.text.length==0){
@@ -287,6 +291,7 @@ static int code = 10102;
         UINavigationItem *navItem = [[[controller viewControllers] lastObject] navigationItem];
         [navItem setTitle:kAFLocalizeEx(kstrAudioInviteSMS, kLZ_Sentence)];
         UIBarButtonItem* item = [[UIBarButtonItem alloc]initWithTitle:kAFLocalize(kActCancel) style:UIBarButtonItemStylePlain target:self action:@selector(messageVCHide)];
+
         navItem.rightBarButtonItem = item;
         [self presentViewController:controller animated:YES completion:nil];
     }

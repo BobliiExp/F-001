@@ -23,7 +23,7 @@
     self.title = @"积分说明";
     CGFloat deltaY = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
     
-    NSArray *arrStr = @[@"1.积分获取",@"A.参与转一转可以随机获得积分，每日可以参与五次。\nB.每日运动步数统计，达到3000步以上时，每增加10步，奖励1积分。",@"2.积分使用",@"A.用户的积分可用于语音通话，通话一分钟使用10积分。"];
+    NSArray *arrStr = @[KLocalizable(@"pointDesTitleFirst"),KLocalizable(@"pointDesContentFirst"),KLocalizable(@"pointDesTitleSecond"),KLocalizable(@"pointDesContentSecond")];
     UILabel *labTitle1 = [[UILabel alloc] initWithFrame:CGRectMake(12.f, deltaY + 12.f, kScreenWidth - 12.f, 40.f)];
     labTitle1.text = arrStr[0];
     [self.view addSubview:labTitle1];
