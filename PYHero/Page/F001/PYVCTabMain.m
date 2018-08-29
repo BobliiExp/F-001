@@ -30,20 +30,11 @@
     [super viewDidLoad];
     
     NSArray *config = @[
-<<<<<<< HEAD
-                        @{@"title":KLocalizable(@"voice"), @"icon":@"msg", @"class":@"PYVCTabMedia"},
-//                        @{@"title":@"摇一摇", @"icon":@"ocean", @"class":@"PYVCTabShake"},
-                        @{@"title":KLocalizable(@"lottery"), @"icon":@"life", @"class":@"PYVCTabLottery"},
-//                        @{@"title":@"捉妖", @"icon":@"work", @"class":@"PYVCTabMonster"},
-                        @{@"title":KLocalizable(@"mine"), @"icon":@"own", @"class":@"PYVCTabOwn"},
-=======
                         @{@"title":kAFLocalize(kStrYuxin), @"icon":@"msg", @"class":@"PYVCTabMedia"},
 //                        @{@"title":kAFLocalize(kStrYubang), @"icon":@"ocean", @"class":@"PYVCTabShake"},
                         @{@"title":kAFLocalize(kStrYuxi), @"icon":@"life", @"class":@"PYVCTabLottery"},
 //                        @{@"title":kAFLocalize(kStrYuchao), @"icon":@"work", @"class":@"PYVCTabMonster"},
                         @{@"title":kAFLocalize(kStrYulong), @"icon":@"own", @"class":@"PYVCTabOwn"},
->>>>>>> parent of 34c4d4f... Merge pull request #9 from BobliiExp/pr/8
-                        ];
     
     NSMutableArray *mArr = [NSMutableArray arrayWithCapacity:config.count];
     

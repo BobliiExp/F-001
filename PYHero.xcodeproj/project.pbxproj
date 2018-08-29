@@ -1744,7 +1744,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-<<<<<<< HEAD
 		A19C78C921366A1D00C03964 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1761,7 +1760,7 @@
 				A19C78D021366B0F00C03964 /* zh-Hans */,
 			);
 			name = Localizable.strings;
-=======
+};
 		C448B6F02136694D00DBEC7A /* localization_sentence.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1778,7 +1777,6 @@
 				C448B6F12136695900DBEC7A /* Base */,
 			);
 			name = localization.strings;
->>>>>>> parent of 34c4d4f... Merge pull request #9 from BobliiExp/pr/8
 			sourceTree = "<group>";
 		};
 		D186501E206E210400C2A6D0 /* Main.storyboard */ = {
