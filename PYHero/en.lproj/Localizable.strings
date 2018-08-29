@@ -1,0 +1,73 @@
+/* 
+  Localizable.strings
+  PYHero
+
+  Created by crow on 2018/8/29.
+  Copyright © 2018 Bob Lee. All rights reserved.
+*/
+
+"voice" = "Voice";
+"lottery" = "Lottery";
+"mine" = "Mine";
+"historyRecord" = "History record";
+
+/******************** 语音 **********************/
+"startVoice" = "Start Voice";
+"startAlertTitle" = "The voice invitation code has been generated, you can";
+"startAlertInvite" = "Invite friends to talk";
+"startAlertConnected" = "Connected friends";
+"enterInviteCode" = "Please enter the invitation code";
+"voiceAlertTitle" = "Please enter the voice invitation code in the text message!";
+"voiceInviteCode" = "Voice invitation code";
+"cancel" = "Cancel";
+"cancelInvite" = "Cancel invite";
+
+/******************** 转一转 **********************/
+"currentAvailableTimes" = "Current available time: ";
+"currentPoints" = "Current user points: ";
+"startPlay" = "Start Play";
+"congratulations" = "Congratulations on getting";
+"point" = "point";
+"incomePocket" = "Income pocket";
+"playAgain" = "Unfortunately, play again!";
+"ok" = "Ok";
+"tips" = "Tips";
+"timesOut" = "The number of games has been used up today, please come back tomorrow!";
+"determine" = "Determine";
+
+/******************** 我的 **********************/
+"setting" = "Setting";
+"avatar" = "Avatar";
+"nickname" = "Nickname";
+"save" = "Save";
+"giveNickname" = "Give yourself a nickname";
+"stepRedemption" = "Step redemption";
+"startTime" = "Starting time: ";
+"duration" = "Duration";
+"usePoints" = "Use points: ";
+"unusePoints" = "Invited, do not use points";
+"earnPoints" = "Earn points: ";
+
+"stepRedemptioned" = "I have already redeemed the number of steps today, please come back tomorrow!";
+"stepAcquisitionFailed" = "Step acquisition failed";
+"stepAuthFailed" = "Unable to get the number of steps, please open the exercise and fitness permissions in the settings";
+"stepAlertFirst" = "Dear,come on,your current number of steps ";
+"stepAlertSecond" = ",Please redeem it at 18:00~20:00.";
+"stepAlertThird" = ",convertible ";
+"stepAlertFourth" = " points\n(more than 3000 steps, 1 point for every 10 steps)";
+"stepAlertFifth" = ",to reach 3000 steps to redeem";
+"stepAlertSixth" = "Dear, your current number of steps ";
+
+"noData" = "No data";
+"welcome" = "Welcome newcomers";
+"welcomeContent" = "Congratulations on getting 20 points for newcomers! \nHurry up and update your avatar and nickname!";
+"goSet" = "Go to set";
+"knowPoint" = "Know the point";
+"pointDes" = "Point Description";
+"pointDesTitleFirst" = "1.Point Acquisition";
+"pointDesContentFirst" = "A. Participate in a turn and get random points, you can participate in five times a day. \nB. Daily exercise step count, when it reaches 3000 steps or more, for each additional 10 steps, reward 1 point.";
+"pointDesTitleSecond" = "2.Point use";
+"pointDesContentSecond" = "A. The user's points can be used for voice calls, and the call uses 10 points in one minute.";
+
+
+

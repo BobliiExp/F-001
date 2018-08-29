@@ -23,7 +23,7 @@
         lab.textAlignment = NSTextAlignmentCenter;
         lab.font = kFont_Title;
         lab.textColor = kColor_Title;
-        lab.text = point.integerValue ? [NSString stringWithFormat:@"恭喜您获得 %@ 积分",point] : @"很遗憾，再玩一次吧！";
+        lab.text = point.integerValue ? [NSString stringWithFormat:@"%@ %@ %@",KLocalizable(@"congratulations"),point,KLocalizable(@"point")] : KLocalizable(@"playAgain");
         [self addSubview:lab];
         
         CALayer *line = [[CALayer alloc] init];
@@ -41,7 +41,7 @@
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((self.mj_w - width)/2.f, CGRectGetMaxY(imgV.frame) + 12.f, width, 35)];
         btn.titleLabel.font = [UIFont fontNormal:13.f];
         [btn setTitleColor:kColor_Title forState:UIControlStateNormal];
-        [btn setTitle:point.integerValue ? @"收入囊中" : @"好的" forState:UIControlStateNormal];
+        [btn setTitle:point.integerValue ? KLocalizable(@"incomePocket") : KLocalizable(@"ok") forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(btnOnClicked) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
         btn.layer.cornerRadius = btn.mj_h/2.f;

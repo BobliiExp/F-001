@@ -10,8 +10,8 @@
 
 @interface PYModelSaveMedia : NSObject
 
-@property (nonatomic, copy) NSString *startTime;    ///< 开始时间
-@property (nonatomic, copy) NSString *duration;     ///< 语音时间
+@property (nonatomic, copy) NSString *startTime;    ///< 开始时间，传时间字符串,2018-08-08 10:30
+@property (nonatomic, copy) NSString *duration;     ///< 语音时间，传10:22
 @property (nonatomic, assign) NSInteger point;      ///< 使用的积分
 @property (nonatomic, assign) BOOL beInvited;       ///< 是否被邀请
 

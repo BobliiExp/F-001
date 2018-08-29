@@ -104,7 +104,7 @@
     
     NSString *name = [kUserDefaults objectForKey:KUserInfoData];
     if (!name) {
-        name = @"给自己起个名字吧";
+        name = KLocalizable(@"giveNickname");
     }
     
     NSArray *arr =@[img,name];

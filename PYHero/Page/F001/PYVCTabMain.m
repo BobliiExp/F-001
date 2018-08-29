@@ -30,11 +30,11 @@
     [super viewDidLoad];
     
     NSArray *config = @[
-                        @{@"title":@"语音", @"icon":@"msg", @"class":@"PYVCTabMedia"},
+                        @{@"title":KLocalizable(@"voice"), @"icon":@"msg", @"class":@"PYVCTabMedia"},
 //                        @{@"title":@"摇一摇", @"icon":@"ocean", @"class":@"PYVCTabShake"},
-                        @{@"title":@"转一转", @"icon":@"life", @"class":@"PYVCTabLottery"},
+                        @{@"title":KLocalizable(@"lottery"), @"icon":@"life", @"class":@"PYVCTabLottery"},
 //                        @{@"title":@"捉妖", @"icon":@"work", @"class":@"PYVCTabMonster"},
-                        @{@"title":@"我的", @"icon":@"own", @"class":@"PYVCTabOwn"},
+                        @{@"title":KLocalizable(@"mine"), @"icon":@"own", @"class":@"PYVCTabOwn"},
                         ];
     
     NSMutableArray *mArr = [NSMutableArray arrayWithCapacity:config.count];

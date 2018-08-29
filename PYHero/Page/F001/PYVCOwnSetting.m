@@ -23,9 +23,9 @@
 }
 
 - (void)setupUI {
-    self.title = @"设置";
+    self.title = KLocalizable(@"setting");
     self.view.backgroundColor = kColor_Background;
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemOnClicked:)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:KLocalizable(@"save") style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemOnClicked:)];
     item.tintColor = kColor_Title;
     self.navigationItem.rightBarButtonItem = item;
     
@@ -47,7 +47,7 @@
     UILabel *lab = [[UILabel alloc] init];
     lab.font = kFont_XL;
     lab.textColor = kColor_Title;
-    lab.text = @"头像";
+    lab.text = KLocalizable(@"avatar");
     [view addSubview:lab];
     [lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(view).offset(space);
@@ -79,7 +79,7 @@
     UILabel *labName = [[UILabel alloc] init];
     labName.font = lab.font;
     labName.textColor = lab.textColor;
-    labName.text = @"昵称";
+    labName.text = KLocalizable(@"nickname");
     [view addSubview:labName];
     [labName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.height.width.equalTo(lab);
@@ -97,7 +97,7 @@
         make.right.equalTo(imgV);
         make.centerY.equalTo(labName);
         make.height.equalTo(@30);
-        make.width.equalTo(@150);
+        make.width.equalTo(@220);
     }];
     
     labNick.userInteractionEnabled = YES;
@@ -119,7 +119,7 @@
 }
 
 -(void)labOnClicked:(UITapGestureRecognizer *)tap {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"" message:@"请输入昵称" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"" message:@"请输入昵称" delegate:self cancelButtonTitle:KLocalizable(@"cancel") otherButtonTitles:KLocalizable(@"determine"), nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView show];
 }
