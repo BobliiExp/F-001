@@ -14,7 +14,6 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "PYIMAudioConverter.h"
 
-
 #import "c2c.h"
 #import "c2s.h"
 
@@ -40,6 +39,7 @@ typedef struct MyAUGraphStruct{
     NSMutableData *mDataSend;
     NSMutableData *mDataRec;
     NSInteger sendCount;
+    
 }
 
 @property (nonatomic, copy) void(^recordEnd)(NSData *media); ///< 录制语音包回调

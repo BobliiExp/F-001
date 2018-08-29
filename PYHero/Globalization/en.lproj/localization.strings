@@ -8,8 +8,6 @@
   Copyright © 2018年 Bob Lee. All rights reserved.
 */
 
-"CFBundleDisplayName" = "Seek luck";
-
 "actBack"           =       "返回";
 "actRefresh"        =       "刷新";
 "actDownload"       =       "下载";

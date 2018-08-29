@@ -8,8 +8,6 @@
   Copyright © 2018年 Bob Lee. All rights reserved.
 */
 
-"CFBundleDisplayName" = "一起来转转";
-
 "actBack"           =       "返回";
 "actRefresh"        =       "刷新";
 "actDownload"       =       "下载";

@@ -17,11 +17,18 @@
 #import "c2c.h"
 #import "c2s.h"
 
+#import "PYModelSaveMedia.h"
+#import "PYModelSaveMedia.h"
+
 /**
  TODO:增加一个timer，如果走到了等待对方接受请求逻辑，就开起来，timer完了提示对方手机不在身边或不在线
  */
 @interface PYVCChatAudio () {
     uint64_t timeRecord; // 开始录制时间
+    
+    NSTimeInterval timeStart;
+    
+    PYModelSaveMedia *modelSave;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *laycCloseTop;
@@ -66,7 +73,7 @@
     self.btnClose.layer.borderColor = kColor_Content.CGColor;
     self.btnClose.layer.borderWidth = 1.0;
     
-    self.labName.text = [NSString stringWithFormat:@"%lld", kAccount.toAccount];
+    self.labName.text = [NSString stringWithFormat:@"%d", self.toAccount];
     
     kPermissionAccess acc = [[UIApplication sharedApplication] hasAccessToMicrophone];
     if(acc == kPermissionAccessGranted){
@@ -213,6 +220,11 @@
     
     kAccount.chatState = play?1:0;
     if(play){
+        modelSave = [[PYModelSaveMedia alloc] init];
+        modelSave.startTime = [NSDate date2String:[NSDate date] formatType:ETimeFormatTimeShort];
+        modelSave.beInvited = self.isRequest;
+        
+        timeStart = [[NSDate date] timeIntervalSince1970];
         timeRecord = [[NSDate date] timeIntervalSince1970]*1000;
         
         __weak typeof(self) weakSelf = self;
@@ -257,7 +269,7 @@
 }
 
 - (IBAction)btnCloseClicked:(id)sender {
-    
+    [self caneclWithError:nil isLocal:YES];
 }
 
 - (void)tapView:(UITapGestureRecognizer*)sender {
@@ -272,6 +284,16 @@
 
 - (void)caneclWithError:(PYIMError*)error isLocal:(BOOL)isLocal {
     if(self.audioController==nil)return;
+    
+    if(modelSave){
+        NSTimeInterval  end = [[NSDate date] timeIntervalSince1970];
+        
+        int score = (int)ceil((end-timeStart)/60);
+        modelSave.duration = [NSString stringWithFormat:@"%d:%d", (int)round((end-timeStart)/60), (int)(((int)end-(int)timeStart)%60)];
+        modelSave.point = score;
+        
+        [PYUserManage py_saveMediaData:modelSave];
+    }
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     if(self.taskGetAccount){

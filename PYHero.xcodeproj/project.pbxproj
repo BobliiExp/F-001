@@ -26,7 +26,6 @@
 		A17B94162132CBD6005407EF /* PYImgVLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94142132CBD6005407EF /* PYImgVLottery.m */; };
 		A17B94192132CCD3005407EF /* PYVCPointInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94182132CCD3005407EF /* PYVCPointInfo.m */; };
 		A19C78C721366A1D00C03964 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A19C78C921366A1D00C03964 /* InfoPlist.strings */; };
-		A19C78CD21366B0E00C03964 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A19C78CF21366B0E00C03964 /* Localizable.strings */; };
 		A1C4E891212D99E500C5F654 /* PYCellLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C4E890212D99E500C5F654 /* PYCellLottery.m */; };
 		A1D023D22134ECC400A3FDC3 /* UILabel+AttributeString.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D023D12134ECC400A3FDC3 /* UILabel+AttributeString.m */; };
 		C43886CE21324FAA00500E58 /* PYAudioWaveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C43886CD21324FAA00500E58 /* PYAudioWaveLayer.m */; };
@@ -128,7 +127,8 @@
 		C4BC917B212EDE3900457D76 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BC917A212EDE3900457D76 /* libiconv.tbd */; };
 		C4BC917D212EDE3F00457D76 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BC917C212EDE3F00457D76 /* libz.tbd */; };
 		C4BC9180212EE61400457D76 /* PYVAudioWave.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BC917F212EE61400457D76 /* PYVAudioWave.m */; };
-		C4BD85FD213668A0006EBA64 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4BD85FF213668A0006EBA64 /* localization.strings */; };
+		C4BD86022136CCB0006EBA64 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4BD85FF213668A0006EBA64 /* localization.strings */; };
+		C4BD86052136CCC6006EBA64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4BD86032136CCC6006EBA64 /* Localizable.strings */; };
 		C4F63675212DAD5B00F9132A /* AFFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F63673212DAD5A00F9132A /* AFFAlertView.m */; };
 		C4F6367B212DB62000F9132A /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6367A212DB62000F9132A /* UIImage+Color.m */; };
 		D10BD2B62072803F00AA1615 /* NSDate+PYHero.m in Sources */ = {isa = PBXBuildFile; fileRef = D10BD2B52072803F00AA1615 /* NSDate+PYHero.m */; };
@@ -207,8 +207,6 @@
 		A19C78C4213669CD00C03964 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A19C78C821366A1D00C03964 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A19C78CA21366A1F00C03964 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		A19C78CE21366B0E00C03964 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A19C78D021366B0F00C03964 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A1C4E88F212D99E500C5F654 /* PYCellLottery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYCellLottery.h; sourceTree = "<group>"; };
 		A1C4E890212D99E500C5F654 /* PYCellLottery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYCellLottery.m; sourceTree = "<group>"; };
 		A1D023D02134ECC400A3FDC3 /* UILabel+AttributeString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+AttributeString.h"; sourceTree = "<group>"; };
@@ -278,14 +276,12 @@
 		C438873D21327B0400500E58 /* NSString+PY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PY.h"; sourceTree = "<group>"; };
 		C438873E21327B0400500E58 /* NSString+PY.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+PY.m"; sourceTree = "<group>"; };
 		C448B6EF2136694D00DBEC7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization_sentence.strings; sourceTree = "<group>"; };
-		C448B6F12136695900DBEC7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/localization.strings; sourceTree = "<group>"; };
-		C448B6F22136696200DBEC7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/localization_sentence.strings; sourceTree = "<group>"; };
 		C448B6F32136733800DBEC7A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C448B6F52136736F00DBEC7A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C448B6F72136738400DBEC7A /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		C448B6F92136738C00DBEC7A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		C46DF5B7212B962E00C784F5 /* localization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = localization.h; sourceTree = "<group>"; };
-		C46DF5BA212B973C00C784F5 /* localization_sentence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = localization_sentence.h; sourceTree = "<group>"; };
+		C46DF5B7212B962E00C784F5 /* localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = localization.h; sourceTree = "<group>"; };
+		C46DF5BA212B973C00C784F5 /* localization_sentence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = localization_sentence.h; sourceTree = "<group>"; };
 		C47A5BA62123C3DC00467618 /* PYVCTabMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabMedia.h; sourceTree = "<group>"; };
 		C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCTabMedia.m; sourceTree = "<group>"; };
 		C47A5BA92123C3F800467618 /* PYVCTabShake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabShake.h; sourceTree = "<group>"; };
@@ -498,6 +494,10 @@
 		C4BC917E212EE61400457D76 /* PYVAudioWave.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVAudioWave.h; sourceTree = "<group>"; };
 		C4BC917F212EE61400457D76 /* PYVAudioWave.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVAudioWave.m; sourceTree = "<group>"; };
 		C4BD85FE213668A0006EBA64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
+		C4BD86042136CCC6006EBA64 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C4BD86062136CCFE006EBA64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C4BD86072136CD87006EBA64 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/localization_sentence.strings"; sourceTree = "<group>"; };
+		C4BD86092136CDBA006EBA64 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/localization.strings"; sourceTree = "<group>"; };
 		C4F63673212DAD5A00F9132A /* AFFAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFFAlertView.m; sourceTree = "<group>"; };
 		C4F63674212DAD5B00F9132A /* AFFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFFAlertView.h; sourceTree = "<group>"; };
 		C4F63679212DB62000F9132A /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
@@ -1382,6 +1382,7 @@
 		D1865014206E210400C2A6D0 /* PYHero */ = {
 			isa = PBXGroup;
 			children = (
+				C4BD86032136CCC6006EBA64 /* Localizable.strings */,
 				C4147D22212AFFFB00A8D79C /* Globalization */,
 				D1865035206E384D00C2A6D0 /* Helper */,
 				D186502F206E384D00C2A6D0 /* Page */,
@@ -1395,7 +1396,6 @@
 				D1865027206E210400C2A6D0 /* main.m */,
 				D186503B206E396900C2A6D0 /* PrefixHeader.pch */,
 				A19C78C921366A1D00C03964 /* InfoPlist.strings */,
-				A19C78CF21366B0E00C03964 /* Localizable.strings */,
 			);
 			path = PYHero;
 			sourceTree = "<group>";
@@ -1468,6 +1468,7 @@
 				D186500F206E210400C2A6D0 /* Frameworks */,
 				D1865010206E210400C2A6D0 /* Resources */,
 				57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */,
+				6582C0309CBF5FC26C7C514C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1532,13 +1533,13 @@
 				A1220218212AAF25007710D4 /* Assets.xcassets in Resources */,
 				C438871D2132739F00500E58 /* SeaVertex.glsl in Resources */,
 				C43887212132739F00500E58 /* fanshaped.jpg in Resources */,
-				C46DF5B6212B955E00C784F5 /* localization.strings in Resources */,
-				A19C78CD21366B0E00C03964 /* Localizable.strings in Resources */,
 				D176D3C02075DEFF00EA514B /* PYVCNewsHero.xib in Resources */,
 				D1865025206E210400C2A6D0 /* LaunchScreen.storyboard in Resources */,
+				C4BD86052136CCC6006EBA64 /* Localizable.strings in Resources */,
 				C438871C2132739F00500E58 /* SeaFragment.glsl in Resources */,
 				D176D3C52075DF9000EA514B /* PYVCNewsFamous.xib in Resources */,
 				C43887262132739F00500E58 /* fill.png in Resources */,
+				C4BD86022136CCB0006EBA64 /* localization.strings in Resources */,
 				C43887392132739F00500E58 /* microPhone_top@3x.png in Resources */,
 				C448B6EE2136694D00DBEC7A /* localization_sentence.strings in Resources */,
 				D176D3BB2075DECF00EA514B /* PYVCNewsGame.xib in Resources */,
@@ -1627,6 +1628,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6582C0309CBF5FC26C7C514C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DA0B4A3BE746F8B912B20316 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1642,7 +1658,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1768,19 +1784,11 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		A19C78CF21366B0E00C03964 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A19C78CE21366B0E00C03964 /* en */,
-				A19C78D021366B0F00C03964 /* zh-Hans */,
-			);
-			name = Localizable.strings;
-};
 		C448B6F02136694D00DBEC7A /* localization_sentence.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C448B6EF2136694D00DBEC7A /* en */,
-				C448B6F22136696200DBEC7A /* Base */,
+				C4BD86072136CD87006EBA64 /* zh-Hans */,
 			);
 			name = localization_sentence.strings;
 			sourceTree = "<group>";
@@ -1789,9 +1797,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				C4BD85FE213668A0006EBA64 /* en */,
-				C448B6F12136695900DBEC7A /* Base */,
+				C4BD86092136CDBA006EBA64 /* zh-Hans */,
 			);
 			name = localization.strings;
+			sourceTree = "<group>";
+		};
+		C4BD86032136CCC6006EBA64 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4BD86042136CCC6006EBA64 /* zh-Hans */,
+				C4BD86062136CCFE006EBA64 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		D186501E206E210400C2A6D0 /* Main.storyboard */ = {
@@ -1928,7 +1945,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UEMD52M26A;
+				DEVELOPMENT_TEAM = S86KA93GD7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1968,7 +1985,7 @@
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/x264-iOS/lib",
 					"$(PROJECT_DIR)/PYHero/libBSWebImage",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHeroer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1981,7 +1998,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UEMD52M26A;
+				DEVELOPMENT_TEAM = S86KA93GD7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2021,7 +2038,7 @@
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/x264-iOS/lib",
 					"$(PROJECT_DIR)/PYHero/libBSWebImage",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHeroer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

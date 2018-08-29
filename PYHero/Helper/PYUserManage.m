@@ -44,6 +44,11 @@
     NSMutableArray *mArr = [NSMutableArray arrayWithArray:[self py_getMediaData]];
     [mArr insertObject:model atIndex:0];
     
+    // 更新积分
+    NSInteger point = [self py_getPoint].integerValue;
+    point -= model.point;
+    [self py_savePoint:[NSString stringWithFormat:@"%zi", point]];
+    
     [kUserDefaults setObject:mArr forKey:@"MediaData"];
     [kUserDefaults synchronize];
 }

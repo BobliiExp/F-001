@@ -268,11 +268,7 @@ static int code = 10102;
         return;
     }
     
-    
-    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *appName = [infoDict stringForKey:@"CFBundleDisplayName"];
-    
-    NSString *strMessage = [NSString stringWithFormat:kAFLocalizeEx(kstrFormat_AudioInvite, kLZ_Sentence), code, appName];
+    NSString *strMessage = [NSString stringWithFormat:kAFLocalizeEx(kstrFormat_AudioInvite, kLZ_Sentence), code, kAFLocalizeEx(@"CFBundleDisplayName", @"InfoPlist")];
     [self sendSMS:strMessage recipientList:nil];
 }
 
@@ -348,7 +344,7 @@ static int code = 10102;
         cell.backgroundColor = kColor_Background;
     }
     
-    cell.textLabel.text = kAFLocalize(kActRecord);
+    cell.textLabel.text = kAFLocalize(kstrRecord);
 //    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : kColor_Background;
 //    [cell setupData:self.mArrData[indexPath.row]];
     return cell;
