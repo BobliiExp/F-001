@@ -1,0 +1,27 @@
+/* 
+  localization_sentence.strings
+  PYHero
+
+  描述内容
+ 
+  Created by Bob Lee on 2018/8/21.
+  Copyright © 2018年 Bob Lee. All rights reserved.
+*/
+
+
+
+/********** format ***********/
+
+"strFormat_PrivateVisit"   =     "无法使用%@\n请在iPhone的“%@”中允许%@访问你的%@";
+"strFormat_AudioInvite"   =     "Hi，我正在使用虫洞语音，语音邀请号为:%@, 赶快打开或者下载 “%@” app,开始畅聊吧！";
+"strFormat_AudioScoreCheck"   =     "您当前积分为:%zi，至少需要10积分才能使用语音功能";
+
+"strAudioAlertMsg"   =     "请输入短信中的语音邀请码！";
+"strAudioConnectWait"   =     "正在等待对方接受邀请...";
+"strAudioInviteCode"   =     "语音邀请码";
+"strAudioSheet"   =     "语音邀请码已生成，您可以";
+"strAudioInvite"   =     "邀请好友";
+"strAudioConnect"   =     "连线好友";
+"strAudioEarn"   =     "赚取积分";
+"strAudioInviteSMS"   =     "短信邀请";
+"strAudioInviteFrom"   =     "收到来自好友的语音请求";
