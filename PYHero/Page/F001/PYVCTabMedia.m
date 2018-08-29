@@ -173,11 +173,15 @@ static int code = 10102;
     UILabel *lab = [[UILabel alloc] initWithFrame:frame];
     lab.textColor = kColor_Title;
     lab.textAlignment = NSTextAlignmentCenter;
-    lab.text = KLocalizable(@"voiceAlertTitle");
+    lab.text = kAFLocalizeEx(kstrAudioAlertMsg, kLZ_Sentence);
     [view addSubview:lab];
     
     __block UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake((kAlertViewWidth-100)/2, CGRectGetMaxY(frame)+paddinng, 100, 40)];
     field.placeholder = KLocalizable(@"voiceInviteCode");
+    [view addSubview:lab];
+    
+    __block UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake((kAlertViewWidth-100)/2, CGRectGetMaxY(frame)+paddinng, 100, 40)];
+    field.placeholder = kAFLocalizeEx(kstrAudioInviteCode, kLZ_Sentence);
     field.layer.borderColor = kColor_Content.CGColor;
     field.layer.borderWidth = 1.0;
     field.textColor = [UIColor blackColor];
@@ -187,11 +191,11 @@ static int code = 10102;
     [view addSubview:field];
     
     view.frame = CGRectMake(0, 0, kAlertViewWidth, CGRectGetMaxY(field.frame)+paddinng);
-    
-    [AFFAlertView alertWithView:view btnTitle:@[KLocalizable(@"startAlertConnected"), KLocalizable(@"cancel")] block:^(NSInteger index, BOOL isCancel) {
+   
+    [AFFAlertView alertWithView:view btnTitle:@[kAFLocalizeEx(kstrAudioConnect, kLZ_Sentence), kAFLocalize(kActCancel)] block:^(NSInteger index, BOOL isCancel) {
         if(!isCancel){
             if(field.text==nil || field.text.length==0){
-                [SVProgressHUD showInfoWithStatus:KLocalizable(@"enterInviteCode")];
+                [SVProgressHUD showInfoWithStatus:kAFLocalizeEx(kstrAudioAlertMsg, kLZ_Sentence)];
                 return;
             }
             
@@ -212,7 +216,7 @@ static int code = 10102;
 - (void)connect {
     if(kAccount.hadLogin){
         // 登录、获取链接秘钥
-        [AFFAlertView actionSheetWithTitle:KLocalizable(@"startAlertTitle") btnTitle:@[KLocalizable(@"startAlertInvite"), KLocalizable(@"startAlertConnected"), KLocalizable(@"cancel")] block:^(NSInteger index, BOOL isCancel) {
+        [AFFAlertView actionSheetWithTitle:kAFLocalizeEx(kstrAudioSheet, kLZ_Sentence) btnTitle:@[kAFLocalizeEx(kstrAudioInvite, kLZ_Sentence), kAFLocalizeEx(kstrAudioConnect, kLZ_Sentence), kAFLocalize(kActCancel)] block:^(NSInteger index, BOOL isCancel) {
             if(isCancel){
                 [_rippleView cleanTheme];
             }else if(index == 0){
@@ -231,7 +235,7 @@ static int code = 10102;
                 [SVProgressHUD dismiss];
                 
                 // 登录、获取链接秘钥
-                [AFFAlertView actionSheetWithTitle:KLocalizable(@"startAlertTitle") btnTitle:@[KLocalizable(@"startAlertInvite"), KLocalizable(@"startAlertConnected"), KLocalizable(@"cancel")] block:^(NSInteger index, BOOL isCancel) {
+                [AFFAlertView actionSheetWithTitle:kAFLocalizeEx(kstrAudioSheet, kLZ_Sentence) btnTitle:@[kAFLocalizeEx(kstrAudioInvite, kLZ_Sentence), kAFLocalizeEx(kstrAudioConnect, kLZ_Sentence), kAFLocalize(kActCancel)] block:^(NSInteger index, BOOL isCancel) {
                     if(isCancel){
                         [_rippleView cleanTheme];
                     }else if(index == 0){
@@ -252,7 +256,7 @@ static int code = 10102;
 -(void)invate:(NSString *)code{
     NSInteger coin = [[PYUserManage py_getPoint] integerValue];
     if(coin<10){
-        [AFFAlertView alertWithTitle:[NSString stringWithFormat:@"您当前积分为:%zi，至少需要10积分才能使用语音功能", coin] btnTitle:@[@"赚取积分", KLocalizable(@"cancel")] block:^(NSInteger index, BOOL isCancel) {
+        [AFFAlertView alertWithTitle:[NSString stringWithFormat:kAFLocalizeEx(kstrFormat_AudioScoreCheck, kLZ_Sentence), coin] btnTitle:@[kAFLocalizeEx(kstrAudioEarn, kLZ_Sentence), kAFLocalize(kActCancel)] block:^(NSInteger index, BOOL isCancel) {
             if(!isCancel){
                 for(UINavigationController *nav in self.tabBarController.viewControllers){
                     if([nav.viewControllers.firstObject isKindOfClass:NSClassFromString(@"PYVCTabLottery")]){
@@ -272,7 +276,7 @@ static int code = 10102;
     NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
     NSString *appName = [infoDict stringForKey:@"CFBundleDisplayName"];
     
-    NSString *strMessage = [NSString stringWithFormat:@"Hi，我正在使用虫洞语音，语音邀请号为:%@, 赶快打开或者下载 “%@” app,开始畅聊吧！", code, appName];
+    NSString *strMessage = [NSString stringWithFormat:kAFLocalizeEx(kstrFormat_AudioInvite, kLZ_Sentence), code, appName];
     [self sendSMS:strMessage recipientList:nil];
 }
 
@@ -285,8 +289,9 @@ static int code = 10102;
         controller.messageComposeDelegate = self;
         //iOS 9.2 要自己写导航栏，和右边按钮
         UINavigationItem *navItem = [[[controller viewControllers] lastObject] navigationItem];
-        [navItem setTitle:@"短信邀请"];
-        UIBarButtonItem* item = [[UIBarButtonItem alloc]initWithTitle:KLocalizable(@"cancel") style:UIBarButtonItemStylePlain target:self action:@selector(messageVCHide)];
+        [navItem setTitle:kAFLocalizeEx(kstrAudioInviteSMS, kLZ_Sentence)];
+        UIBarButtonItem* item = [[UIBarButtonItem alloc]initWithTitle:kAFLocalize(kActCancel) style:UIBarButtonItemStylePlain target:self action:@selector(messageVCHide)];
+
         navItem.rightBarButtonItem = item;
         [self presentViewController:controller animated:YES completion:nil];
     }
@@ -303,10 +308,10 @@ static int code = 10102;
     [self dismissViewControllerAnimated:YES completion:nil];
     NSString *str = nil;
     if (result == MessageComposeResultSent){
-        str = @"邀请发送成功";
+        str = kAFLocalize(kActSuccess);
     }
     else{
-        str = KLocalizable(@"cancelInvite");
+        str = kAFLocalize(kActCancel);
     }
     
     [SVProgressHUD showInfoWithStatus:str];
@@ -321,7 +326,7 @@ static int code = 10102;
 }
 
 - (void)actionnRequest {
-    [AFFAlertView actionSheetWithTitle:@"收到来自好友的语音请求" btnTitle:@[@"连线语音", KLocalizable(@"cancel")] block:^(NSInteger index, BOOL isCancel) {
+    [AFFAlertView actionSheetWithTitle:kAFLocalizeEx(kstrAudioInviteFrom, kLZ_Sentence) btnTitle:@[kAFLocalizeEx(kstrAudioConnect, kLZ_Sentence), kAFLocalize(kActCancel)] block:^(NSInteger index, BOOL isCancel) {
         if(isCancel){
             [PYIMAPIChat chatC2CRequestAccept:NO callback:^(PYIMError *error) {}];
         }else {
@@ -348,7 +353,7 @@ static int code = 10102;
         cell.backgroundColor = kColor_Background;
     }
     
-    cell.textLabel.text = KLocalizable(@"historyRecord");
+    cell.textLabel.text = kAFLocalize(kActRecord);
 //    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : kColor_Background;
 //    [cell setupData:self.mArrData[indexPath.row]];
     return cell;

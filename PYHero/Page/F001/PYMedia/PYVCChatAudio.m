@@ -55,13 +55,13 @@
     [self.viewSmall addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)]];
     
     [self.btnCancel setTitleColor:kColor_Select forState:UIControlStateNormal];
-    [self.btnCancel setTitle:kAFLocalize(@"取消") forState:UIControlStateNormal];
+    [self.btnCancel setTitle:kAFLocalize(kActCancel) forState:UIControlStateNormal];
     self.btnCancel.layer.cornerRadius = CGRectGetHeight(self.btnCancel.frame)/2;
     self.btnCancel.layer.borderColor = kColor_Select.CGColor;
     self.btnCancel.layer.borderWidth = 1.0;
     
     [self.btnClose setTitleColor:kColor_Content forState:UIControlStateNormal];
-    [self.btnClose setTitle:kAFLocalize(@"关闭") forState:UIControlStateNormal];
+    [self.btnClose setTitle:kAFLocalize(kActClose) forState:UIControlStateNormal];
     self.btnClose.layer.cornerRadius = CGRectGetHeight(self.btnClose.frame)/2;
     self.btnClose.layer.borderColor = kColor_Content.CGColor;
     self.btnClose.layer.borderWidth = 1.0;
@@ -208,7 +208,7 @@
     if(self.audioController.isPlaying==play)return;
     NSLog(@"开启语音模块");
     
-    self.labDesc.text = play?@"":@"正在等待对方接受邀请...";
+    self.labDesc.text = play?@"":kAFLocalizeEx(kstrAudioConnectWait, kLZ_Sentence);
     self.labName.text = [NSString stringWithFormat:@"%lld", kAccount.toAccount];
     
     kAccount.chatState = play?1:0;

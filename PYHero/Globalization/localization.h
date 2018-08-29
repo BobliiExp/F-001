@@ -9,6 +9,8 @@
 #ifndef localization_h
 #define localization_h
 
+#import "localization_sentence.h"
+
 #define kLZ_Sentence    @"localization_sentence"
 
 #define kAFLocalize(key)            NSLocalizedString(key, nil)
@@ -38,6 +40,8 @@
 #define kActPreview     @"actPreview"
 #define kActLeave       @"actLeave"
 #define kActClose       @"actClose"
+#define kActSuccess       @"actSuccess"
+#define kActFailed       @"actFailed"
 
 #define kActCopy        @"actCopy"
 #define kActTransmit    @"actTransmit"
@@ -65,8 +69,14 @@
 #define kStrYubang      @"strYubang"
 #define kStrYuxin       @"strYuxin"
 #define kStrYulong      @"strYulong"
-#define kStrYuzai       @"strYuzai"
+#define kStrYuxi       @"strYuxi"
 #define kStrYuchao      @"strYuchao"
+
+#define kstrStartVoice      @"strStartVoice"
+#define kstrRecord       @"strRecord"
+#define kstrStartTime      @"strStartTime"
+#define kstrTimespan       @"strTimespan"
+#define kstrScoreCast      @"strScoreCast"
 
 #define kStrYusen       @"strYusen"
 #define kStrYucontact   @"strYucontact"
