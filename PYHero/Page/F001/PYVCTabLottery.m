@@ -186,7 +186,7 @@
         }
         _isPlay = YES;
     }else {
-        [AFFAlertView alertWithTitle:KLocalizable(@"tips") content:KLocalizable(@"timesOut") btnTitle:@[KLocalizable(@"determine")] block:^(NSInteger index, BOOL isCancel) {
+        [AFFAlertView alertWithTitle:@"温馨提示" content:@"今日游戏次数已经用光，请明天再来吧！" btnTitle:@[@"确定"] block:^(NSInteger index, BOOL isCancel) {
             [AFFAlertView dismiss];
         }];
     }
@@ -228,7 +228,7 @@
                 point = @"0";
             }
             PYModelAttr *model = [[PYModelAttr alloc] init];
-            model.arrText = @[KLocalizable(@"currentAvailableTimes"), [NSString stringWithFormat:@"%ld",_count]];
+            model.arrText = @[@"当前可用次数：", [NSString stringWithFormat:@"%ld",_count]];
             model.arrFgColor = @[kColor_Title, KColorTheme];
             [self.vLottery.labCount setAttributedTextWithModel:model];
             
@@ -237,7 +237,7 @@
             [PYUserManage py_savePoint:currentPoint];
             
             model = [[PYModelAttr alloc] init];
-            model.arrText = @[KLocalizable(@"currentPoints"), currentPoint];
+            model.arrText = @[@"当前积分：", currentPoint];
             model.arrFgColor = @[kColor_Title, KColorTheme];
             
             if (point.integerValue > 0) { // 获得积分
@@ -278,7 +278,7 @@
         cell.backgroundColor = kColor_Background;
     }
     
-    cell.textLabel.text = KLocalizable(@"historyRecord");
+    cell.textLabel.text = @"历史记录";
     //    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : kColor_Background;
     //    [cell setupData:self.mArrData[indexPath.row]];
     return cell;

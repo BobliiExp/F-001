@@ -177,7 +177,11 @@ static int code = 10102;
     [view addSubview:lab];
     
     __block UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake((kAlertViewWidth-100)/2, CGRectGetMaxY(frame)+paddinng, 100, 40)];
+<<<<<<< HEAD
     field.placeholder = KLocalizable(@"voiceInviteCode");
+=======
+    field.placeholder = kAFLocalizeEx(kstrAudioInviteCode, kLZ_Sentence);
+>>>>>>> parent of 34c4d4f... Merge pull request #9 from BobliiExp/pr/8
     field.layer.borderColor = kColor_Content.CGColor;
     field.layer.borderWidth = 1.0;
     field.textColor = [UIColor blackColor];
@@ -188,7 +192,11 @@ static int code = 10102;
     
     view.frame = CGRectMake(0, 0, kAlertViewWidth, CGRectGetMaxY(field.frame)+paddinng);
     
+<<<<<<< HEAD
     [AFFAlertView alertWithView:view btnTitle:@[KLocalizable(@"startAlertConnected"), KLocalizable(@"cancel")] block:^(NSInteger index, BOOL isCancel) {
+=======
+    [AFFAlertView alertWithView:view btnTitle:@[kAFLocalizeEx(kstrAudioConnect, kLZ_Sentence), kAFLocalize(kActCancel)] block:^(NSInteger index, BOOL isCancel) {
+>>>>>>> parent of 34c4d4f... Merge pull request #9 from BobliiExp/pr/8
         if(!isCancel){
             if(field.text==nil || field.text.length==0){
                 [SVProgressHUD showInfoWithStatus:KLocalizable(@"enterInviteCode")];
@@ -285,8 +293,13 @@ static int code = 10102;
         controller.messageComposeDelegate = self;
         //iOS 9.2 要自己写导航栏，和右边按钮
         UINavigationItem *navItem = [[[controller viewControllers] lastObject] navigationItem];
+<<<<<<< HEAD
         [navItem setTitle:@"短信邀请"];
         UIBarButtonItem* item = [[UIBarButtonItem alloc]initWithTitle:KLocalizable(@"cancel") style:UIBarButtonItemStylePlain target:self action:@selector(messageVCHide)];
+=======
+        [navItem setTitle:kAFLocalizeEx(kstrAudioInviteSMS, kLZ_Sentence)];
+        UIBarButtonItem* item = [[UIBarButtonItem alloc]initWithTitle:kAFLocalize(kActCancel) style:UIBarButtonItemStylePlain target:self action:@selector(messageVCHide)];
+>>>>>>> parent of 34c4d4f... Merge pull request #9 from BobliiExp/pr/8
         navItem.rightBarButtonItem = item;
         [self presentViewController:controller animated:YES completion:nil];
     }

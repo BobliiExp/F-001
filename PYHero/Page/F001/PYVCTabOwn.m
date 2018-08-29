@@ -49,7 +49,7 @@
 
 - (void)setupData {
     self.mArrUserInfo = [PYUserManage py_getUserInfo].mutableCopy;
-    self.mArrData = @[KLocalizable(@"voice")/*,@"摇一摇"*/,KLocalizable(@"lottery")/*,@"捉妖"*/].mutableCopy;
+    self.mArrData = @[@"语音"/*,@"摇一摇"*/,@"转一转"/*,@"捉妖"*/].mutableCopy;
     
     [self.tableView reloadData];
 }
@@ -151,7 +151,7 @@
     [vBg addSubview:labPoint];
     
     PYModelAttr *model = [[PYModelAttr alloc] init];
-    model.arrText = @[KLocalizable(@"currentPoints"), [PYUserManage py_getPoint], @"分"];
+    model.arrText = @[@"当前用户积分：", [PYUserManage py_getPoint], @"分"];
     model.arrFgColor = @[kColor_Title, kColor_Select, kColor_Title];
     [labPoint setAttributedTextWithModel:model];
     
@@ -177,7 +177,7 @@
     labStep.font = lab.font;
     labStep.textColor = lab.textColor;
     labStep.userInteractionEnabled = YES;
-    labStep.text = KLocalizable(@"stepRedemption");
+    labStep.text = @"步数兑换";
     [vBg addSubview:labStep];
     
     [labStep mas_makeConstraints:^(MASConstraintMaker *make) {

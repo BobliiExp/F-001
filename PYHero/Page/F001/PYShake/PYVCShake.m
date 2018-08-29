@@ -130,7 +130,7 @@
         cell.backgroundColor = kColor_Background;
     }
     
-    cell.textLabel.text = KLocalizable(@"historyRecord");
+    cell.textLabel.text = @"历史记录";
     //    cell.contentView.backgroundColor = indexPath.row%2 ? [UIColor whiteColor] : kColor_Background;
     //    [cell setupData:self.mArrData[indexPath.row]];
     return cell;

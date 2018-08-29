@@ -27,12 +27,12 @@
         
         UILabel *labTitle = [[UILabel alloc] initWithFrame:CGRectMake(12.f, 0, width - 12.f*2, 40)];
         labTitle.textColor = kColor_Title;
-        labTitle.text = KLocalizable(@"stepRedemption");
+        labTitle.text = @"步数兑换";
         labTitle.textAlignment = NSTextAlignmentCenter;
         labTitle.font = kFont_XL;
         [self addSubview:labTitle];
         
-        NSString *str = type == 2 ? KLocalizable(@"stepRedemptioned") : @"";
+        NSString *str = type == 2 ? @"今天已经兑换步数了，请明天再来吧！" : @"";
         UILabel *labContent = [[UILabel alloc] initWithFrame:CGRectMake(12.f, CGRectGetMaxY(labTitle.frame), labTitle.mj_w, 100)];
         labContent.textAlignment = labTitle.textAlignment;
         labContent.font = kFont_Normal;
@@ -45,7 +45,7 @@
         width = 100;
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((self.mj_w - width)/2.f, CGRectGetMaxY(labContent.frame), width, 30)];
         btn.titleLabel.font = kFont_Normal;
-        [btn setTitle:KLocalizable(@"ok") forState:UIControlStateNormal];
+        [btn setTitle:@"好的" forState:UIControlStateNormal];
         [btn setTitleColor:kColor_Title forState:UIControlStateNormal];
         btn.layer.borderColor = kColor_Select.CGColor;
         btn.layer.borderWidth = 1.f;
@@ -95,19 +95,19 @@
         [self.pedometer queryPedometerDataFromDate:startDate toDate:endDate withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (error) {
-                    self.labContent.text = KLocalizable(@"stepAcquisitionFailed");
+                    self.labContent.text = @"步数获取失败";
                 }else {
                     NSNumber *step = pedometerData.numberOfSteps;
                     
                     if (type == 1) { // 不在时间段内
-                        self.labContent.text = [NSString stringWithFormat:@"%@%@%@",KLocalizable(@"stepAlertFirst"),step,KLocalizable(@"stepAlertSecond")];
+                        self.labContent.text = [NSString stringWithFormat:@"亲，加油哦，您当前运动步数%@，请于18:00~20:00来兑换吧",step];
                     }else { // 在兑换时间段内
                         if (step.integerValue > 3000) { // 步数可兑换
-                            self.labContent.text = [NSString stringWithFormat:@"%@%@%@%ld%@",KLocalizable(@"stepAlertSixth"),step,KLocalizable(@"stepAlertSecond"),(step.integerValue - 3000)/10,KLocalizable(@"stepAlertFourth")];
+                            self.labContent.text = [NSString stringWithFormat:@"亲，您当前运动步数%@，可兑换%ld分\n（超过3000步，每10步兑换1分）",step,(step.integerValue - 3000)/10];
                             self.btn.tag = step.integerValue - 3000;
-                            [self.btn setTitle:KLocalizable(@"incomePocket") forState:UIControlStateNormal];
+                            [self.btn setTitle:@"收入囊中" forState:UIControlStateNormal];
                         }else { // 步数少于3000，不可兑换
-                            self.labContent.text = [NSString stringWithFormat:@"%@%@%@",KLocalizable(@"stepAlertFirst"),step,KLocalizable(@"stepAlertFifth")];
+                            self.labContent.text = [NSString stringWithFormat:@"亲，加油哦，您当前运动步数%@，要达到3000步才能兑换哦",step];
                         }
                     }
                 }
@@ -115,7 +115,7 @@
         }];
     }else{
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.labContent.text = KLocalizable(@"stepAuthFailed");
+            self.labContent.text = @"无法获取步数，请在设置中打开运动与健身权限";
         });
     }
 }
