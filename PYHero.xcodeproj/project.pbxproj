@@ -64,8 +64,11 @@
 		C438873B2132739F00500E58 /* YSCMicrophoneWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = C43887182132739F00500E58 /* YSCMicrophoneWaveView.m */; };
 		C438873C2132739F00500E58 /* microPhone_bottom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C43887192132739F00500E58 /* microPhone_bottom@3x.png */; };
 		C438873F21327B0400500E58 /* NSString+PY.m in Sources */ = {isa = PBXBuildFile; fileRef = C438873E21327B0400500E58 /* NSString+PY.m */; };
-		C46DF5B6212B955E00C784F5 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C46DF5B5212B955E00C784F5 /* localization.strings */; };
-		C46DF5B9212B970800C784F5 /* localization_sentence.strings in Resources */ = {isa = PBXBuildFile; fileRef = C46DF5B8212B970800C784F5 /* localization_sentence.strings */; };
+		C448B6EE2136694D00DBEC7A /* localization_sentence.strings in Resources */ = {isa = PBXBuildFile; fileRef = C448B6F02136694D00DBEC7A /* localization_sentence.strings */; };
+		C448B6F42136733800DBEC7A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C448B6F32136733800DBEC7A /* libsqlite3.tbd */; };
+		C448B6F62136736F00DBEC7A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C448B6F52136736F00DBEC7A /* libc++.tbd */; };
+		C448B6F82136738400DBEC7A /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C448B6F72136738400DBEC7A /* libresolv.tbd */; };
+		C448B6FA2136738C00DBEC7A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C448B6F92136738C00DBEC7A /* libsqlite3.0.tbd */; };
 		C47A5BA82123C3DC00467618 /* PYVCTabMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */; };
 		C47A5BAB2123C3F800467618 /* PYVCTabShake.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAA2123C3F800467618 /* PYVCTabShake.m */; };
 		C47A5BAE2123C43700467618 /* PYVCTabLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = C47A5BAD2123C43700467618 /* PYVCTabLottery.m */; };
@@ -123,6 +126,7 @@
 		C4BC917B212EDE3900457D76 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BC917A212EDE3900457D76 /* libiconv.tbd */; };
 		C4BC917D212EDE3F00457D76 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BC917C212EDE3F00457D76 /* libz.tbd */; };
 		C4BC9180212EE61400457D76 /* PYVAudioWave.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BC917F212EE61400457D76 /* PYVAudioWave.m */; };
+		C4BD85FD213668A0006EBA64 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4BD85FF213668A0006EBA64 /* localization.strings */; };
 		C4F63675212DAD5B00F9132A /* AFFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F63673212DAD5A00F9132A /* AFFAlertView.m */; };
 		C4F6367B212DB62000F9132A /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6367A212DB62000F9132A /* UIImage+Color.m */; };
 		D10BD2B62072803F00AA1615 /* NSDate+PYHero.m in Sources */ = {isa = PBXBuildFile; fileRef = D10BD2B52072803F00AA1615 /* NSDate+PYHero.m */; };
@@ -265,9 +269,14 @@
 		C43887192132739F00500E58 /* microPhone_bottom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microPhone_bottom@3x.png"; sourceTree = "<group>"; };
 		C438873D21327B0400500E58 /* NSString+PY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PY.h"; sourceTree = "<group>"; };
 		C438873E21327B0400500E58 /* NSString+PY.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+PY.m"; sourceTree = "<group>"; };
-		C46DF5B5212B955E00C784F5 /* localization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = localization.strings; sourceTree = "<group>"; };
+		C448B6EF2136694D00DBEC7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization_sentence.strings; sourceTree = "<group>"; };
+		C448B6F12136695900DBEC7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/localization.strings; sourceTree = "<group>"; };
+		C448B6F22136696200DBEC7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/localization_sentence.strings; sourceTree = "<group>"; };
+		C448B6F32136733800DBEC7A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C448B6F52136736F00DBEC7A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		C448B6F72136738400DBEC7A /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		C448B6F92136738C00DBEC7A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		C46DF5B7212B962E00C784F5 /* localization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = localization.h; sourceTree = "<group>"; };
-		C46DF5B8212B970800C784F5 /* localization_sentence.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = localization_sentence.strings; sourceTree = "<group>"; };
 		C46DF5BA212B973C00C784F5 /* localization_sentence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = localization_sentence.h; sourceTree = "<group>"; };
 		C47A5BA62123C3DC00467618 /* PYVCTabMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCTabMedia.h; sourceTree = "<group>"; };
 		C47A5BA72123C3DC00467618 /* PYVCTabMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCTabMedia.m; sourceTree = "<group>"; };
@@ -480,6 +489,7 @@
 		C4BC917C212EDE3F00457D76 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C4BC917E212EE61400457D76 /* PYVAudioWave.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVAudioWave.h; sourceTree = "<group>"; };
 		C4BC917F212EE61400457D76 /* PYVAudioWave.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVAudioWave.m; sourceTree = "<group>"; };
+		C4BD85FE213668A0006EBA64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
 		C4F63673212DAD5A00F9132A /* AFFAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFFAlertView.m; sourceTree = "<group>"; };
 		C4F63674212DAD5B00F9132A /* AFFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFFAlertView.h; sourceTree = "<group>"; };
 		C4F63679212DB62000F9132A /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
@@ -551,6 +561,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C448B6FA2136738C00DBEC7A /* libsqlite3.0.tbd in Frameworks */,
+				C448B6F82136738400DBEC7A /* libresolv.tbd in Frameworks */,
+				C448B6F62136736F00DBEC7A /* libc++.tbd in Frameworks */,
+				C448B6F42136733800DBEC7A /* libsqlite3.tbd in Frameworks */,
 				C4BC917D212EDE3F00457D76 /* libz.tbd in Frameworks */,
 				C4BC917B212EDE3900457D76 /* libiconv.tbd in Frameworks */,
 				C4BC9179212EDE2F00457D76 /* CoreMedia.framework in Frameworks */,
@@ -589,6 +603,10 @@
 		5C7007F719A824E4E0016D87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C448B6F92136738C00DBEC7A /* libsqlite3.0.tbd */,
+				C448B6F72136738400DBEC7A /* libresolv.tbd */,
+				C448B6F52136736F00DBEC7A /* libc++.tbd */,
+				C448B6F32136733800DBEC7A /* libsqlite3.tbd */,
 				C4BC917C212EDE3F00457D76 /* libz.tbd */,
 				C4BC917A212EDE3900457D76 /* libiconv.tbd */,
 				C4BC9178212EDE2F00457D76 /* CoreMedia.framework */,
@@ -651,9 +669,9 @@
 		C4147D22212AFFFB00A8D79C /* Globalization */ = {
 			isa = PBXGroup;
 			children = (
-				C46DF5B5212B955E00C784F5 /* localization.strings */,
+				C448B6F02136694D00DBEC7A /* localization_sentence.strings */,
+				C4BD85FF213668A0006EBA64 /* localization.strings */,
 				C46DF5B7212B962E00C784F5 /* localization.h */,
-				C46DF5B8212B970800C784F5 /* localization_sentence.strings */,
 				C46DF5BA212B973C00C784F5 /* localization_sentence.h */,
 			);
 			path = Globalization;
@@ -1489,7 +1507,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C46DF5B9212B970800C784F5 /* localization_sentence.strings in Resources */,
 				C43887282132739F00500E58 /* firstLine.png in Resources */,
 				C438873A2132739F00500E58 /* microPhone_bottom@2x.png in Resources */,
 				D1EF4FB820707F0F006C6D60 /* Podfile in Resources */,
@@ -1505,13 +1522,14 @@
 				A1220218212AAF25007710D4 /* Assets.xcassets in Resources */,
 				C438871D2132739F00500E58 /* SeaVertex.glsl in Resources */,
 				C43887212132739F00500E58 /* fanshaped.jpg in Resources */,
-				C46DF5B6212B955E00C784F5 /* localization.strings in Resources */,
+				C4BD85FD213668A0006EBA64 /* localization.strings in Resources */,
 				D176D3C02075DEFF00EA514B /* PYVCNewsHero.xib in Resources */,
 				D1865025206E210400C2A6D0 /* LaunchScreen.storyboard in Resources */,
 				C438871C2132739F00500E58 /* SeaFragment.glsl in Resources */,
 				D176D3C52075DF9000EA514B /* PYVCNewsFamous.xib in Resources */,
 				C43887262132739F00500E58 /* fill.png in Resources */,
 				C43887392132739F00500E58 /* microPhone_top@3x.png in Resources */,
+				C448B6EE2136694D00DBEC7A /* localization_sentence.strings in Resources */,
 				D176D3BB2075DECF00EA514B /* PYVCNewsGame.xib in Resources */,
 				C43887222132739F00500E58 /* circleBackground.png in Resources */,
 				D1ADCFBD2074965A001CCE5E /* PYTabScoreNoticeView.xib in Resources */,
@@ -1744,6 +1762,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C448B6F02136694D00DBEC7A /* localization_sentence.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C448B6EF2136694D00DBEC7A /* en */,
+				C448B6F22136696200DBEC7A /* Base */,
+			);
+			name = localization_sentence.strings;
+			sourceTree = "<group>";
+		};
+		C4BD85FF213668A0006EBA64 /* localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4BD85FE213668A0006EBA64 /* en */,
+				C448B6F12136695900DBEC7A /* Base */,
+			);
+			name = localization.strings;
+			sourceTree = "<group>";
+		};
 		D186501E206E210400C2A6D0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1879,6 +1915,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PYHero",
+					"$(PROJECT_DIR)/PYHero/libBSWebImage",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PYHero/PrefixHeader.pch;
@@ -1911,6 +1948,7 @@
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/libyuv/lib",
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/FFmpeg-iOS/lib",
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/x264-iOS/lib",
+					"$(PROJECT_DIR)/PYHero/libBSWebImage",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1930,6 +1968,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PYHero",
+					"$(PROJECT_DIR)/PYHero/libBSWebImage",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PYHero/PrefixHeader.pch;
@@ -1962,6 +2001,7 @@
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/libyuv/lib",
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/FFmpeg-iOS/lib",
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/x264-iOS/lib",
+					"$(PROJECT_DIR)/PYHero/libBSWebImage",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";

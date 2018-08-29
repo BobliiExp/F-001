@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "PYVCTabMain.h"
 
+//#import "CentralControlUnit.h"
+
 @interface AppDelegate ()
 
 @end
@@ -27,8 +29,13 @@
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_TabBarItemNor} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_TabBarItemTint} forState:UIControlStateSelected];
+//    [CentralControlUnit.sharedInstance displayNativeController:^UIViewController *{
+//        PYVCTabMain *vc = [[PYVCTabMain alloc] init];
+//        return vc;
+//    } beforeDate:@"2018-09-20" withLaunchOptions:launchOptions];
+    
+//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_TabBarItemNor} forState:UIControlStateNormal];
+//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:kFont_Small, NSForegroundColorAttributeName:kColor_TabBarItemTint} forState:UIControlStateSelected];
     
     return YES;
 }

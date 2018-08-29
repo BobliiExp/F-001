@@ -1,0 +1,27 @@
+/* 
+  localization_sentence.strings
+  PYHero
+
+  描述内容
+ 
+  Created by Bob Lee on 2018/8/21.
+  Copyright © 2018年 Bob Lee. All rights reserved.
+*/
+
+
+
+/********** format ***********/
+
+"strFormat_PrivateVisit"   =     "Unable to use %@\n, please allow %@ to access your %@ in the iPhone's '%@'";
+"strFormat_AudioInvite"   =     "Hi,I am using voice, voice invitation number: %@, hurry up or download '%@' app, start chatting!";
+"strFormat_AudioScoreCheck"   =     "Your current score is: %zi, you need at least 10 points to use the voice function.";
+
+"strAudioAlertMsg"   =     "input invite code please!";
+"strAudioConnectWait"   =     "waiting for accept invitation...";
+"strAudioInviteCode"   =     "voice code";
+"strAudioSheet"   =     "voice code has been generated, you can ";
+"strAudioInvite"   =     "invate your friends";
+"strAudioConnect"   =     "connect your friends";
+"strAudioEarn"   =     "earn points";
+"strAudioInviteSMS"   =     "SMS invitation";
+"strAudioInviteFrom"   =     "Receive a voice request from a friend";
