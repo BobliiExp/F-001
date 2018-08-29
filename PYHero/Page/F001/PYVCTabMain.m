@@ -35,7 +35,8 @@
                         @{@"title":kAFLocalize(kStrYuxi), @"icon":@"life", @"class":@"PYVCTabLottery"},
 //                        @{@"title":kAFLocalize(kStrYuchao), @"icon":@"work", @"class":@"PYVCTabMonster"},
                         @{@"title":kAFLocalize(kStrYulong), @"icon":@"own", @"class":@"PYVCTabOwn"},
-    
+                        @{@"title":kAFLocalize(kStrYulong), @"icon":@"own", @"class":@"PYVCTabOwn"}
+                        ];
     NSMutableArray *mArr = [NSMutableArray arrayWithCapacity:config.count];
     
     for(NSDictionary *dic in config){

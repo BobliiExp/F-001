@@ -177,6 +177,7 @@ static int code = 10102;
     [view addSubview:lab];
     
     __block UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake((kAlertViewWidth-100)/2, CGRectGetMaxY(frame)+paddinng, 100, 40)];
+
     field.placeholder = kAFLocalizeEx(kstrAudioInviteCode, kLZ_Sentence);
     field.layer.borderColor = kColor_Content.CGColor;
     field.layer.borderWidth = 1.0;

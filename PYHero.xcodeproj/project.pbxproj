@@ -25,6 +25,8 @@
 		A17B94152132CBD6005407EF /* PYVAlertLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94112132CBD6005407EF /* PYVAlertLottery.m */; };
 		A17B94162132CBD6005407EF /* PYImgVLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94142132CBD6005407EF /* PYImgVLottery.m */; };
 		A17B94192132CCD3005407EF /* PYVCPointInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B94182132CCD3005407EF /* PYVCPointInfo.m */; };
+		A19C78C721366A1D00C03964 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A19C78C921366A1D00C03964 /* InfoPlist.strings */; };
+		A19C78CD21366B0E00C03964 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A19C78CF21366B0E00C03964 /* Localizable.strings */; };
 		A1C4E891212D99E500C5F654 /* PYCellLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C4E890212D99E500C5F654 /* PYCellLottery.m */; };
 		A1D023D22134ECC400A3FDC3 /* UILabel+AttributeString.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D023D12134ECC400A3FDC3 /* UILabel+AttributeString.m */; };
 		C43886CE21324FAA00500E58 /* PYAudioWaveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C43886CD21324FAA00500E58 /* PYAudioWaveLayer.m */; };
@@ -197,6 +199,12 @@
 		A17B94142132CBD6005407EF /* PYImgVLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYImgVLottery.m; sourceTree = "<group>"; };
 		A17B94172132CCD3005407EF /* PYVCPointInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYVCPointInfo.h; sourceTree = "<group>"; };
 		A17B94182132CCD3005407EF /* PYVCPointInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYVCPointInfo.m; sourceTree = "<group>"; };
+		A19C78C3213669CC00C03964 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		A19C78C4213669CD00C03964 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A19C78C821366A1D00C03964 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A19C78CA21366A1F00C03964 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A19C78CE21366B0E00C03964 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A19C78D021366B0F00C03964 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A1C4E88F212D99E500C5F654 /* PYCellLottery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYCellLottery.h; sourceTree = "<group>"; };
 		A1C4E890212D99E500C5F654 /* PYCellLottery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYCellLottery.m; sourceTree = "<group>"; };
 		A1D023D02134ECC400A3FDC3 /* UILabel+AttributeString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+AttributeString.h"; sourceTree = "<group>"; };
@@ -1368,6 +1376,8 @@
 				D1865026206E210400C2A6D0 /* Info.plist */,
 				D1865027206E210400C2A6D0 /* main.m */,
 				D186503B206E396900C2A6D0 /* PrefixHeader.pch */,
+				A19C78C921366A1D00C03964 /* InfoPlist.strings */,
+				A19C78CF21366B0E00C03964 /* Localizable.strings */,
 			);
 			path = PYHero;
 			sourceTree = "<group>";
@@ -1440,7 +1450,6 @@
 				D186500F206E210400C2A6D0 /* Frameworks */,
 				D1865010206E210400C2A6D0 /* Resources */,
 				57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */,
-				53D12912887738CFB3E13E72 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1473,6 +1482,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = D1865009206E210400C2A6D0;
 			productRefGroup = D1865013206E210400C2A6D0 /* Products */;
@@ -1505,7 +1515,8 @@
 				A1220218212AAF25007710D4 /* Assets.xcassets in Resources */,
 				C438871D2132739F00500E58 /* SeaVertex.glsl in Resources */,
 				C43887212132739F00500E58 /* fanshaped.jpg in Resources */,
-				C4BD85FD213668A0006EBA64 /* localization.strings in Resources */,
+				C46DF5B6212B955E00C784F5 /* localization.strings in Resources */,
+				A19C78CD21366B0E00C03964 /* Localizable.strings in Resources */,
 				D176D3C02075DEFF00EA514B /* PYVCNewsHero.xib in Resources */,
 				D1865025206E210400C2A6D0 /* LaunchScreen.storyboard in Resources */,
 				C438871C2132739F00500E58 /* SeaFragment.glsl in Resources */,
@@ -1520,6 +1531,7 @@
 				D176D3B62075DE9200EA514B /* PYVCNewsOfficial.xib in Resources */,
 				D1865020206E210400C2A6D0 /* Main.storyboard in Resources */,
 				C438873C2132739F00500E58 /* microPhone_bottom@3x.png in Resources */,
+				A19C78C721366A1D00C03964 /* InfoPlist.strings in Resources */,
 				D1ADCFAD2074535B001CCE5E /* PYTabScoreCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1527,21 +1539,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53D12912887738CFB3E13E72 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYHero/Pods-PYHero-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		57C0B83D8C30F4BC2E2606B5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1627,7 +1624,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1783,6 +1780,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D186501F206E210400C2A6D0 /* Base */,
+				A19C78C3213669CC00C03964 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1791,6 +1789,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D1865024206E210400C2A6D0 /* Base */,
+				A19C78C4213669CD00C03964 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1802,6 +1801,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1857,6 +1857,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1909,7 +1910,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S86KA93GD7;
+				DEVELOPMENT_TEAM = UEMD52M26A;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1947,7 +1948,7 @@
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/FFmpeg-iOS/lib",
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/x264-iOS/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHeroer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1960,7 +1961,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S86KA93GD7;
+				DEVELOPMENT_TEAM = UEMD52M26A;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1998,7 +1999,7 @@
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/FFmpeg-iOS/lib",
 					"$(PROJECT_DIR)/PYHero/Page/F001/PYMedia/Helper/OpenGL/x264-iOS/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ponyo.PYHeroer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

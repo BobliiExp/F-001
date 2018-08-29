@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  PYHero
+
+  Created by crow on 2018/8/29.
+  Copyright © 2018 Bob Lee. All rights reserved.
+*/
+
+CFBundleDisplayName = "Lettry";
+

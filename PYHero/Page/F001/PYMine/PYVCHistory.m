@@ -25,7 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"历史记录";
+    self.title = KLocalizable(@"historyRecord");
     [self setup];
     [self setupData];
 }
@@ -47,11 +47,6 @@
 - (void)setupData {
     if (self.type == PYHistoryTypeVoice) {
         self.mArrData = [PYUserManage py_getMediaData].mutableCopy;
-        PYModelSaveMedia *model = [[PYModelSaveMedia alloc] init];
-        model.startTime = @"2019-09-20 10:30";
-        model.duration = @"1时20分";
-        model.point = 20;
-        [self.mArrData addObject:model];
     }else if (self.type == PYHistoryTypeShake) {
         self.mArrData = @[[PYUserManage py_getShakeData:PYLotteryTypeUnionLotto],[PYUserManage py_getShakeData:PYLotteryTypeLecaGreati],[PYUserManage py_getShakeData:PYLotteryTypeSuperLotto]].mutableCopy;
     }else if (self.type == PYHistoryTypeVR) {
@@ -158,7 +153,7 @@
 #pragma mark - empty delegate
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
-    return [[NSAttributedString alloc] initWithString:@"暂无数据"];
+    return [[NSAttributedString alloc] initWithString:KLocalizable(@"noData")];
 }
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {

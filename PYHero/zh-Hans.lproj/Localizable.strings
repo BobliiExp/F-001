@@ -1,0 +1,72 @@
+/* 
+  Localizable.strings
+  PYHero
+
+  Created by crow on 2018/8/29.
+  Copyright © 2018 Bob Lee. All rights reserved.
+*/
+
+"voice" = "语音";
+"lottery" = "转一转";
+"mine" = "我的";
+"historyRecord" = "历史记录";
+
+/******************** 语音 **********************/
+"startVoice" = "开始语音";
+"startAlertTitle" = "语音邀请码已生成，您可以";
+"startAlertInvite" = "邀请好友通话";
+"startAlertConnected" = "连线好友";
+"enterInviteCode" = "请输入邀请码";
+"voiceAlertTitle" = "请输入短信中的语音邀请码！";
+"voiceInviteCode" = "语音邀请码";
+"cancel" = "取消";
+"cancelInvite" = "取消邀请";
+
+/******************** 转一转 **********************/
+"currentAvailableTimes" = "当前可用次数：";
+"currentPoints" = "当前用户积分：";
+"startPlay" = "开始游戏";
+"congratulations" = "恭喜您获得";
+"point" = "积分";
+"incomePocket" = "收入囊中";
+"playAgain" = "很遗憾，再玩一次吧！";
+"ok" = "好的";
+"tips" = "温馨提示";
+"timesOut" = "今日游戏次数已经用光，请明天再来吧！";
+"determine" = "确定";
+
+/******************** 我的 **********************/
+"setting" = "设置";
+"avatar" = "头像";
+"nickname" = "昵称";
+"save" = "保存";
+"giveNickname" = "给自己起个昵称吧";
+"stepRedemption" = "步数兑换";
+"startTime" = "开始时间：";
+"duration" = "时长：";
+"usePoints" = "使用积分：";
+"unusePoints" = "被邀请，不使用积分";
+"earnPoints" = "获得积分：";
+"stepRedemptioned" = "今天已经兑换步数了，请明天再来吧！";
+"stepAcquisitionFailed" = "步数获取失败";
+"stepAuthFailed" = "无法获取步数，请在设置中打开运动与健身权限";
+"stepAlertFirst" = "亲，加油哦，您当前运动步数";
+"stepAlertSecond" = "，请于18:00~20:00来兑换吧";
+"stepAlertThird" = "，可兑换";
+"stepAlertFourth" = "分\n（超过3000步，每10步兑换1分）";
+"stepAlertFifth" = "，要达到3000步才能兑换哦";
+"stepAlertSixth" = "亲，您当前运动步数";
+
+"noData" = "暂无数据";
+"welcome" = "喜迎新人";
+"welcomeContent" = "恭喜您获得新人奖励20积分！\n赶快去更新自己的头像和昵称吧！";
+"goSet" = "去设置";
+"knowPoint" = "了解积分";
+"pointDes" = "积分说明";
+"pointDesTitleFirst" = "1.积分获取";
+"pointDesContentFirst" = "A.参与转一转可以随机获得积分，每日可以参与五次。\nB.每日运动步数统计，达到3000步以上时，每增加10步，奖励1积分。";
+"pointDesTitleSecond" = "2.积分使用";
+"pointDesContentSecond" = "A.用户的积分可用于语音通话，通话一分钟使用10积分。";
+
+
+
