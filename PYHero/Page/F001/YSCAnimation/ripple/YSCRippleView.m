@@ -84,7 +84,7 @@
     _rippleButton.layer.masksToBounds = YES;
     _ringColor = kColor_Select;
     
-    [_rippleButton setTitle:kAFLocalize(kstrStartVoice) forState:UIControlStateNormal];
+    [_rippleButton setTitle:KLocalizable(@"startVoice") forState:UIControlStateNormal];
 }
 
 - (void)onButtonClicked:(void(^)(void))buttonClicked {
@@ -96,7 +96,7 @@
 }
 
 - (void)cleanTheme {
-    [_rippleButton setTitle:kAFLocalize(kstrStartVoice) forState:UIControlStateNormal];
+    [_rippleButton setTitle:KLocalizable(@"startVoice") forState:UIControlStateNormal];
     [_rippleButton setBackgroundImage:nil forState:UIControlStateNormal];
     _rippleButton.selected = NO;
     _ringColor = kColor_Select;

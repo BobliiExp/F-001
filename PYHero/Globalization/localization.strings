@@ -7,9 +7,6 @@
   Created by Bob Lee on 2018/8/21.
   Copyright © 2018年 Bob Lee. All rights reserved.
 */
-
-"CFBundleDisplayName" = "Seek luck";
-
 "actBack"           =       "返回";
 "actRefresh"        =       "刷新";
 "actDownload"       =       "下载";
@@ -20,7 +17,7 @@
 "actRevoke"         =       "撤回";
 "actSendFish"       =       "送鱼";
 "actAdd"            =       "添加";
-"actCancel"         =       "cancel";
+"actCancel"         =       "取消";
 "actConfirm"        =       "确定";
 "actSearch"         =       "搜索";
 "actSend"           =       "发送";
@@ -56,23 +53,20 @@
 "actUse"            =       "使用";
 "actBlcak"          =       "拉黑";
 "actCollect"        =       "收藏";
-"actSuccess"          =       "success";
-"actFailed"          =       "failed";
 
 
 /**************** Static text ***********************/
-"strYuxin"          =       "Audio";
-"strYubang"         =       "Shake";
-"strYuxi"           =       "Seek";
-"strYuchao"         =       "Monster";
-"strYulong"         =       "Me";
+"strYuxin"          =       "鱼酬";
+"strYubang"         =       "鱼榜";
+"strYuxi"           =       "鱼系";
+"strYuchao"         =       "鱼潮";
+"strYulong"         =       "鱼篓";
 
-"strStartVoice"          =       "Audio";
-"strRecord"          =       "history records";
-"strStartTime"      =       "start time";
-"strTimespan"       =       "time span";
-"strScoreCast"        =       "score use";
-
+"strYumsg"          =       "消息";
+"strYusen"          =       "鱼信";
+"strYucontact"      =       "通讯本";
+"strYucenter"       =       "中间页";
+"strYuocean"        =       "海洋";
 "strYuown"          =       "我";
 "strYuwork"         =       "工作圈";
 "strYustreet"       =       "后街";
